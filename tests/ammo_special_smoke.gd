@@ -1,0 +1,96 @@
+extends "res://tests/choose_smoke.gd"
+
+const Calculator = preload("res://Code/damage_calculator.gd")
+
+
+func _run() -> void:
+	root.size = Vector2i(1152, 648)
+	scene = load("res://Scene/main.tscn").instantiate()
+	root.add_child(scene)
+	choose = scene.get_node("Information/Chosse")
+	var btk: Control = scene.get_node("Information/BTK")
+	await _frames()
+	_check(not btk.special_panel.visible, "Ordinary ammo has no special panel")
+	var base := {"head": 1.9, "chest": 1.0, "abdomen": 0.9, "limbs": 0.4}
+	choose._select_weapon(choose._find_by_name(choose.weapons, "MP7"))
+	for name in ["FMJ ST", "AP ST"]:
+		var ammo: Dictionary = choose._find_by_name(choose.get_bullet_choices(), name)
+		choose._select_bullet(ammo)
+		_check(btk.special_panel.visible and btk.special_description.text == "头部、胸部倍率 ×1.25\n腹部、四肢倍率 ×0.9", "ST special description: " + name)
+		var effective: Dictionary = Calculator.effective_body_multipliers(ammo, base)
+		_check(is_equal_approx(effective.head, 2.375) and is_equal_approx(effective.chest, 1.25) and is_equal_approx(effective.abdomen, 0.81) and is_equal_approx(effective.limbs, 0.36), "ST multiplies all four body values")
+		_check(base == {"head": 1.9, "chest": 1.0, "abdomen": 0.9, "limbs": 0.4}, "Weapon multipliers are never mutated")
+		var result := Calculator.calculate({"flesh_damage": 45, "armor_damage": 20}, ammo, {"level": 0, "max_durability": 0}, {"level": 0, "max_durability": 0}, base)
+		_check(result.head == 1 and result.chest == 2 and result.abdomen == 3 and result.arms == 7 and result.arms_then_chest == [2, 2, 1, 1], "ST corrections affect single and mixed hits")
+	await _capture("ammo-special-st")
+	_check(root.get_visible_rect().encloses(btk.special_panel.get_global_rect()), "ST panel fits below BTK")
+	choose._select_bullet(choose._find_by_name(choose.get_bullet_choices(), "FMJ SX"))
+	_check(not btk.special_panel.visible and btk.special_description.text.is_empty(), "Ordinary ammo clears special description")
+	var info: Control = scene.get_node("Information/GunInformation")
+	var ct: Dictionary = choose._find_by_name(choose.get_bullet_choices(), "CT")
+	choose._select_bullet(ct)
+	_check(ct.level == 0 and ct.background.ends_with("4级_紫色.png"), "CT stays level zero with purple background")
+	_check(Calculator.base_damage_ratio_for(ct) == 1.0 and is_equal_approx(Calculator.effective_body_multipliers(ct, base).limbs, 0.74), "CT uses its specific limb formula, without generic zero-level 1.4")
+	_check(btk.special_description.text.contains("四肢倍率 ×1.85") and info.damage.text.contains("射速：807.5"), "CT explanation and reduced rate displayed")
+	_check(btk.results.arms == 5, "MP7 CT unprotected arm damage is 23.68")
+	await _capture("ammo-special-ct")
+	choose._select_bullet(choose._find_by_name(choose.get_bullet_choices(), "FMJ SX"))
+	_check(info.damage.text.contains("射速：950"), "Leaving CT restores original rate")
+	choose._select_weapon(choose._find_by_name(choose.weapons, "P90"))
+	for name in ["HT", "HT+"]:
+		var ammo: Dictionary = choose._find_by_name(choose.get_bullet_choices(), name)
+		choose._select_bullet(ammo)
+		var armor := {"level": 6, "max_durability": 100000}
+		var rate := 0.15 if name == "HT" else 0.25
+		var hit := Calculator.apply_hit(32 * 1.2, 28, ammo.level, 6, 100000, Calculator.factor_for(ammo, armor), 1.0, Calculator.health_rate_for(ammo, armor))
+		_check(is_equal_approx(hit.flesh_damage, 32 * 1.2 * rate), "HT armored damage matches document example: " + name)
+		_check(is_equal_approx(100000 - float(hit.durability), 28 * 0.2), "HT raw armor factor is not multiplied by 0.2 again")
+		var result := Calculator.calculate({"flesh_damage": 32, "armor_damage": 28}, ammo, armor, armor, base)
+		_check(result.chest == (18 if name == "HT" else 11), "HT penetrates above its grade without ordinary rule stacking")
+		_check(btk.special_description.text.contains("钝伤机制"), "HT special explanation displayed")
+	await _capture("ammo-special-ht")
+	choose._select_weapon(choose._find_by_name(choose.weapons, "ASh-12"))
+	var pd12: Dictionary = choose._find_by_name(choose.get_bullet_choices(), "PD12双头弹")
+	choose._select_bullet(pd12)
+	var naked := {"level": 0, "max_durability": 0}
+	var profile := Calculator.projectile_damage_profile({"flesh_damage": 999, "armor_damage": 999}, pd12)
+	_check(profile == {"flesh_damage": 37.0, "armor_damage": 5.5}, "PD12 uses exact user damage independently of raw weapon values")
+	_check(Calculator.effective_body_multipliers(pd12, base) == {"head": 1.6, "chest": 1.0, "abdomen": 0.9, "limbs": 0.45}, "PD12 uses supplied body multipliers")
+	var pd12_result := Calculator.calculate({"flesh_damage": 56, "armor_damage": 55}, pd12, naked, naked, base)
+	_check(pd12_result.head == 1 and pd12_result.chest == 2 and pd12_result.arms == 4, "PD12 counts rounds with two fixed 37-damage projectiles")
+	var chest_damage := [37.0, 37.0, 37.0, 27.8, 18.5, 14.8, 11.1]
+	var chest_rounds := [2, 2, 2, 2, 3, 4, 5]
+	for level in range(7):
+		var defense := {"level": level, "max_durability": 100000}
+		var keep := Calculator.health_rate_for(pd12, defense)
+		var factor := Calculator.factor_for(pd12, defense)
+		var hit := Calculator.apply_hit(profile.flesh_damage, profile.armor_damage, pd12.level, level, 100000, factor, 1.0, keep)
+		_check(is_equal_approx(hit.flesh_damage, chest_damage[level]), "Exact chest damage at armor level %d" % level)
+		_check(is_equal_approx(100000 - float(hit.durability), 5.5 if level > 0 else 0), "Each projectile removes exactly 5.5 armor, regardless of armor grade")
+		var result := Calculator.calculate({"flesh_damage": 56, "armor_damage": 55}, pd12, defense, defense, base)
+		_check(result.chest == chest_rounds[level], "Supplied damage table yields expected chest rounds at grade %d" % level)
+		for part in ["head", "abdomen", "limbs"]:
+			var multiplier: float = {"head": 1.6, "abdomen": 0.9, "limbs": 0.45}[part]
+			var body_hit := Calculator.apply_hit(profile.flesh_damage, profile.armor_damage, pd12.level, level, 100000, factor, multiplier, keep)
+			_check(is_equal_approx(body_hit.flesh_damage, chest_damage[level] * multiplier), "Exact body multiplier applied after chest table: " + part)
+	var five := {"level": 5}
+	var keep := Calculator.health_rate_for(pd12, five)
+	var partial := Calculator.apply_hit(37, 5.5, 4, 5, 2.75, 1, 1, keep)
+	_check(is_equal_approx(partial.flesh_damage, 25.9) and partial.durability == 0, "Half remaining armor blends 14.8 and 37 damage")
+	var exact := Calculator.apply_hit(37, 5.5, 4, 5, 5.5, 1, 1, keep)
+	var second := Calculator.apply_hit(37, 5.5, 4, 5, exact.durability, 1, 1, keep)
+	_check(is_equal_approx(exact.flesh_damage, 14.8) and second.flesh_damage == 37, "First projectile exactly breaks armor and second is unprotected")
+	_check(btk.results.chest == 4 and btk.results.arms_then_chest == [3, 2, 1, 0], "Actual ASh-12 BTK uses fixed 5.5 armor damage and two projectiles")
+	_check(not btk.special_description.text.contains("估算") and not btk.special_description.text.contains("待核实"), "Confirmed user data removes old estimate warning")
+	await _capture("ammo-special-pd12")
+	_check(root.get_visible_rect().encloses(btk.special_panel.get_global_rect()), "PD12 full explanation fits below BTK")
+	choose._select_weapon(choose._find_by_name(choose.weapons, "G3"))
+	var ls: Dictionary = choose._find_by_name(choose.get_bullet_choices(), "LS")
+	choose._select_bullet(ls)
+	_check(btk.special_panel.visible and btk.special_description.text == "子弹初速 +40%", "LS shows velocity description")
+	_check(Calculator.special_effect_for(ls).muzzle_velocity_multiplier == 1.4 and Calculator.effective_body_multipliers(ls, base) == base, "LS velocity does not change damage multipliers")
+	await _capture("ammo-special-ls")
+	choose._select_weapon(choose._find_by_name(choose.weapons, "M7"))
+	_check(not btk.special_panel.visible, "Changing caliber hides previous special description")
+	print("AMMO_SPECIAL_SMOKE: %s; failures=%d" % ["PASS" if failures.is_empty() else "FAIL", failures.size()])
+	quit(0 if failures.is_empty() else 1)

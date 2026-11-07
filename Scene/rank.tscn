@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://bs70581m2sjc0"]
+
+[ext_resource type="Script" uid="uid://bksbfvi02jokl" path="res://Code/rank.gd" id="1_script"]
+[ext_resource type="Theme" uid="uid://c2dwrho41pl7g" path="res://assets/UI/aurora_theme.tres" id="aurora_theme"]
+
+[sub_resource type="StyleBoxFlat" id="Style_board"]
+bg_color = Color(0.17, 0.19, 0.34, 0.76)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.64, 0.69, 1, 0.16)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+corner_detail = 12
+
+[node name="Rank" type="Control" unique_id=1884231035]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("aurora_theme")
+script = ExtResource("1_script")
+column_widths = PackedInt32Array(36, 103, 70, 42, 42, 45)
+
+[node name="Leaderboards" type="HBoxContainer" parent="." unique_id=374124522]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="FleshBoard" type="PanelContainer" parent="Leaderboards" unique_id=1950989427]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("Style_board")
+
+[node name="Margin" type="MarginContainer" parent="Leaderboards/FleshBoard" unique_id=1820064505]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Column" type="VBoxContainer" parent="Leaderboards/FleshBoard/Margin" unique_id=832179947]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Leaderboards/FleshBoard/Margin/Column" unique_id=364685840]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.43, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "肉伤排行榜"
+
+[node name="Table" type="Tree" parent="Leaderboards/FleshBoard/Margin/Column" unique_id=1957613994]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/v_separation = 14
+theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/title_button_font_size = 14
+columns = 6
+column_titles_visible = true
+hide_folding = true
+hide_root = true
+select_mode = 1
+
+[node name="ArmorBoard" type="PanelContainer" parent="Leaderboards" unique_id=737223472]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("Style_board")
+
+[node name="Margin" type="MarginContainer" parent="Leaderboards/ArmorBoard" unique_id=205965143]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Column" type="VBoxContainer" parent="Leaderboards/ArmorBoard/Margin" unique_id=441673545]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Leaderboards/ArmorBoard/Margin/Column" unique_id=1800645896]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.64, 0.84, 1)
+theme_override_font_sizes/font_size = 24
+text = "甲伤排行榜"
+
+[node name="Table" type="Tree" parent="Leaderboards/ArmorBoard/Margin/Column" unique_id=2086659485]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/v_separation = 14
+theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/title_button_font_size = 14
+columns = 6
+column_titles_visible = true
+hide_folding = true
+hide_root = true
+select_mode = 1

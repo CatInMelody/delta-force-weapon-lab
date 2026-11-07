@@ -1,0 +1,102 @@
+{
+  "37170500002": {
+    "description": "子弹初速 +40%",
+    "muzzle_velocity_multiplier": 1.4
+  },
+  "37260400002": {
+    "description": "头部、胸部倍率 ×1.25\n腹部、四肢倍率 ×0.9",
+    "body_multipliers": {
+      "head": 1.25,
+      "chest": 1.25,
+      "abdomen": 0.9,
+      "limbs": 0.9
+    }
+  },
+  "37260500002": {
+    "description": "头部、胸部倍率 ×1.25\n腹部、四肢倍率 ×0.9",
+    "body_multipliers": {
+      "head": 1.25,
+      "chest": 1.25,
+      "abdomen": 0.9,
+      "limbs": 0.9
+    }
+  },
+  "37260000002": {
+    "description": "四肢倍率 ×1.85\n射速 −15%（开镜散布增加、后坐力控制降低）",
+    "body_multipliers": {
+      "limbs": 1.85
+    },
+    "base_damage_ratio": 1.0,
+    "fire_rate_multiplier": 0.85,
+    "background_level": 4
+  },
+  "37210300002": {
+    "description": "钝伤机制 · 基础肉伤 ×1.2\n按防具等级使用特殊穿血比例",
+    "base_damage_ratio": 1.2,
+    "health_rates": [
+      0.7,
+      0.6,
+      0.5,
+      0.4,
+      0.25,
+      0.15
+    ]
+  },
+  "37210400002": {
+    "description": "钝伤机制 · 基础肉伤 ×1.2\n按防具等级使用特殊穿血比例",
+    "base_damage_ratio": 1.2,
+    "health_rates": [
+      0.8,
+      0.7,
+      0.6,
+      0.5,
+      0.4,
+      0.25
+    ]
+  },
+  "37160400002": {
+    "description": "钝伤机制 · 每枪2弹头\n每颗无甲胸伤37、甲伤5.5\n按给定伤害表计算，两颗均命中",
+    "projectiles_per_round": 2,
+    "fixed_chest_damage": {
+      "0": 37.0,
+      "1": 37.0,
+      "2": 37.0,
+      "3": 27.8,
+      "4": 18.5,
+      "5": 14.8,
+      "6": 11.1
+    },
+    "fixed_armor_damage": 5.5,
+    "fixed_body_multipliers": {
+      "head": 1.6,
+      "chest": 1.0,
+      "abdomen": 0.9,
+      "limbs": 0.45
+    },
+    "hit_assumption": "both_projectiles_same_body_part",
+    "model_source": "用户提供的逐级胸部肉伤与每颗甲伤数据（2026-10-26）"
+  },
+  "s12:cinder": {
+    "description": "每命中一发子弹，2秒内造成3次1点真实伤害。",
+    "dot_ticks": 3,
+    "dot_tick_damage": 1,
+    "dot_duration": 2
+  },
+  "s12:tiv": {
+    "description": "命中4次后，造成12点真实伤害与12甲伤（护甲损耗逻辑同常规子弹）\n基础肉伤95%",
+    "base_damage_ratio": 0.95,
+    "proc_hits": 4,
+    "proc_true_damage": 12,
+    "proc_armor_damage": 12
+  },
+  "s12:ttv": {
+    "description": "命中4次后，造成12点真实伤害与12甲伤（护甲损耗逻辑同常规子弹）\n基础肉伤95%",
+    "base_damage_ratio": 0.95,
+    "proc_hits": 4,
+    "proc_true_damage": 12,
+    "proc_armor_damage": 12
+  },
+  "s12:spall": {
+    "description": "命中后，护甲更难维修。"
+  }
+}

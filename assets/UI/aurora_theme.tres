@@ -1,0 +1,192 @@
+[gd_resource type="Theme" format=3 uid="uid://c2dwrho41pl7g"]
+
+[sub_resource type="StyleBoxFlat" id="Input"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.06, 0.08, 0.19, 0.65)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.64, 0.69, 1, 0.16)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="Focus"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.91, 1, 0.9)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="Hover"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.3, 0.32, 0.52, 0.8)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38, 0.88, 0.98, 0.8)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="Pressed"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.3, 0.27, 0.51, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.72, 0.57, 1, 0.9)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="Normal"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.21, 0.23, 0.4, 0.58)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.64, 0.69, 1, 0.16)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="Grabber"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.48, 0.51, 0.73, 0.8)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="Track"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.12, 0.15, 0.28, 0.5)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 12
+
+[sub_resource type="StyleBoxLine" id="Line"]
+color = Color(0.68, 0.72, 1, 0.13)
+
+[sub_resource type="StyleBoxFlat" id="Glass"]
+bg_color = Color(0.16, 0.18, 0.32, 0.73)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.64, 0.69, 1, 0.16)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 12
+
+[sub_resource type="StyleBoxEmpty" id="Empty"]
+
+[sub_resource type="StyleBoxFlat" id="Selection"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.34, 0.4, 0.67, 0.5)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.42, 0.87, 1, 0.3)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+
+[resource]
+default_font_size = 16
+Button/colors/font_color = Color(0.92, 0.94, 1, 1)
+Button/colors/font_disabled_color = Color(0.56, 0.6, 0.76, 1)
+Button/colors/font_hover_color = Color(0.66, 0.96, 1, 1)
+Button/styles/disabled = SubResource("Input")
+Button/styles/focus = SubResource("Focus")
+Button/styles/hover = SubResource("Hover")
+Button/styles/hover_pressed = SubResource("Pressed")
+Button/styles/normal = SubResource("Normal")
+Button/styles/pressed = SubResource("Pressed")
+HScrollBar/styles/grabber = SubResource("Grabber")
+HScrollBar/styles/grabber_highlight = SubResource("Hover")
+HScrollBar/styles/grabber_pressed = SubResource("Pressed")
+HScrollBar/styles/scroll = SubResource("Track")
+HSeparator/styles/separator = SubResource("Line")
+Label/colors/font_color = Color(0.92, 0.94, 1, 1)
+LineEdit/colors/caret_color = Color(0.45, 0.92, 1, 1)
+LineEdit/colors/font_color = Color(0.92, 0.94, 1, 1)
+LineEdit/colors/font_placeholder_color = Color(0.48, 0.53, 0.72, 1)
+LineEdit/styles/disabled = SubResource("Input")
+LineEdit/styles/focus = SubResource("Focus")
+LineEdit/styles/hover = SubResource("Hover")
+LineEdit/styles/normal = SubResource("Input")
+LineEdit/styles/pressed = SubResource("Pressed")
+Panel/styles/panel = SubResource("Glass")
+PanelContainer/styles/panel = SubResource("Glass")
+Tree/colors/font_color = Color(0.92, 0.94, 1, 1)
+Tree/colors/title_button_color = Color(0.65, 0.73, 0.95, 1)
+Tree/constants/outline_size = 0
+Tree/styles/panel = SubResource("Empty")
+Tree/styles/selected = SubResource("Selection")
+Tree/styles/selected_focus = SubResource("Selection")
+Tree/styles/title_button_hover = SubResource("Hover")
+Tree/styles/title_button_normal = SubResource("Input")
+Tree/styles/title_button_pressed = SubResource("Pressed")
+VScrollBar/styles/grabber = SubResource("Grabber")
+VScrollBar/styles/grabber_highlight = SubResource("Hover")
+VScrollBar/styles/grabber_pressed = SubResource("Pressed")
+VScrollBar/styles/scroll = SubResource("Track")

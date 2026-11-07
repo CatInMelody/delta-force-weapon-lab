@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "game": "三角洲行动",
+  "mode": "sol",
+  "mode_name": "烽火地带",
+  "retrieved_at": "2026-10-24",
+  "source_data_version": "20261015-bd-balance.1",
+  "source_manifest_version": "65089f0628197d53",
+  "verification": "社区数据来源快照，已核验源文件 SHA-256；未逐项在游戏内实测。",
+  "manifest_url": "https://dfttk.com/data/v3/manifest.json",
+  "manifest_sha256": "a82ff9ae49496a49c7c0865784df926ff934b92ecc742c3773556dfa4d29aa46",
+  "files": [
+    {
+      "name": "armors",
+      "url": "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53",
+      "sha256": "2bdf02f28aa73e975606657c8807a91eedffb91eb37638eafbb341cbfc693238",
+      "bytes": 8743,
+      "manifest_hash_verified": true
+    },
+    {
+      "name": "helmets",
+      "url": "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53",
+      "sha256": "7288cb529d46ad078ab4150d016a9b4be8104b3b16b9f7329a03c8120570a7c2",
+      "bytes": 8517,
+      "manifest_hash_verified": true
+    },
+    {
+      "name": "ammo_interactions",
+      "url": "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53",
+      "sha256": "7fd27af1ae0fbda6624d76c2b8ed67a4f088eabcdacd80d93dbfe0bfe792b20f",
+      "bytes": 195226,
+      "manifest_hash_verified": true
+    },
+    {
+      "name": "rule_sets",
+      "url": "https://dfttk.com/data/v3/combat/defense/rule-sets.json?v=65089f0628197d53",
+      "sha256": "6c44c438c6a051a75e080ef44541943bf838e0b19fb7593d1348571979300cd3",
+      "bytes": 593,
+      "manifest_hash_verified": true
+    },
+    {
+      "name": "ammo",
+      "url": "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+      "sha256": "121341ded4b05627e844fe17438226e1fe523b7143a9789b69c51891e68a465d",
+      "bytes": 46128,
+      "manifest_hash_verified": true
+    },
+    {
+      "name": "items_zh",
+      "url": "https://dfttk.com/data/v3/locales/zh-CN/items.json?v=65089f0628197d53",
+      "sha256": "74c7f7dfa7bdbcec172fffa1bc5ec24e106c20716f69369b0e019c57a28000cd",
+      "bytes": 88185,
+      "manifest_hash_verified": true
+    }
+  ],
+  "supplemental_defense": {
+    "11050005007": {
+      "max_durability": 105,
+      "urls": [
+        "https://orzice.com/v/info/p1388",
+        "https://m.ali213.net/news/gl2601/1741879.html"
+      ]
+    },
+    "11010005011": {
+      "max_durability": 75,
+      "urls": [
+        "https://orzice.com/v/info/p1387",
+        "https://m.ali213.net/news/gl2601/1741879.html"
+      ]
+    }
+  },
+  "cross_checks": [
+    "https://sjzwiki.com/game/armor",
+    "https://sjzwiki.com/game/helmets"
+  ],
+  "field_mapping": {
+    "max_durability": "profiles[item_id].maxDurability",
+    "armor_damage_factors": "profiles[ammo_id].armorCorrection[armor_level].bodyDurabilityRate",
+    "helmet_damage_factors": "profiles[ammo_id].armorCorrection[armor_level].helmetDurabilityRate",
+    "ammo_armor_damage_multiplier": "ammo[ammo_id].armorDamageMultiplier"
+  },
+  "caliber_aliases": {
+    ".300 BLK": [
+      ".300BLK",
+      "7.62x35mm"
+    ],
+    "7.62x54R": [
+      "7.62x54mm"
+    ],
+    ".45-70 Govt": [
+      "45-70 Govt",
+      ".45-70mm"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="三角洲武器实验室"
+config/version="1.1.0"
+run/main_scene="uid://c122g1kdniivi"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="uid://cxaaj1fgmd2ll"
+
+[display]
+
+window/size/resizable=false
+window/size/window_width_override=2074
+window/size/window_height_override=1166
+window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="Tool"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

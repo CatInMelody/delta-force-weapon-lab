@@ -1,0 +1,706 @@
+{
+  "game": "三角洲行动",
+  "collected_at": "2026-10-24",
+  "scope": "按口径保存共享弹药基础图标；不按穿透等级重复下载同一口径图标；箭矢不属于本次子弹范围。",
+  "sources": [
+    "https://sjz.u79.cn/ammo/",
+    "https://dfttk.com/data/v3/catalog/ammo.json"
+  ],
+  "total_icons": 20,
+  "mapped_ammo_count": 110,
+  "excluded_arrow_count": 4,
+  "errors": [],
+  "icons": [
+    {
+      "caliber": "12 Gauge",
+      "filename": "12-Gauge.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/gun/ammo/12-Gauge.png",
+      "source_item_name": "12 Gauge 7毫米鹿弹",
+      "source_detail_url": "https://sjz.u79.cn/ammo/12gauge7haomiludan-618/",
+      "ammo_count": 10,
+      "levels": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "ammo_names": [
+        "12 Gauge DART",
+        "12 Gauge 独头 APX",
+        "12 Gauge 龙息弹",
+        "12 Gauge独头 AP-20",
+        "12 Gauge 8.5毫米鹿弹",
+        "12 Gauge 箭形弹",
+        "12 Gauge独头 FTX",
+        "12 Gauge独头 GT",
+        "12 Gauge独头 RIP",
+        "12 Gauge 7毫米鹿弹"
+      ],
+      "bytes": 155572,
+      "sha256": "c0bdb9c76bb3227841a7b0bf9f4ef5021252d0561961537b893a8673a6c4ea3b",
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "pixel_sha256": "ac8408b08e8793b5a7ca15665380e20c97a31012c2c268feb04d18b47d27664f"
+    },
+    {
+      "caliber": "12.7x55mm",
+      "filename": "12.7x55mm.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/gun/ammo/12.7x55mm.png",
+      "source_item_name": "12.7x55mm PS12A",
+      "source_detail_url": "https://sjz.u79.cn/ammo/127x55mmps12a-625/",
+      "ammo_count": 4,
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "ammo_names": [
+        "12.7x55mm PS12B",
+        "12.7x55mm PD12双头弹",
+        "12.7x55mm PS12",
+        "12.7x55mm PS12A"
+      ],
+      "bytes": 147105,
+      "sha256": "7ec4321363a283117878dfc748a963302c1d65b448a759efe46577f4885b3058",
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "pixel_sha256": "2309536ded933be3d7c1719a42ce321447bc9bac71b8604b1c7e26dea677228b",
+      "source_note": "依据公开口径资源命名规则定位，实际下载并解码验证的腾讯原图。"
+    },
+    {
+      "caliber": "7.62x35mm",
+      "filename": "300-BLK.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/gun/ammo/300BLK.png",
+      "source_item_name": ".300BLK_3",
+      "source_detail_url": "https://sjz.u79.cn/ammo/300blk3-1223/",
+      "ammo_count": 5,
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "ammo_names": [
+        ".300BLK_5",
+        ".300BLK SUB_4",
+        ".300BLK_4",
+        ".300BLK SUB_3",
+        ".300BLK_3"
+      ],
+      "bytes": 179548,
+      "sha256": "f64d8e6db86d08fcd1474076b03b6d17c70ce0a0d7844260f6245355ec596084",
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "pixel_sha256": "cbb6bd182d54f20fb7b0e8a7d16d9ba8a7f94f36780767709695a000a0711f4c"
+    },
+    {
+      "caliber": ".338 Lap Mag",
+      "filename": "338-Lap-Mag.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/gun/ammo/338.png",
+      "source_item_name": ".338 Lap Mag AP",
+      "source_detail_url": "https://sjz.u79.cn/ammo/338lapmagap-b4/",
+      "ammo_count": 1,
+      "levels": [
+        6
+      ],
+      "ammo_names": [
+        ".338 Lap Mag AP"
+      ],
+      "bytes": 106446,
+      "sha256": "09823145752c4ae0dfcd89fa1a572327cbdcd4fb3fe3cba8e46528466e729c52",
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "pixel_sha256": "a0a8a3cb4e0302f3850ca0894cd75745e48f340d1e4ea559a9ec75248efa8c4e"
+    },
+    {
+      "caliber": ".357 Magnum",
+      "filename": "357-Magnum.png",
+      "source_url": "https://orzice.com/update/sjz_pic/607.png",
+      "source_item_name": ".357 Magnum HP",
+      "source_detail_url": "https://sjz.u79.cn/ammo/357magnumhp-607/",
+      "ammo_count": 4,
+      "levels": [
+        2,
+        3,
+        4
+      ],
+      "ammo_names": [
+        ".357 Magnum FMJ",
+        ".357 Magnum 9号霰射\"鼠弹\"",
+        ".357 Magnum JHP",
+        ".357 Magnum HP"
+      ],
+      "bytes": 29950,
+      "sha256": "b44fb9677af33cde3b631a12afb8e26bcb1628ca00c3279439b056913b43a551",
+      "width": 130,
+      "height": 98,
+      "transparent": true,
+      "pixel_sha256": "e0b3c774ecb4a57da3592d843da90735cb9814f67315c42c5d038da4c576c994"
+    },
+    {
+      "caliber": "4.6x30mm",
+      "filename": "4.6x30mm.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/gun/ammo/4.6x30mm.png",
+      "source_item_name": "4.6x30mm Subsonic SX",
+      "source_detail_url": "https://sjz.u79.cn/ammo/46x30mmsubsonicsx-670/",
+      "ammo_count": 6,
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "ammo_names": [
+        "4.6x30mm AP ST",
+        "4.6x30mm AP SX",
+        "4.6x30mm CT",
+        "4.6x30mm FMJ ST",
+        "4.6x30mm FMJ SX",
+        "4.6x30mm Subsonic SX"
+      ],
+      "bytes": 158028,
+      "sha256": "240e0cd00c6854c58877e104f3b6f99858da228e12d630250b5277719ffa76e1",
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "pixel_sha256": "f63f0b19796e10eba315816da4af0276bdfdd341664e9dc3e4ca1eae29345f24"
+    },
+    {
+      "caliber": ".45-70mm",
+      "filename": "45-70-Govt.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/37290300001.png",
+      "source_item_name": "45-70 Govt RN",
+      "source_detail_url": "https://sjz.u79.cn/ammo/4570govtrn-1212/",
+      "ammo_count": 3,
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "ammo_names": [
+        "45-70 Govt FTX",
+        "45-70 Govt FMJ",
+        "45-70 Govt RN"
+      ],
+      "bytes": 198921,
+      "sha256": "ca3c02f62517c75865fb0bd3ebdfc23bba4d7d876dd1438707a4d482a7b9cfac",
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "pixel_sha256": "b375719cc54cfb8fefbbe4aba964583e1e1a31a701457ff4b11bede5db82fa0b"
+    },
+    {
+      "caliber": ".45 ACP",
+      "filename": "45-ACP.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/gun/ammo/45-ACP.png",
+      "source_item_name": ".45 ACP HS",
+      "source_detail_url": "https://sjz.u79.cn/ammo/45acphs-610/",
+      "ammo_count": 7,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "ammo_names": [
+        ".45 ACP Super",
+        ".45 ACP AP",
+        ".45 ACP CT",
+        ".45 ACP FMJ",
+        ".45 ACP RIP",
+        ".45 ACP JHP",
+        ".45 ACP HS"
+      ],
+      "bytes": 155691,
+      "sha256": "1536d13058cf9f954bdd29fd849df8869f59f530e69d40ec1917974ddf21a53d",
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "pixel_sha256": "16899519608064e894a0ba22ce866dd40d0ad5c9ce45992c06fc5568d7a4a3ba"
+    },
+    {
+      "caliber": "5.45x39mm",
+      "filename": "5.45x39mm.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/gun/ammo/5.45x39.png",
+      "source_item_name": "5.45x39mm BT +P",
+      "source_detail_url": "https://sjz.u79.cn/ammo/545x39mmbtp-b1320/",
+      "ammo_count": 8,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "ammo_names": [
+        "5.45x39mm BS",
+        "5.45x39mm BS ST+",
+        "5.45x39mm BT",
+        "5.45x39mm BT +P",
+        "5.45x39mm BT ST",
+        "5.45x39mm PS",
+        "5.45x39mm T",
+        "5.45x39mm PRS"
+      ],
+      "bytes": 235293,
+      "sha256": "3bae5a6fe10dc3a9a1c9e68ab15b9e96b1486975fd11d365cf3d4697bae87991",
+      "width": 431,
+      "height": 327,
+      "transparent": true,
+      "pixel_sha256": "7ebde938ebc487c50508c7196e733b9c4c1eb5bef7892221e610e53fbd4e11b4"
+    },
+    {
+      "caliber": "5.56x45mm",
+      "filename": "5.56x45mm.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/gun/ammo/5.56x45mm.png",
+      "source_item_name": "5.56x45mm RRLP",
+      "source_detail_url": "https://sjz.u79.cn/ammo/556x45mmrrlp-634/",
+      "ammo_count": 7,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "ammo_names": [
+        "5.56x45mm M995",
+        "5.56x45mm M855A1",
+        "5.56x45mm M855A1 APC+",
+        "5.56x45mm M855",
+        "5.56x45mm M855 APC",
+        "5.56x45mm FMJ",
+        "5.56x45mm RRLP"
+      ],
+      "bytes": 146442,
+      "sha256": "25ea9888860ca3b67a811e80516ac6f05d8ad883e65c8c47f965ad6c917fbca5",
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "pixel_sha256": "0724d2a88ad7c0b68712447bc677deb1ab2cde70a3d6e19c47ab7720710f175c"
+    },
+    {
+      "caliber": "5.7x28mm",
+      "filename": "5.7x28mm.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/gun/ammo/5.7x28.png",
+      "source_item_name": "5.7x28mm HT",
+      "source_detail_url": "https://sjz.u79.cn/ammo/57x28mmht-1385/",
+      "ammo_count": 8,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "ammo_names": [
+        "5.7x28mm SS190",
+        "5.7x28mm HT+",
+        "5.7x28mm SS193",
+        "5.7x28mm HT",
+        "5.7x28mm L191",
+        "5.7x28mm R37.F",
+        "5.7x28mm SS197SR",
+        "5.7x28mm SS198LF"
+      ],
+      "bytes": 240097,
+      "sha256": "75395f25a21e2892770e5de56dd6adb0275bf7d977f2252b4c08dc61efa20186",
+      "width": 431,
+      "height": 327,
+      "transparent": true,
+      "pixel_sha256": "32bcbf09301c10c4a288b5fbad621c13176fd907de088926bf72998216ed373f"
+    },
+    {
+      "caliber": "5.8x42mm",
+      "filename": "5.8x42mm.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/gun/ammo/5.8x42mm.png",
+      "source_item_name": "5.8x42mm DBP87",
+      "source_detail_url": "https://sjz.u79.cn/ammo/58x42mmdbp87-645/",
+      "ammo_count": 6,
+      "levels": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "ammo_names": [
+        "5.8x42mm DVC12",
+        "5.8x42mm DVC12+P",
+        "5.8x42mm DBP10",
+        "5.8x42mm DBP10+P",
+        "5.8x42mm DVP88",
+        "5.8x42mm DBP87"
+      ],
+      "bytes": 143432,
+      "sha256": "4012054c4b89fd2a6f756601eb7951be7fd53d8dd7c5f3de8ac65b9f78e648c5",
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "pixel_sha256": "ca90fb327a140855b2e7c5cadab98f8cce72d0e9dd7c480492bce978a44e610d",
+      "source_note": "依据公开口径资源命名规则定位，实际下载并解码验证的腾讯原图。"
+    },
+    {
+      "caliber": ".50 AE",
+      "filename": "50-AE.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/gun/ammo/50-AE.png",
+      "source_item_name": ".50 AE HP",
+      "source_detail_url": "https://sjz.u79.cn/ammo/50aehp-616/",
+      "ammo_count": 4,
+      "levels": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "ammo_names": [
+        ".50 AE AP",
+        ".50 AE FMJ",
+        ".50 AE JHP",
+        ".50 AE HP"
+      ],
+      "bytes": 157715,
+      "sha256": "a6da4769cd41908b7b4341df65762c872159624d618f24bd07b2f4ab5faa87cd",
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "pixel_sha256": "b5bed64e1d047fa1a3b1c890460014d4531b30e87f520b782c64a7650782d48e"
+    },
+    {
+      "caliber": ".50 BMG",
+      "filename": "50-BMG.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/37300600001.png",
+      "source_item_name": ".50 BMG M10 RAZOR",
+      "source_detail_url": "https://sjz.u79.cn/ammo/50bmgm10razor-b1471/",
+      "ammo_count": 3,
+      "levels": [
+        6,
+        7
+      ],
+      "ammo_names": [
+        ".50 BMG M903 SLAP",
+        ".50 BMG M10 RAZOR",
+        ".50 BMG M3 K-0"
+      ],
+      "bytes": 189240,
+      "sha256": "7ef739aef29526eadad50fd78368577d13df119cc3fabc5418d79261ba7ab39c",
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "pixel_sha256": "7721ad2fbf0ef6eaa3fdf720aa3caa236bd6bacc2a2ee28da2c034462da157ed"
+    },
+    {
+      "caliber": "6.8x51mm",
+      "filename": "6.8x51mm.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/gun/ammo/6.8x51mm.png",
+      "source_item_name": "6.8x51mm FMJ",
+      "source_detail_url": "https://sjz.u79.cn/ammo/68x51mmfmj-647/",
+      "ammo_count": 6,
+      "levels": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "ammo_names": [
+        "6.8x51mm AP",
+        "6.8x51mm Hybrid",
+        "6.8x51mm PLY-III",
+        "6.8x51mm FMJ",
+        "6.8x51mm PLY-II",
+        "6.8x51mm PLY-I"
+      ],
+      "bytes": 149647,
+      "sha256": "83fdbe8ce37dda23839afd2d2ee94e80944b7e33b3a28784bb5058c36cccecbd",
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "pixel_sha256": "1aa5792b6516f924216c919b96c25c49867e56c7a2ade063a30bfa6f35f73320"
+    },
+    {
+      "caliber": "7.62x39mm",
+      "filename": "7.62x39mm.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/gun/ammo/7.62x39mm.png",
+      "source_item_name": "7.62x39mm LP",
+      "source_detail_url": "https://sjz.u79.cn/ammo/762x39mmlp-651/",
+      "ammo_count": 7,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "ammo_names": [
+        "7.62x39mm AP",
+        "7.62x39mm SUB_5",
+        "7.62x39mm BP",
+        "7.62x39mm SUB_4",
+        "7.62x39mm PS",
+        "7.62x39mm T45M",
+        "7.62x39mm LP"
+      ],
+      "bytes": 158913,
+      "sha256": "b4e1ae13e0f357fbb991993b3250f76eb68373d27b0669f218e42fa68536bef8",
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "pixel_sha256": "b92ab02904961bf814bbc08a667c08a8150bb7604d599609cf3335171832d234"
+    },
+    {
+      "caliber": "7.62x51mm",
+      "filename": "7.62x51mm.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/gun/ammo/7.62x51mm.png",
+      "source_item_name": "7.62x51mm LS",
+      "source_detail_url": "https://sjz.u79.cn/ammo/762x51mmls-b1699/",
+      "ammo_count": 6,
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "ammo_names": [
+        "7.62x51mm M61",
+        "7.62x51mm LS",
+        "7.62x51mm M62",
+        "7.62x51mm M80",
+        "7.62x51mm BPZ",
+        "7.62x51mm Ultra Nosler"
+      ],
+      "bytes": 150978,
+      "sha256": "d114c3f4b1cca163c6ecee0c45cda619e6e9d6f8c47f5b4fe4f3644ecaab8de1",
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "pixel_sha256": "05d2e803cce194f57704ae1f480a9b9a52628819d9c89b4f5c90fcbdce1f66a5"
+    },
+    {
+      "caliber": "7.62x54mm",
+      "filename": "7.62x54mm.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/gun/ammo/7.62x54mm.png",
+      "source_item_name": "7.62x54R SNB",
+      "source_detail_url": "https://sjz.u79.cn/ammo/762x54rsnb-b3/",
+      "ammo_count": 4,
+      "levels": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "ammo_names": [
+        "7.62x54R SNB",
+        "7.62x54R BT",
+        "7.62x54R LPS",
+        "7.62x54R T46M"
+      ],
+      "bytes": 144538,
+      "sha256": "2e8f4cba15d5261e805ecd786d0e0d0435804e3e4cc2eef4e434fb98d16b1126",
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "pixel_sha256": "925518cecb31424143ad696c1c42615d31bcb346eff636cf654030452592a34f"
+    },
+    {
+      "caliber": "9x19mm",
+      "filename": "9x19mm.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/gun/ammo/9x19mm.png",
+      "source_item_name": "9x19mm PSO",
+      "source_detail_url": "https://sjz.u79.cn/ammo/9x19mmpso-1071/",
+      "ammo_count": 6,
+      "levels": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "ammo_names": [
+        "9x19mm CT",
+        "9x19mm PBP",
+        "9x19mm AP6.3",
+        "9x19mm RIP",
+        "9x19mm Pst",
+        "9x19mm PSO"
+      ],
+      "bytes": 156567,
+      "sha256": "3cbcd56a875a572096660b133d45460270f3e37df952eb4850ac4a7c113093f6",
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "pixel_sha256": "a4c7c2e1f831e45b0baa211992d310b8c9eed2b15db2c15ad98cfdd9719cee59"
+    },
+    {
+      "caliber": "9x39mm",
+      "filename": "9x39mm.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/gun/ammo/9x39mm.png",
+      "source_item_name": "9x39mm PAB-7",
+      "source_detail_url": "https://sjz.u79.cn/ammo/9x39mmpab7-b1512/",
+      "ammo_count": 5,
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "ammo_names": [
+        "9x39mm BP",
+        "9x39mm PAB-9",
+        "9x39mm SP6",
+        "9x39mm PAB-7",
+        "9x39mm SP5"
+      ],
+      "bytes": 158262,
+      "sha256": "bc0efe49b154dc22ca5494b0f53634d0502334bdd8f7367c6f6515fa9196aea1",
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "pixel_sha256": "deece66c7dda590492f4a55dde3bdaf1dc40e1ddce9bcd710dfb2fba4721e83e",
+      "source_note": "依据公开口径资源命名规则定位，实际下载并解码验证的腾讯原图。"
+    }
+  ],
+  "icon_origin_counts": {
+    "tencent_cdn": 19,
+    "orzice": 1
+  },
+  "backgrounds": [
+    {
+      "levels": [
+        1
+      ],
+      "color": "白色",
+      "filename": "Background/1级_白色.png",
+      "width": 512,
+      "height": 512,
+      "origin": "自制；按用户指定的六种颜色绘制，并非下载的游戏原版底图。",
+      "top_rgb": [
+        247,
+        249,
+        250
+      ],
+      "bottom_rgb": [
+        193,
+        203,
+        213
+      ],
+      "sha256": "a045551e9138f2b434757c8173572016a27de10a28123ac9845f1a48d067e21f"
+    },
+    {
+      "levels": [
+        2
+      ],
+      "color": "绿色",
+      "filename": "Background/2级_绿色.png",
+      "width": 512,
+      "height": 512,
+      "origin": "自制；按用户指定的六种颜色绘制，并非下载的游戏原版底图。",
+      "top_rgb": [
+        185,
+        222,
+        188
+      ],
+      "bottom_rgb": [
+        40,
+        119,
+        77
+      ],
+      "sha256": "b66e6a7afe6ac02e80e818c39af6b72be6cd9559baf9690d7491fb71668b84d1"
+    },
+    {
+      "levels": [
+        3
+      ],
+      "color": "蓝色",
+      "filename": "Background/3级_蓝色.png",
+      "width": 512,
+      "height": 512,
+      "origin": "自制；按用户指定的六种颜色绘制，并非下载的游戏原版底图。",
+      "top_rgb": [
+        168,
+        207,
+        238
+      ],
+      "bottom_rgb": [
+        39,
+        97,
+        159
+      ],
+      "sha256": "acbb189db6c5372e14d2bc575bc2d36bc650f51e9641e6519884b01efb4bb1a9"
+    },
+    {
+      "levels": [
+        4
+      ],
+      "color": "紫色",
+      "filename": "Background/4级_紫色.png",
+      "width": 512,
+      "height": 512,
+      "origin": "自制；按用户指定的六种颜色绘制，并非下载的游戏原版底图。",
+      "top_rgb": [
+        206,
+        182,
+        232
+      ],
+      "bottom_rgb": [
+        105,
+        62,
+        150
+      ],
+      "sha256": "7d43bf22161f31a2b8a749d9965bd8815456b22b5e0439230ec1411d92dece13"
+    },
+    {
+      "levels": [
+        5
+      ],
+      "color": "黄色",
+      "filename": "Background/5级_黄色.png",
+      "width": 512,
+      "height": 512,
+      "origin": "自制；按用户指定的六种颜色绘制，并非下载的游戏原版底图。",
+      "top_rgb": [
+        250,
+        229,
+        163
+      ],
+      "bottom_rgb": [
+        178,
+        125,
+        28
+      ],
+      "sha256": "7759bb152f9579334b5a50e9d2a8fc1e67f2076ac96d6b990f49496ad8d0381e"
+    },
+    {
+      "levels": [
+        6,
+        7
+      ],
+      "color": "红色",
+      "filename": "Background/6-7级_红色.png",
+      "width": 512,
+      "height": 512,
+      "origin": "自制；按用户指定的六种颜色绘制，并非下载的游戏原版底图。",
+      "top_rgb": [
+        242,
+        180,
+        177
+      ],
+      "bottom_rgb": [
+        158,
+        46,
+        52
+      ],
+      "sha256": "1120fb7fc4630e4d9f7a306038a1d75cf2d2654e07f878c378ace422ac315dc1"
+    }
+  ],
+  "background_level_mapping": {
+    "1": "Background/1级_白色.png",
+    "2": "Background/2级_绿色.png",
+    "3": "Background/3级_蓝色.png",
+    "4": "Background/4级_紫色.png",
+    "5": "Background/5级_黄色.png",
+    "6": "Background/6-7级_红色.png",
+    "7": "Background/6-7级_红色.png",
+    "0": "Background/3级_蓝色.png"
+  }
+}

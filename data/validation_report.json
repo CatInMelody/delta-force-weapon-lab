@@ -1,0 +1,40 @@
+{
+  "counts": {
+    "defense": {
+      "armors": 26,
+      "helmets": 27,
+      "total": 53
+    },
+    "ammo": {
+      "calibers": 20,
+      "bullet_types": 110,
+      "excluded_arrow_types": 4,
+      "target_armor_levels": 6,
+      "body_armor_factor_values": 660,
+      "helmet_factor_values": 660
+    }
+  },
+  "validation": "Passed JSON round trip, no BOM, unique indexes, complete six-level factors, 163 local icon references and .300 example checks",
+  "files": [
+    {
+      "name": "ammo_armor_factors.json",
+      "bytes": 144829,
+      "sha256": "a3f239a15849372b4469747d24edfeed566bc8a0e72871edf777a982f220c24e"
+    },
+    {
+      "name": "defense_ammo_README.md",
+      "bytes": 14976,
+      "sha256": "36f97af5a999c0b2582a1121b151ea5df0baa5af8bfb4fc59aecefa4bcec2d69"
+    },
+    {
+      "name": "defense_ammo_sources.json",
+      "bytes": 3270,
+      "sha256": "d6304527edf3e79cb37bf5c1aef57942f93c72c240328da361acd3fa7656fbeb"
+    },
+    {
+      "name": "defense_stats.json",
+      "bytes": 23416,
+      "sha256": "31c12c16844ae0070105c54d9f25667ed1329d6a17f60aa523da33db1b81b8bb"
+    }
+  ]
+}

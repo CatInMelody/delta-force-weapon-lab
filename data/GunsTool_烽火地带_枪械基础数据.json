@@ -1,0 +1,1047 @@
+{
+  "schema_version": 1,
+  "game": "三角洲行动",
+  "mode": "sol",
+  "mode_name": "烽火地带",
+  "configuration": "未改装、未精校的基础枪械",
+  "retrieved_at": "2026-10-24",
+  "source_data_version": "20261015-bd-balance.1",
+  "source_manifest_version": "65089f0628197d53",
+  "source_manifest_url": "https://dfttk.com/data/v3/manifest.json",
+  "source_manifest_sha256": "a82ff9ae49496a49c7c0865784df926ff934b92ecc742c3773556dfa4d29aa46",
+  "counts": {
+    "AR": 25,
+    "SR": 5,
+    "SMG": 12,
+    "DMR": 10,
+    "LMG": 4
+  },
+  "total": 56,
+  "units": {
+    "range_m": "米",
+    "fire_rate_rpm": "发/分钟",
+    "armor_damage": "基础护甲伤害",
+    "flesh_damage": "基础伤害"
+  },
+  "notes": [
+    "模式：烽火地带（sol）。对象：未改装、未精校的基础枪械。",
+    "射程记录面板优势射程，单位为米；不是最大射击距离，也不直接等同于伤害模型的无衰减距离。",
+    "射速单位为发/分钟，取烽火地带 combatSummaryByMode.sol.displayFireRateRpm；点射枪采用包含点射间隔的显示/持续射速。",
+    "甲伤和肉伤分别为枪械基础护甲伤害、基础伤害。实际命中结果还受弹药、命中部位、护甲、距离等因素影响。",
+    "数值来自社区维护的数据集，已核验下载文件与其版本清单的 SHA-256 一致；未逐把在游戏中实测，不能据此保证与后续热更新完全同步。",
+    "覆盖此前收集图标的 55 把枪：步枪 24、狙击枪 5、冲锋枪 12、射手步枪 10、轻机枪 4。"
+  ],
+  "weapons": [
+    {
+      "weapon_id": "18010000018",
+      "name": "AK-12",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 40,
+      "fire_rate_rpm": 735,
+      "armor_damage": 42,
+      "flesh_damage": 30,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/AK-12.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000018.json?v=65089f0628197d53",
+        "range_core_sha256": "ae9c23f726a3c1c73c5691c0f0cffb3a46be5761981baeba021984aa7e00a5e4"
+      }
+    },
+    {
+      "weapon_id": "18010000006",
+      "name": "AKM",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 40,
+      "fire_rate_rpm": 600,
+      "armor_damage": 42,
+      "flesh_damage": 40,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/AKM.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000006.json?v=65089f0628197d53",
+        "range_core_sha256": "203d2e568d3c3f5275b04d799107c0df4589f5291da6b001bfd21d22d2423c8b"
+      }
+    },
+    {
+      "weapon_id": "18010000010",
+      "name": "AKS-74U",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 40,
+      "fire_rate_rpm": 533,
+      "armor_damage": 36,
+      "flesh_damage": 34,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/AKS-74U.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000010.json?v=65089f0628197d53",
+        "range_core_sha256": "7b8bdad606705b09709fd80b90298133b402733e2b90af6455a9875ea2930683"
+      }
+    },
+    {
+      "weapon_id": "18010000045",
+      "name": "AR57",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 35,
+      "fire_rate_rpm": 900,
+      "armor_damage": 32,
+      "flesh_damage": 30,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/AR57.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000045.json?v=65089f0628197d53",
+        "range_core_sha256": "e8902f5f006f95127ec89125c9dc2b53b18a648ae729bb02150d0bcef2f78cfc"
+      },
+      "special_description": "手臂伤害倍率0.5，腿部伤害倍率0.4",
+      "arms_multiplier": 0.5
+    },
+    {
+      "weapon_id": "18010000037",
+      "name": "AS-Val",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 21,
+      "fire_rate_rpm": 972,
+      "armor_damage": 44,
+      "flesh_damage": 28,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/AS-Val.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000037.json?v=65089f0628197d53",
+        "range_core_sha256": "c0fe628d05bf7121c5c1b4c48ec528f5b1d8403e005713e93adb4cc1f3859532"
+      }
+    },
+    {
+      "weapon_id": "18010000012",
+      "name": "ASh-12",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 55,
+      "fire_rate_rpm": 500,
+      "armor_damage": 55,
+      "flesh_damage": 56,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/ASh-12.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000012.json?v=65089f0628197d53",
+        "range_core_sha256": "d90d0fdbb5879308ce890af64c434aac8bde6dd62bfcdd65faf0bca22ea54297"
+      }
+    },
+    {
+      "weapon_id": "18010000015",
+      "name": "AUG",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 55,
+      "fire_rate_rpm": 679,
+      "armor_damage": 35,
+      "flesh_damage": 32,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/AUG.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000015.json?v=65089f0628197d53",
+        "range_core_sha256": "f21d5c598815dcdf2033e288902bbacf3919b087c8259ef04ef1156144a50dcb"
+      }
+    },
+    {
+      "weapon_id": "18010000031",
+      "name": "CAR-15",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 40,
+      "fire_rate_rpm": 632,
+      "armor_damage": 32,
+      "flesh_damage": 27,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/CAR-15.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000031.json?v=65089f0628197d53",
+        "range_core_sha256": "d96940900af2452f20a0c4c254981ec6f2032cd0a44159ab87ad3acf2390c745"
+      }
+    },
+    {
+      "weapon_id": "18010000023",
+      "name": "G3",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 55,
+      "fire_rate_rpm": 533,
+      "armor_damage": 42,
+      "flesh_damage": 39,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/G3.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000023.json?v=65089f0628197d53",
+        "range_core_sha256": "7259f1cbbaad588502c07f935d2392748d869d2c6c76893fed24e76826bcf99f"
+      }
+    },
+    {
+      "weapon_id": "18010000013",
+      "name": "K416",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 27,
+      "fire_rate_rpm": 880,
+      "armor_damage": 35,
+      "flesh_damage": 32,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/K416.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000013.json?v=65089f0628197d53",
+        "range_core_sha256": "94e5238cdb7b7a92c53daa9f0e855d685d235151562d309706f128a31c8b6ea4"
+      }
+    },
+    {
+      "weapon_id": "18010000040",
+      "name": "K437",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 35,
+      "fire_rate_rpm": 780,
+      "armor_damage": 32,
+      "flesh_damage": 36,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/K437.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000040.json?v=65089f0628197d53",
+        "range_core_sha256": "d93b0f7c1a02bc7744ea53c4ae34babf29313cf6b262d704a9c86ccc0ac459e1"
+      }
+    },
+    {
+      "weapon_id": "18010000042",
+      "name": "KC17",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 55,
+      "fire_rate_rpm": 740,
+      "armor_damage": 48,
+      "flesh_damage": 31,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/KC17.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000042.json?v=65089f0628197d53",
+        "range_core_sha256": "e7cfad08e1cb15291a3a31d28579e6752774084eae179b5d8513927ec3a99d31"
+      }
+    },
+    {
+      "weapon_id": "18010000014",
+      "name": "M16A4",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 55,
+      "fire_rate_rpm": 508,
+      "armor_damage": 39,
+      "flesh_damage": 33,
+      "fire_mode": "Burst",
+      "icon_relative_path": "AR/M16A4.png",
+      "notes": "默认点射模式；射速采用数据源的显示/持续射速，含点射间隔。",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000014.json?v=65089f0628197d53",
+        "range_core_sha256": "8edb8101acdd570d315799fead46573494f6cb885b3e6d6922b7cb6270242d30"
+      }
+    },
+    {
+      "weapon_id": "18010000001",
+      "name": "M4A1",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 40,
+      "fire_rate_rpm": 800,
+      "armor_damage": 33,
+      "flesh_damage": 31,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/M4A1.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000001.json?v=65089f0628197d53",
+        "range_core_sha256": "2faefed5de4b63926e07eee5ecc774720358436310d5fddc884d8c6cbf8215e0"
+      }
+    },
+    {
+      "weapon_id": "18010000016",
+      "name": "M7",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 50,
+      "fire_rate_rpm": 649,
+      "armor_damage": 40,
+      "flesh_damage": 37,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/M7.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000016.json?v=65089f0628197d53",
+        "range_core_sha256": "4f7cfac9402cef046f0c8da43d2b57fd47a49f83072f0542006b81796385c062"
+      }
+    },
+    {
+      "weapon_id": "18010000044",
+      "name": "MCX-LT",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 30,
+      "fire_rate_rpm": 840,
+      "armor_damage": 26,
+      "flesh_damage": 34,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/MCX-LT.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000044.json?v=65089f0628197d53",
+        "range_core_sha256": "69f5ae2abda92eb08990fe61010e1922c4bd24a40e02a6b831ed7e68da12ae07"
+      }
+    },
+    {
+      "weapon_id": "18010000051",
+      "name": "MDR",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 35,
+      "fire_rate_rpm": 650,
+      "armor_damage": 43,
+      "flesh_damage": 41,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/MDR.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000051.json?v=65089f0628197d53",
+        "range_core_sha256": "bd7531303942cfed1a52f5eb4ce963509becf1f4dc1fcab07b35dc3a88dd291c"
+      }
+    },
+    {
+      "weapon_id": "18010000043",
+      "name": "MK47",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 30,
+      "fire_rate_rpm": 625,
+      "armor_damage": 46,
+      "flesh_damage": 42,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/MK47.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000043.json?v=65089f0628197d53",
+        "range_core_sha256": "0f4525a850f53ecb690ec975f6a8b44e49692d91f3a971171009ca866ed29842"
+      }
+    },
+    {
+      "weapon_id": "18010000024",
+      "name": "PTR-32",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 40,
+      "fire_rate_rpm": 632,
+      "armor_damage": 37,
+      "flesh_damage": 36,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/PTR-32.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000024.json?v=65089f0628197d53",
+        "range_core_sha256": "02630c241face7d152157ef670936bf12441e30d7fda4f58de20b952b5effef8"
+      }
+    },
+    {
+      "weapon_id": "18010000008",
+      "name": "QBZ95-1",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 55,
+      "fire_rate_rpm": 679,
+      "armor_damage": 42,
+      "flesh_damage": 28,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/QBZ95-1.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000008.json?v=65089f0628197d53",
+        "range_core_sha256": "e97cab5c20b56561c9bc13cf6036c914894ed391a0fb66d3c011f8a2ed3dda4d"
+      }
+    },
+    {
+      "weapon_id": "18010000049",
+      "name": "RM277",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 55,
+      "fire_rate_rpm": 550,
+      "armor_damage": 42,
+      "flesh_damage": 41,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/RM277.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000049.json?v=65089f0628197d53",
+        "range_core_sha256": "321801c8ded99a03a1048aeb94f16fbb656de1b2a68a71c9ec139ada1e5a0f4f"
+      }
+    },
+    {
+      "weapon_id": "18010000021",
+      "name": "SCAR-H",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 40,
+      "fire_rate_rpm": 585,
+      "armor_damage": 41,
+      "flesh_damage": 40,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/SCAR-H.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000021.json?v=65089f0628197d53",
+        "range_core_sha256": "7a6dcfcbe5b5dd4270139617788048a4357099e150d5f1ddbc7d29c507cbbfcf"
+      }
+    },
+    {
+      "weapon_id": "18010000017",
+      "name": "SG552",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 35,
+      "fire_rate_rpm": 906,
+      "armor_damage": 34,
+      "flesh_damage": 25,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/SG552.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000017.json?v=65089f0628197d53",
+        "range_core_sha256": "dc8ee83726560b52ea35d151ba775e9981322f18f06c1133520abc95d84e34e8"
+      }
+    },
+    {
+      "weapon_id": "18010000038",
+      "name": "腾龙",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 35,
+      "fire_rate_rpm": 706,
+      "armor_damage": 38,
+      "flesh_damage": 35,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/腾龙.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18010000038.json?v=65089f0628197d53",
+        "range_core_sha256": "8147d134abcfc5534f4ec78d2914549210f51de115a1a15a8828e36b479db7e6"
+      }
+    },
+    {
+      "weapon_id": "18060000011",
+      "name": "AWM",
+      "category": "SR",
+      "category_name": "狙击枪",
+      "range_m": 200,
+      "fire_rate_rpm": 35,
+      "armor_damage": 10,
+      "flesh_damage": 100,
+      "fire_mode": "Single",
+      "icon_relative_path": "SR/AWM.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18060000011.json?v=65089f0628197d53",
+        "range_core_sha256": "4a929df2c43954be12ab3ca5aab9e2af002a65609731381b2c01e7e5629d6a7c"
+      }
+    },
+    {
+      "weapon_id": "18060000009",
+      "name": "M700",
+      "category": "SR",
+      "category_name": "狙击枪",
+      "range_m": 150,
+      "fire_rate_rpm": 48,
+      "armor_damage": 58,
+      "flesh_damage": 61,
+      "fire_mode": "Single",
+      "icon_relative_path": "SR/M700.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18060000009.json?v=65089f0628197d53",
+        "range_core_sha256": "4b22e15183e1755c5f3fb4fbbd147351b23c5be13952841a4f8e1db79c4e394e"
+      }
+    },
+    {
+      "weapon_id": "18060000033",
+      "name": "M82",
+      "category": "SR",
+      "category_name": "狙击枪",
+      "range_m": 200,
+      "fire_rate_rpm": 100,
+      "armor_damage": 20,
+      "flesh_damage": 100,
+      "fire_mode": "Single",
+      "icon_relative_path": "SR/M82.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18060000033.json?v=65089f0628197d53",
+        "range_core_sha256": "a9cd4cc1fbce421bc4f6958d37587666df89b7729e4d2a344921fbf62f1f8da7"
+      }
+    },
+    {
+      "weapon_id": "18060000008",
+      "name": "R93",
+      "category": "SR",
+      "category_name": "狙击枪",
+      "range_m": 150,
+      "fire_rate_rpm": 56,
+      "armor_damage": 58,
+      "flesh_damage": 61,
+      "fire_mode": "Single",
+      "icon_relative_path": "SR/R93.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18060000008.json?v=65089f0628197d53",
+        "range_core_sha256": "fda593ae97d08c4a8963b0b7dd90b1cd7a47c82a4f400c86bc9bb23bf707363f"
+      }
+    },
+    {
+      "weapon_id": "18060000007",
+      "name": "SV-98",
+      "category": "SR",
+      "category_name": "狙击枪",
+      "range_m": 150,
+      "fire_rate_rpm": 44,
+      "armor_damage": 58,
+      "flesh_damage": 60,
+      "fire_mode": "Single",
+      "icon_relative_path": "SR/SV-98.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18060000007.json?v=65089f0628197d53",
+        "range_core_sha256": "e84de354a19d7204c1977ad5341268d055de302f24d96021f27573bbf3a6738c"
+      }
+    },
+    {
+      "weapon_id": "18020000012",
+      "name": "MK4",
+      "category": "SMG",
+      "category_name": "冲锋枪",
+      "range_m": 20,
+      "fire_rate_rpm": 793,
+      "armor_damage": 30,
+      "flesh_damage": 34,
+      "fire_mode": "Burst",
+      "icon_relative_path": "SMG/MK4.png",
+      "notes": "默认点射模式；射速采用数据源的显示/持续射速，含点射间隔。",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18020000012.json?v=65089f0628197d53",
+        "range_core_sha256": "ae3c3e650da506e9d19fab41e7d5edc6d01163ae9018c4272b62919187327d74"
+      }
+    },
+    {
+      "weapon_id": "18020000001",
+      "name": "MP5",
+      "category": "SMG",
+      "category_name": "冲锋枪",
+      "range_m": 20,
+      "fire_rate_rpm": 820,
+      "armor_damage": 32,
+      "flesh_damage": 30,
+      "fire_mode": "Auto",
+      "icon_relative_path": "SMG/MP5.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18020000001.json?v=65089f0628197d53",
+        "range_core_sha256": "112d646e291a809310823321ffcb0efd0679e5f019574cb182a60711f0c51523"
+      }
+    },
+    {
+      "weapon_id": "18020000010",
+      "name": "MP7",
+      "category": "SMG",
+      "category_name": "冲锋枪",
+      "range_m": 20,
+      "fire_rate_rpm": 950,
+      "armor_damage": 28,
+      "flesh_damage": 32,
+      "fire_mode": "Auto",
+      "icon_relative_path": "SMG/MP7.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18020000010.json?v=65089f0628197d53",
+        "range_core_sha256": "d0fb702d82fe94359f7cc8cd1fd51f9b508be8a6a8010f42a4faab82aa5a210e"
+      }
+    },
+    {
+      "weapon_id": "18020000002",
+      "name": "P90",
+      "category": "SMG",
+      "category_name": "冲锋枪",
+      "range_m": 20,
+      "fire_rate_rpm": 898,
+      "armor_damage": 35,
+      "flesh_damage": 32,
+      "fire_mode": "Auto",
+      "icon_relative_path": "SMG/P90.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18020000002.json?v=65089f0628197d53",
+        "range_core_sha256": "8a5b699dff3241fcdb65e5fecd624fcd70385d26932d8eb854557e6900d04f02"
+      }
+    },
+    {
+      "weapon_id": "18020000011",
+      "name": "QCQ171",
+      "category": "SMG",
+      "category_name": "冲锋枪",
+      "range_m": 20,
+      "fire_rate_rpm": 763,
+      "armor_damage": 33,
+      "flesh_damage": 36,
+      "fire_mode": "Auto",
+      "icon_relative_path": "SMG/QCQ171.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18020000011.json?v=65089f0628197d53",
+        "range_core_sha256": "86449be3d772c0a9861709a521557337b8fdea4523a89555ba701ab8b37017b8"
+      }
+    },
+    {
+      "weapon_id": "18020000006",
+      "name": "SMG-45",
+      "category": "SMG",
+      "category_name": "冲锋枪",
+      "range_m": 27,
+      "fire_rate_rpm": 605,
+      "armor_damage": 40,
+      "flesh_damage": 35,
+      "fire_mode": "Auto",
+      "icon_relative_path": "SMG/SMG-45.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18020000006.json?v=65089f0628197d53",
+        "range_core_sha256": "902a602c832611a4798fb17704f7c794b731e6234c2783bfe9268250a4834a4d"
+      }
+    },
+    {
+      "weapon_id": "18020000008",
+      "name": "SR-3M",
+      "category": "SMG",
+      "category_name": "冲锋枪",
+      "range_m": 15,
+      "fire_rate_rpm": 747,
+      "armor_damage": 48,
+      "flesh_damage": 36,
+      "fire_mode": "Auto",
+      "icon_relative_path": "SMG/SR-3M.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18020000008.json?v=65089f0628197d53",
+        "range_core_sha256": "2aadbe05f6e94f5ddb95cb530165e49e00f3dfe3afc58bc030d42e04e2280af6"
+      }
+    },
+    {
+      "weapon_id": "18020000004",
+      "name": "UZI",
+      "category": "SMG",
+      "category_name": "冲锋枪",
+      "range_m": 20,
+      "fire_rate_rpm": 780,
+      "armor_damage": 35,
+      "flesh_damage": 28,
+      "fire_mode": "Auto",
+      "icon_relative_path": "SMG/UZI.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18020000004.json?v=65089f0628197d53",
+        "range_core_sha256": "f7954691924576d9fbb646aa67c783dd591fab8986899710373ecb51156bf95a"
+      }
+    },
+    {
+      "weapon_id": "18020000003",
+      "name": "Vector",
+      "category": "SMG",
+      "category_name": "冲锋枪",
+      "range_m": 20,
+      "fire_rate_rpm": 1091,
+      "armor_damage": 28,
+      "flesh_damage": 32,
+      "fire_mode": "Auto",
+      "icon_relative_path": "SMG/Vector.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18020000003.json?v=65089f0628197d53",
+        "range_core_sha256": "e10552208d0a90df0ef347ecc942b1c168f45ab28460027ce0b32791ea0992f6"
+      }
+    },
+    {
+      "weapon_id": "18020000009",
+      "name": "勇士",
+      "category": "SMG",
+      "category_name": "冲锋枪",
+      "range_m": 20,
+      "fire_rate_rpm": 700,
+      "armor_damage": 35,
+      "flesh_damage": 36,
+      "fire_mode": "Auto",
+      "icon_relative_path": "SMG/勇士.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18020000009.json?v=65089f0628197d53",
+        "range_core_sha256": "36877db760b194c03cee51058f00d38e94d97803d160c13d2461290a01309521"
+      }
+    },
+    {
+      "weapon_id": "18020000046",
+      "name": "汤姆逊",
+      "category": "SMG",
+      "category_name": "冲锋枪",
+      "range_m": 18,
+      "fire_rate_rpm": 900,
+      "armor_damage": 36,
+      "flesh_damage": 34,
+      "fire_mode": "Auto",
+      "icon_relative_path": "SMG/汤姆逊.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18020000046.json?v=65089f0628197d53",
+        "range_core_sha256": "f592621cca044f8169bfd060aef65180358fcc97626dcce20184a89036c95d31"
+      }
+    },
+    {
+      "weapon_id": "18020000005",
+      "name": "野牛",
+      "category": "SMG",
+      "category_name": "冲锋枪",
+      "range_m": 20,
+      "fire_rate_rpm": 659,
+      "armor_damage": 35,
+      "flesh_damage": 32,
+      "fire_mode": "Auto",
+      "icon_relative_path": "SMG/野牛.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18020000005.json?v=65089f0628197d53",
+        "range_core_sha256": "fb1937bc1b5c7a4b2b99a4f6ddb03fad42a441a45c074801262f7c6510c5b38a"
+      }
+    },
+    {
+      "weapon_id": "18050000005",
+      "name": "M14",
+      "category": "DMR",
+      "category_name": "射手步枪",
+      "range_m": 40,
+      "fire_rate_rpm": 727,
+      "armor_damage": 41,
+      "flesh_damage": 39,
+      "fire_mode": "Auto",
+      "icon_relative_path": "DMR/M14.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18050000005.json?v=65089f0628197d53",
+        "range_core_sha256": "e7ca9dfba7aff72a1da98adfda79fc8d74c69311eb5acaa2b76b70b433fb401e"
+      }
+    },
+    {
+      "weapon_id": "18050000032",
+      "name": "Marlin杠杆步枪",
+      "category": "DMR",
+      "category_name": "射手步枪",
+      "range_m": 30,
+      "fire_rate_rpm": 100,
+      "armor_damage": 25,
+      "flesh_damage": 70,
+      "fire_mode": "Single",
+      "icon_relative_path": "DMR/Marlin杠杆步枪.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18050000032.json?v=65089f0628197d53",
+        "range_core_sha256": "bbe6d6cfd3d6de709f71d7c4e3823b18ef0454261843e0277f404eced67aabca"
+      }
+    },
+    {
+      "weapon_id": "18050000002",
+      "name": "Mini-14",
+      "category": "DMR",
+      "category_name": "射手步枪",
+      "range_m": 90,
+      "fire_rate_rpm": 590,
+      "armor_damage": 38,
+      "flesh_damage": 34,
+      "fire_mode": "Single",
+      "icon_relative_path": "DMR/Mini-14.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18050000002.json?v=65089f0628197d53",
+        "range_core_sha256": "be91fd1ae3d17ef733fcfb67e3a70d491e658630984bd44062691bd0f86d57ae"
+      }
+    },
+    {
+      "weapon_id": "18050000031",
+      "name": "PSG-1",
+      "category": "DMR",
+      "category_name": "射手步枪",
+      "range_m": 90,
+      "fire_rate_rpm": 300,
+      "armor_damage": 55,
+      "flesh_damage": 50,
+      "fire_mode": "Single",
+      "icon_relative_path": "DMR/PSG-1.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18050000031.json?v=65089f0628197d53",
+        "range_core_sha256": "1217850abc05f0c44f10959d341b36b269bed20cc1f3339c1ef793f1aafe94b3"
+      }
+    },
+    {
+      "weapon_id": "18050000006",
+      "name": "SKS",
+      "category": "DMR",
+      "category_name": "射手步枪",
+      "range_m": 55,
+      "fire_rate_rpm": 510,
+      "armor_damage": 49,
+      "flesh_damage": 48,
+      "fire_mode": "Single",
+      "icon_relative_path": "DMR/SKS.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18050000006.json?v=65089f0628197d53",
+        "range_core_sha256": "d70cb83d043a0d57f845748264c2e5a6c64e03ce213913eaf676eea1ef0923e7"
+      }
+    },
+    {
+      "weapon_id": "18050000007",
+      "name": "SR-25",
+      "category": "DMR",
+      "category_name": "射手步枪",
+      "range_m": 60,
+      "fire_rate_rpm": 364,
+      "armor_damage": 55,
+      "flesh_damage": 50,
+      "fire_mode": "Single",
+      "icon_relative_path": "DMR/SR-25.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18050000007.json?v=65089f0628197d53",
+        "range_core_sha256": "a4c19584e1b2df6c246182c7abcae5314ff9089bcb4a4fc81a6a937b188a195f"
+      }
+    },
+    {
+      "weapon_id": "18050000008",
+      "name": "SR9",
+      "category": "DMR",
+      "category_name": "射手步枪",
+      "range_m": 90,
+      "fire_rate_rpm": 261,
+      "armor_damage": 55,
+      "flesh_damage": 50,
+      "fire_mode": "Single",
+      "icon_relative_path": "DMR/SR9.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18050000008.json?v=65089f0628197d53",
+        "range_core_sha256": "1944f6c235e934dfb72644d81e62c16a308876f7975e3d9c6e1181a87c652d90"
+      }
+    },
+    {
+      "weapon_id": "18050000033",
+      "name": "SVCH",
+      "category": "DMR",
+      "category_name": "射手步枪",
+      "range_m": 65,
+      "fire_rate_rpm": 600,
+      "armor_damage": 46,
+      "flesh_damage": 47,
+      "fire_mode": "Single",
+      "icon_relative_path": "DMR/SVCH.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18050000033.json?v=65089f0628197d53",
+        "range_core_sha256": "b1f8675ec235dd65324dde2acaa0ad05f2aa16143c102c2b6f8adcd510d1dcf3"
+      }
+    },
+    {
+      "weapon_id": "18050000004",
+      "name": "SVD",
+      "category": "DMR",
+      "category_name": "射手步枪",
+      "range_m": 70,
+      "fire_rate_rpm": 300,
+      "armor_damage": 56,
+      "flesh_damage": 56,
+      "fire_mode": "Single",
+      "icon_relative_path": "DMR/SVD.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18050000004.json?v=65089f0628197d53",
+        "range_core_sha256": "ff6e0b248897fe74d960a9cd33da03690c73b503ae25305de24a36af8003c3c4"
+      }
+    },
+    {
+      "weapon_id": "18050000003",
+      "name": "VSS",
+      "category": "DMR",
+      "category_name": "射手步枪",
+      "range_m": 120,
+      "fire_rate_rpm": 480,
+      "armor_damage": 48,
+      "flesh_damage": 40,
+      "fire_mode": "Auto",
+      "icon_relative_path": "DMR/VSS.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18050000003.json?v=65089f0628197d53",
+        "range_core_sha256": "359d0c8139e9d75df19af38baf9f644c9e7fe856f90ac29a99c762e1a92ee146"
+      }
+    },
+    {
+      "weapon_id": "18040000002",
+      "name": "M249",
+      "category": "LMG",
+      "category_name": "轻机枪",
+      "range_m": 40,
+      "fire_rate_rpm": 858,
+      "armor_damage": 38,
+      "flesh_damage": 30,
+      "fire_mode": "Auto",
+      "icon_relative_path": "LMG/M249.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18040000002.json?v=65089f0628197d53",
+        "range_core_sha256": "b00ec45936cc364e2fcc2f3ba182be673b81d392c3a83ab0af2ed7dc46cbdcf8"
+      }
+    },
+    {
+      "weapon_id": "18040000003",
+      "name": "M250",
+      "category": "LMG",
+      "category_name": "轻机枪",
+      "range_m": 40,
+      "fire_rate_rpm": 550,
+      "armor_damage": 53,
+      "flesh_damage": 55,
+      "fire_mode": "Auto",
+      "icon_relative_path": "LMG/M250.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18040000003.json?v=65089f0628197d53",
+        "range_core_sha256": "dbd436fa63ec71dfc34d6198c3b43c20586f6bef03f0cc55dd13b17e967262e7"
+      }
+    },
+    {
+      "weapon_id": "18040000001",
+      "name": "PKM",
+      "category": "LMG",
+      "category_name": "轻机枪",
+      "range_m": 40,
+      "fire_rate_rpm": 669,
+      "armor_damage": 42,
+      "flesh_damage": 45,
+      "fire_mode": "Auto",
+      "icon_relative_path": "LMG/PKM.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18040000001.json?v=65089f0628197d53",
+        "range_core_sha256": "c2adbb785100f126206b5c94729588ab6033a21d53ddc6c44b8980df996f4343"
+      }
+    },
+    {
+      "weapon_id": "18040000004",
+      "name": "QJB201",
+      "category": "LMG",
+      "category_name": "轻机枪",
+      "range_m": 40,
+      "fire_rate_rpm": 785,
+      "armor_damage": 38,
+      "flesh_damage": 32,
+      "fire_mode": "Auto",
+      "icon_relative_path": "LMG/QJB201.png",
+      "notes": "",
+      "sources": {
+        "combat_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+        "range_core_url": "https://dfttk.com/data/v3/packs/build-shared/cores/18040000004.json?v=65089f0628197d53",
+        "range_core_sha256": "c7c227df72746369890c83cc5dc12c34a1dfc365359a4023d1541e457e929796"
+      }
+    },
+    {
+      "weapon_id": "s12:an94",
+      "name": "AN94",
+      "category": "AR",
+      "category_name": "步枪",
+      "range_m": 35,
+      "fire_rate_rpm": 600,
+      "armor_damage": 42,
+      "flesh_damage": 34,
+      "fire_mode": "Auto",
+      "icon_relative_path": "AR/AN94.webp",
+      "notes": "前两发1800发/分钟，之后600；TTK按用户提供0.26秒展示",
+      "sources": {
+        "source": "用户S12更新资料"
+      },
+      "initial_fire_rate_rpm": 1800,
+      "initial_burst_shots": 2,
+      "reference_ttk_seconds": 0.26
+    }
+  ]
+}

@@ -1,0 +1,665 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://assets/UI/aurora_theme.tres" id="aurora_theme"]
+
+[ext_resource type="Theme" path="res://assets/UI/icon_button_theme.tres" id="theme_icon"]
+[ext_resource type="Script" path="res://Code/icon_feedback.gd" id="script_feedback"]
+
+[ext_resource type="Script" path="res://Code/stat_lines.gd" id="12_lines"]
+
+[ext_resource type="PackedScene" path="res://Scene/stat_refresh.tscn" id="11_refresh"]
+
+[ext_resource type="Script" path="res://Code/gun_information.gd" id="1_info"]
+[ext_resource type="Script" path="res://Code/choose.gd" id="2_choose"]
+[ext_resource type="Script" path="res://Code/btk.gd" id="3_btk"]
+[ext_resource type="Script" path="res://Code/build_code.gd" id="4_build"]
+[ext_resource type="PackedScene" path="res://Scene/icon_picker.tscn" id="5_picker"]
+[ext_resource type="Texture2D" path="res://assets/AR/M7.png" id="6_gun"]
+[ext_resource type="Texture2D" path="res://assets/Bullet/Background/4级_紫色.png" id="7_background"]
+[ext_resource type="Texture2D" path="res://assets/Bullet/6.8x51mm.png" id="8_bullet"]
+[ext_resource type="Texture2D" path="res://assets/Helmet/DICH训练头盔.png" id="9_helmet"]
+[ext_resource type="Texture2D" path="res://assets/Armor/重型突击背心.png" id="10_armor"]
+
+[sub_resource type="StyleBoxFlat" id="Style_card"]
+bg_color = Color(0.18, 0.20, 0.36, 0.70)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.64, 0.69, 1, 0.16)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_left = 18
+corner_radius_bottom_right = 18
+corner_detail = 12
+
+
+[sub_resource type="StyleBoxFlat" id="Style_btk_row"]
+bg_color = Color(0.41, 0.44, 0.65, 0.12)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_left = 9
+corner_radius_bottom_right = 9
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="Style_plan_title"]
+
+[node name="Information" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("aurora_theme")
+
+[node name="RefreshLayer" type="CanvasLayer" parent="."]
+layer = 8
+
+[node name="GunRefresh" parent="RefreshLayer" instance=ExtResource("11_refresh")]
+
+[node name="BTKRefresh" parent="RefreshLayer" instance=ExtResource("11_refresh")]
+
+[node name="MultiplierRefresh" parent="RefreshLayer" instance=ExtResource("11_refresh")]
+
+[node name="GunInformation" type="PanelContainer" parent="."]
+layout_mode = 1
+anchor_left = 0.0
+anchor_right = 0.29
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_right = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("Style_card")
+script = ExtResource("1_info")
+
+[node name="Margin" type="MarginContainer" parent="GunInformation"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="Column" type="VBoxContainer" parent="GunInformation/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="GunInformation/Margin/Column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.43, 0.9, 1, 1)
+text = "枪械"
+
+[node name="WeaponButton" type="Button" parent="GunInformation/Margin/Column"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+tooltip_text = "点击图标选择枪械"
+flat = false
+theme = ExtResource("theme_icon")
+script = ExtResource("script_feedback")
+
+[node name="Gun" type="TextureRect" parent="GunInformation/Margin/Column/WeaponButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_gun")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WeaponCaption" type="Label" parent="GunInformation/Margin/Column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "M7 ▾"
+horizontal_alignment = 1
+
+[node name="Divider" type="HSeparator" parent="GunInformation/Margin/Column"]
+layout_mode = 2
+
+[node name="Damage" type="VBoxContainer" parent="GunInformation/Margin/Column"]
+layout_mode = 2
+theme_override_constants/separation = 2
+script = ExtResource("12_lines")
+
+[node name="FleshDps" type="Label" parent="GunInformation/Margin/Column/Damage"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "秒肉伤："
+theme_override_colors/font_color = Color(0.54, 0.94, 1, 1)
+
+[node name="ArmorDps" type="Label" parent="GunInformation/Margin/Column/Damage"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "秒甲伤："
+theme_override_colors/font_color = Color(0.54, 0.94, 1, 1)
+
+[node name="FleshDamage" type="Label" parent="GunInformation/Margin/Column/Damage"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "肉伤："
+
+[node name="ArmorDamage" type="Label" parent="GunInformation/Margin/Column/Damage"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "甲伤："
+
+[node name="FireRate" type="Label" parent="GunInformation/Margin/Column/Damage"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "射速："
+
+[node name="Range" type="Label" parent="GunInformation/Margin/Column/Damage"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "射程："
+
+[node name="TTK" type="Label" parent="GunInformation/Margin/Column/Damage"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "TTK："
+
+[node name="MultiplierDivider" type="HSeparator" parent="GunInformation/Margin/Column"]
+layout_mode = 2
+
+[node name="Magnification" type="VBoxContainer" parent="GunInformation/Margin/Column"]
+layout_mode = 2
+theme_override_constants/separation = 0
+script = ExtResource("12_lines")
+
+[node name="Head" type="Label" parent="GunInformation/Margin/Column/Magnification"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "头部倍率：1.9"
+
+[node name="Chest" type="Label" parent="GunInformation/Margin/Column/Magnification"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "胸部倍率：1.0"
+
+[node name="Abdomen" type="Label" parent="GunInformation/Margin/Column/Magnification"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "腹部倍率：0.9"
+
+[node name="Limbs" type="Label" parent="GunInformation/Margin/Column/Magnification"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "四肢倍率：0.4"
+
+[node name="Chosse" type="PanelContainer" parent="."]
+layout_mode = 1
+anchor_left = 0.29
+anchor_right = 0.71
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_right = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("Style_card")
+script = ExtResource("2_choose")
+
+[node name="Margin" type="MarginContainer" parent="Chosse"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="Column" type="VBoxContainer" parent="Chosse/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Chosse/Margin/Column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.8, 0.65, 1, 1)
+text = "BTK"
+
+[node name="Equipment" type="HBoxContainer" parent="Chosse/Margin/Column"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Armor" type="VBoxContainer" parent="Chosse/Margin/Column/Equipment"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="Chosse/Margin/Column/Equipment/Armor"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.61, 0.67, 0.83, 1)
+text = "护甲"
+horizontal_alignment = 1
+
+[node name="Select" type="Button" parent="Chosse/Margin/Column/Equipment/Armor"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+flat = false
+theme = ExtResource("theme_icon")
+script = ExtResource("script_feedback")
+
+[node name="Armor" type="TextureRect" parent="Chosse/Margin/Column/Equipment/Armor/Select"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_armor")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Caption" type="Label" parent="Chosse/Margin/Column/Equipment/Armor"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "护甲 ▾"
+custom_minimum_size = Vector2(0, 42)
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Helmet" type="VBoxContainer" parent="Chosse/Margin/Column/Equipment"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="Chosse/Margin/Column/Equipment/Helmet"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.61, 0.67, 0.83, 1)
+text = "头盔"
+horizontal_alignment = 1
+
+[node name="Select" type="Button" parent="Chosse/Margin/Column/Equipment/Helmet"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+flat = false
+theme = ExtResource("theme_icon")
+script = ExtResource("script_feedback")
+
+[node name="Helmet" type="TextureRect" parent="Chosse/Margin/Column/Equipment/Helmet/Select"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_helmet")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Caption" type="Label" parent="Chosse/Margin/Column/Equipment/Helmet"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "头盔 ▾"
+custom_minimum_size = Vector2(0, 42)
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Bullet" type="VBoxContainer" parent="Chosse/Margin/Column/Equipment"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="Chosse/Margin/Column/Equipment/Bullet"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.61, 0.67, 0.83, 1)
+text = "子弹"
+horizontal_alignment = 1
+
+[node name="Select" type="Button" parent="Chosse/Margin/Column/Equipment/Bullet"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+flat = false
+theme = ExtResource("theme_icon")
+script = ExtResource("script_feedback")
+
+[node name="BulletBackground" type="TextureRect" parent="Chosse/Margin/Column/Equipment/Bullet/Select"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 4.0
+offset_right = 40.0
+offset_bottom = 84.0
+mouse_filter = 2
+texture = ExtResource("7_background")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Bullet" type="TextureRect" parent="Chosse/Margin/Column/Equipment/Bullet/Select"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = 12.0
+offset_right = 32.0
+offset_bottom = 76.0
+mouse_filter = 2
+texture = ExtResource("8_bullet")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Caption" type="Label" parent="Chosse/Margin/Column/Equipment/Bullet"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "子弹 ▾"
+custom_minimum_size = Vector2(0, 42)
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Divider" type="HSeparator" parent="Chosse/Margin/Column"]
+layout_mode = 2
+
+[node name="BTKTitle" type="Label" parent="Chosse/Margin/Column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "击杀枪数"
+visible = false
+
+[node name="BTKColumns" type="HBoxContainer" parent="Chosse/Margin/Column"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="SingleColumn" type="VBoxContainer" parent="Chosse/Margin/Column/BTKColumns"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Chosse/Margin/Column/BTKColumns/SingleColumn"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.61, 0.67, 0.83, 1)
+text = "连续命中"
+visible = false
+
+[node name="Single" type="VBoxContainer" parent="Chosse/Margin/Column/BTKColumns/SingleColumn"]
+layout_mode = 2
+theme_override_constants/separation = 14
+script = ExtResource("12_lines")
+
+[node name="Head" type="Label" parent="Chosse/Margin/Column/BTKColumns/SingleColumn/Single"]
+theme_override_styles/normal = SubResource("Style_btk_row")
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "全头：— 枪"
+
+[node name="Chest" type="Label" parent="Chosse/Margin/Column/BTKColumns/SingleColumn/Single"]
+theme_override_styles/normal = SubResource("Style_btk_row")
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "全胸：— 枪"
+
+[node name="Abdomen" type="Label" parent="Chosse/Margin/Column/BTKColumns/SingleColumn/Single"]
+theme_override_styles/normal = SubResource("Style_btk_row")
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "全腹：— 枪"
+
+[node name="Arms" type="Label" parent="Chosse/Margin/Column/BTKColumns/SingleColumn/Single"]
+theme_override_styles/normal = SubResource("Style_btk_row")
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "全手：— 枪"
+
+[node name="MixedColumn" type="VBoxContainer" parent="Chosse/Margin/Column/BTKColumns"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Chosse/Margin/Column/BTKColumns/MixedColumn"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.61, 0.67, 0.83, 1)
+text = "先打手臂，再补胸部"
+visible = false
+
+[node name="Complex" type="VBoxContainer" parent="Chosse/Margin/Column/BTKColumns/MixedColumn"]
+layout_mode = 2
+theme_override_constants/separation = 14
+script = ExtResource("12_lines")
+
+[node name="Mixed1" type="Label" parent="Chosse/Margin/Column/BTKColumns/MixedColumn/Complex"]
+theme_override_styles/normal = SubResource("Style_btk_row")
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "马一枪手：— 枪"
+
+[node name="Mixed2" type="Label" parent="Chosse/Margin/Column/BTKColumns/MixedColumn/Complex"]
+theme_override_styles/normal = SubResource("Style_btk_row")
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "马二枪手：— 枪"
+
+[node name="Mixed3" type="Label" parent="Chosse/Margin/Column/BTKColumns/MixedColumn/Complex"]
+theme_override_styles/normal = SubResource("Style_btk_row")
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "马三枪手：— 枪"
+
+[node name="Mixed4" type="Label" parent="Chosse/Margin/Column/BTKColumns/MixedColumn/Complex"]
+theme_override_styles/normal = SubResource("Style_btk_row")
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "马四枪手：— 枪"
+
+[node name="Conditions" type="Label" parent="Chosse/Margin/Column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.61, 0.67, 0.83, 1)
+text = "每种方案均按100血、所选防具满耐久计算。"
+autowrap_mode = 3
+visible = false
+
+[node name="SpecialAmmo" type="PanelContainer" parent="Chosse/Margin/Column"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("Style_btk_row")
+
+[node name="Content" type="VBoxContainer" parent="Chosse/Margin/Column/SpecialAmmo"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="Chosse/Margin/Column/SpecialAmmo/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.43, 0.9, 1, 1)
+text = "子弹特殊说明"
+
+[node name="Description" type="Label" parent="Chosse/Margin/Column/SpecialAmmo/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+autowrap_mode = 3
+
+[node name="ChoosePopupLayer" type="CanvasLayer" parent="Chosse"]
+layer = 10
+
+[node name="IconPicker" parent="Chosse/ChoosePopupLayer" instance=ExtResource("5_picker")]
+visible = false
+
+[node name="BTK" type="Control" parent="."]
+layout_mode = 0
+mouse_filter = 2
+script = ExtResource("3_btk")
+
+[node name="BuildCode" type="PanelContainer" parent="."]
+layout_mode = 1
+anchor_left = 0.71
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_right = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("Style_card")
+script = ExtResource("4_build")
+
+[node name="Margin" type="MarginContainer" parent="BuildCode"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="Column" type="VBoxContainer" parent="BuildCode/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="BuildCode/Margin/Column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(1, 0.64, 0.84, 1)
+text = "改枪码"
+
+[node name="CurrentWeapon" type="Label" parent="BuildCode/Margin/Column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "M7 的专属方案"
+
+[node name="Description" type="Label" parent="BuildCode/Margin/Column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.61, 0.67, 0.83, 1)
+text = "为当前枪械编辑方案，换枪时自动加载。"
+autowrap_mode = 3
+visible = false
+
+[node name="PlanSpacer" type="Control" parent="BuildCode/Margin/Column"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PlanA" type="VBoxContainer" parent="BuildCode/Margin/Column"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="LineEdit" parent="BuildCode/Margin/Column/PlanA"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("Style_plan_title")
+text = "方案 A"
+placeholder_text = "方案 A"
+tooltip_text = "点击修改方案标题，自动保存到本机"
+expand_to_text_length = false
+
+[node name="Input" type="HBoxContainer" parent="BuildCode/Margin/Column/PlanA"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextA" type="LineEdit" parent="BuildCode/Margin/Column/PlanA/Input"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+placeholder_text = "输入方案A"
+clear_button_enabled = true
+
+[node name="ButtonA" type="Button" parent="BuildCode/Margin/Column/PlanA/Input"]
+custom_minimum_size = Vector2(60, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "复制"
+
+[node name="Gap" type="Control" parent="BuildCode/Margin/Column"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PlanB" type="VBoxContainer" parent="BuildCode/Margin/Column"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="LineEdit" parent="BuildCode/Margin/Column/PlanB"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("Style_plan_title")
+text = "方案 B"
+placeholder_text = "方案 B"
+tooltip_text = "点击修改方案标题，自动保存到本机"
+expand_to_text_length = false
+
+[node name="Input" type="HBoxContainer" parent="BuildCode/Margin/Column/PlanB"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextB" type="LineEdit" parent="BuildCode/Margin/Column/PlanB/Input"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+placeholder_text = "输入方案B"
+clear_button_enabled = true
+
+[node name="ButtonB" type="Button" parent="BuildCode/Margin/Column/PlanB/Input"]
+custom_minimum_size = Vector2(60, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "复制"
+
+[node name="GapC" type="Control" parent="BuildCode/Margin/Column"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PlanC" type="VBoxContainer" parent="BuildCode/Margin/Column"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="LineEdit" parent="BuildCode/Margin/Column/PlanC"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("Style_plan_title")
+text = "方案 C"
+placeholder_text = "方案 C"
+tooltip_text = "点击修改方案标题，自动保存到本机"
+expand_to_text_length = false
+
+[node name="Input" type="HBoxContainer" parent="BuildCode/Margin/Column/PlanC"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextC" type="LineEdit" parent="BuildCode/Margin/Column/PlanC/Input"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+placeholder_text = "输入方案C"
+clear_button_enabled = true
+
+[node name="ButtonC" type="Button" parent="BuildCode/Margin/Column/PlanC/Input"]
+custom_minimum_size = Vector2(60, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "复制"
+
+[node name="SaveStatus" type="Label" parent="BuildCode/Margin/Column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.61, 0.67, 0.83, 1)
+text = "自动保存到本机"
+autowrap_mode = 3
+mouse_filter = 1
+size_flags_vertical = 10
+
+[node name="SaveTimer" type="Timer" parent="BuildCode"]
+wait_time = 0.4
+one_shot = true
+
+[editable path="Chosse/ChoosePopupLayer/IconPicker"]
+

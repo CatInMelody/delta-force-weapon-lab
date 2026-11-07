@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-10-26",
+  "game": "三角洲行动",
+  "source_catalog_url": "https://deltaforce.th.gl/zh-CN/db/ammo",
+  "format": "原始 WebP，不放大、不重绘，保留透明通道",
+  "notes": [
+    "每个文件按具体弹药物品ID匹配，不使用通用口径图标。",
+    "AP ST与FMJ ST在该来源使用相同图片，保留两个文件名方便程序按弹种读取。",
+    "CT的穿透等级为0，不能根据物品品质色推断穿透等级。",
+    "腾讯CDN同ID的FMJ ST候选图与HT相同，因此没有采用该候选图；LS的腾讯候选地址返回404。"
+  ],
+  "icons": {
+    "37210400002": {
+      "item_id": "37210400002",
+      "name": "5.7x28mm HT+",
+      "penetration_level": 4,
+      "filename": "5.7x28mm-HT-plus.webp",
+      "width": 96,
+      "height": 96,
+      "transparent": true,
+      "icon_relative_path": "Bullet/Special/5.7x28mm-HT-plus.webp",
+      "godot_icon_path": "res://assets/Bullet/Special/5.7x28mm-HT-plus.webp",
+      "source_url": "https://cdn.th.gl/delta-force/icons/db/item_37210400002.webp",
+      "source_page": "https://deltaforce.th.gl/zh-CN/db/ammo/item_37210400002",
+      "sha256": "8d5e73104c043ccaa996f9582b2f96e9ee840197ab5a6952a23edf45b9d3a172"
+    },
+    "37210300002": {
+      "item_id": "37210300002",
+      "name": "5.7x28mm HT",
+      "penetration_level": 3,
+      "filename": "5.7x28mm-HT.webp",
+      "width": 96,
+      "height": 96,
+      "transparent": true,
+      "icon_relative_path": "Bullet/Special/5.7x28mm-HT.webp",
+      "godot_icon_path": "res://assets/Bullet/Special/5.7x28mm-HT.webp",
+      "source_url": "https://cdn.th.gl/delta-force/icons/db/item_37210300002.webp",
+      "source_page": "https://deltaforce.th.gl/zh-CN/db/ammo/item_37210300002",
+      "sha256": "4734a9cdf3479f9a652059a3ba9fd3cbb5f01062dfa6a42b6c857740936aacfa"
+    },
+    "37260500002": {
+      "item_id": "37260500002",
+      "name": "4.6x30mm AP ST",
+      "penetration_level": 5,
+      "filename": "4.6x30mm-AP-ST.webp",
+      "width": 96,
+      "height": 96,
+      "transparent": true,
+      "icon_relative_path": "Bullet/Special/4.6x30mm-AP-ST.webp",
+      "godot_icon_path": "res://assets/Bullet/Special/4.6x30mm-AP-ST.webp",
+      "source_url": "https://cdn.th.gl/delta-force/icons/db/item_37260500002.webp",
+      "source_page": "https://deltaforce.th.gl/zh-CN/db/ammo/item_37260500002",
+      "sha256": "4857fd397ae7b4387fea49ecfc41a92a30ade53cce7186477195e4a8479a3e35"
+    },
+    "37260000002": {
+      "item_id": "37260000002",
+      "name": "4.6x30mm CT",
+      "penetration_level": 0,
+      "filename": "4.6x30mm-CT.webp",
+      "width": 96,
+      "height": 96,
+      "transparent": true,
+      "icon_relative_path": "Bullet/Special/4.6x30mm-CT.webp",
+      "godot_icon_path": "res://assets/Bullet/Special/4.6x30mm-CT.webp",
+      "source_url": "https://cdn.th.gl/delta-force/icons/db/item_37260000002.webp",
+      "source_page": "https://deltaforce.th.gl/zh-CN/db/ammo/item_37260000002",
+      "sha256": "25e097d2c08c03ffd7fb5d48d3c352618ea370e055cb9fa1a2be14d5dde5f62d"
+    },
+    "37260400002": {
+      "item_id": "37260400002",
+      "name": "4.6x30mm FMJ ST",
+      "penetration_level": 4,
+      "filename": "4.6x30mm-FMJ-ST.webp",
+      "width": 96,
+      "height": 96,
+      "transparent": true,
+      "icon_relative_path": "Bullet/Special/4.6x30mm-FMJ-ST.webp",
+      "godot_icon_path": "res://assets/Bullet/Special/4.6x30mm-FMJ-ST.webp",
+      "source_url": "https://cdn.th.gl/delta-force/icons/db/item_37260400002.webp",
+      "source_page": "https://deltaforce.th.gl/zh-CN/db/ammo/item_37260400002",
+      "sha256": "4857fd397ae7b4387fea49ecfc41a92a30ade53cce7186477195e4a8479a3e35"
+    },
+    "37170500002": {
+      "item_id": "37170500002",
+      "name": "7.62x51mm LS",
+      "penetration_level": 5,
+      "filename": "7.62x51mm-LS.webp",
+      "width": 96,
+      "height": 96,
+      "transparent": true,
+      "icon_relative_path": "Bullet/Special/7.62x51mm-LS.webp",
+      "godot_icon_path": "res://assets/Bullet/Special/7.62x51mm-LS.webp",
+      "source_url": "https://cdn.th.gl/delta-force/icons/db/item_37170500002.webp",
+      "source_page": "https://deltaforce.th.gl/zh-CN/db/ammo/item_37170500002",
+      "sha256": "9849c3f87d57e7dbae8b2e7d36743ba5c70e6dc4657c48cc2794e7d75ddda936"
+    }
+  }
+}

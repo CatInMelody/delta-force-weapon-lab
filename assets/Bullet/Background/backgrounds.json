@@ -1,0 +1,145 @@
+{
+  "origin": "original UI artwork created for the user",
+  "size": [
+    512,
+    512
+  ],
+  "backgrounds": [
+    {
+      "levels": [
+        1
+      ],
+      "color": "白色",
+      "filename": "Background/1级_白色.png",
+      "width": 512,
+      "height": 512,
+      "origin": "自制；按用户指定的六种颜色绘制，并非下载的游戏原版底图。",
+      "top_rgb": [
+        247,
+        249,
+        250
+      ],
+      "bottom_rgb": [
+        193,
+        203,
+        213
+      ],
+      "sha256": "a045551e9138f2b434757c8173572016a27de10a28123ac9845f1a48d067e21f"
+    },
+    {
+      "levels": [
+        2
+      ],
+      "color": "绿色",
+      "filename": "Background/2级_绿色.png",
+      "width": 512,
+      "height": 512,
+      "origin": "自制；按用户指定的六种颜色绘制，并非下载的游戏原版底图。",
+      "top_rgb": [
+        185,
+        222,
+        188
+      ],
+      "bottom_rgb": [
+        40,
+        119,
+        77
+      ],
+      "sha256": "b66e6a7afe6ac02e80e818c39af6b72be6cd9559baf9690d7491fb71668b84d1"
+    },
+    {
+      "levels": [
+        3
+      ],
+      "color": "蓝色",
+      "filename": "Background/3级_蓝色.png",
+      "width": 512,
+      "height": 512,
+      "origin": "自制；按用户指定的六种颜色绘制，并非下载的游戏原版底图。",
+      "top_rgb": [
+        168,
+        207,
+        238
+      ],
+      "bottom_rgb": [
+        39,
+        97,
+        159
+      ],
+      "sha256": "acbb189db6c5372e14d2bc575bc2d36bc650f51e9641e6519884b01efb4bb1a9"
+    },
+    {
+      "levels": [
+        4
+      ],
+      "color": "紫色",
+      "filename": "Background/4级_紫色.png",
+      "width": 512,
+      "height": 512,
+      "origin": "自制；按用户指定的六种颜色绘制，并非下载的游戏原版底图。",
+      "top_rgb": [
+        206,
+        182,
+        232
+      ],
+      "bottom_rgb": [
+        105,
+        62,
+        150
+      ],
+      "sha256": "7d43bf22161f31a2b8a749d9965bd8815456b22b5e0439230ec1411d92dece13"
+    },
+    {
+      "levels": [
+        5
+      ],
+      "color": "黄色",
+      "filename": "Background/5级_黄色.png",
+      "width": 512,
+      "height": 512,
+      "origin": "自制；按用户指定的六种颜色绘制，并非下载的游戏原版底图。",
+      "top_rgb": [
+        250,
+        229,
+        163
+      ],
+      "bottom_rgb": [
+        178,
+        125,
+        28
+      ],
+      "sha256": "7759bb152f9579334b5a50e9d2a8fc1e67f2076ac96d6b990f49496ad8d0381e"
+    },
+    {
+      "levels": [
+        6,
+        7
+      ],
+      "color": "红色",
+      "filename": "Background/6-7级_红色.png",
+      "width": 512,
+      "height": 512,
+      "origin": "自制；按用户指定的六种颜色绘制，并非下载的游戏原版底图。",
+      "top_rgb": [
+        242,
+        180,
+        177
+      ],
+      "bottom_rgb": [
+        158,
+        46,
+        52
+      ],
+      "sha256": "1120fb7fc4630e4d9f7a306038a1d75cf2d2654e07f878c378ace422ac315dc1"
+    }
+  ],
+  "level_mapping": {
+    "1": "Background/1级_白色.png",
+    "2": "Background/2级_绿色.png",
+    "3": "Background/3级_蓝色.png",
+    "4": "Background/4级_紫色.png",
+    "5": "Background/5级_黄色.png",
+    "6": "Background/6-7级_红色.png",
+    "7": "Background/6-7级_红色.png"
+  }
+}

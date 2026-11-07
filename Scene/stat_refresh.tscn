@@ -1,0 +1,25 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Code/stat_refresh.gd" id="1_script"]
+[ext_resource type="Shader" path="res://assets/UI/stat_refresh_shine.gdshader" id="2_shader"]
+
+[sub_resource type="ShaderMaterial" id="Material_shine"]
+resource_local_to_scene = true
+shader = ExtResource("2_shader")
+
+[node name="StatRefresh" type="Control"]
+visible = false
+layout_mode = 0
+mouse_filter = 2
+script = ExtResource("1_script")
+duration = 0.3
+
+[node name="Shine" type="ColorRect" parent="."]
+material = SubResource("Material_shine")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

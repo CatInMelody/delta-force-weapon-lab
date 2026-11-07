@@ -1,0 +1,153 @@
+{
+  "weapons": {
+    "18020000046": {
+      "name": "汤姆逊",
+      "multipliers": {
+        "abdomen": 1.0,
+        "limbs": 0.35
+      }
+    },
+    "18020000006": {
+      "name": "SMG-45",
+      "multipliers": {
+        "limbs": 0.45
+      }
+    },
+    "18040000004": {
+      "name": "QJB201",
+      "multipliers": {
+        "head": 2.1
+      }
+    },
+    "18040000003": {
+      "name": "M250",
+      "multipliers": {
+        "head": 1.82,
+        "abdomen": 0.7
+      }
+    },
+    "18010000044": {
+      "name": "MCX-LT",
+      "multipliers": {
+        "limbs": 0.35
+      }
+    },
+    "18010000040": {
+      "name": "K437",
+      "multipliers": {
+        "limbs": 0.3
+      }
+    },
+    "18010000038": {
+      "name": "腾龙",
+      "multipliers": {
+        "head": 2.1
+      }
+    },
+    "18010000021": {
+      "name": "SCAR-H",
+      "multipliers": {
+        "limbs": 0.5
+      }
+    },
+    "18010000018": {
+      "name": "AK-12",
+      "multipliers": {
+        "limbs": 0.45
+      }
+    },
+    "18010000016": {
+      "name": "M7",
+      "multipliers": {
+        "abdomen": 1.0,
+        "limbs": 0.35
+      }
+    },
+    "18010000015": {
+      "name": "AUG",
+      "multipliers": {
+        "head": 2.0,
+        "chest": 1.1
+      }
+    },
+    "18010000012": {
+      "name": "ASh-12",
+      "multipliers": {
+        "head": 1.6,
+        "limbs": 0.45
+      }
+    },
+    "18010000008": {
+      "name": "QBZ95-1",
+      "multipliers": {
+        "head": 2.3
+      }
+    },
+    "18060000009": {
+      "name": "M700",
+      "multipliers": {
+        "head": 2.5
+      }
+    },
+    "18060000007": {
+      "name": "SV-98",
+      "multipliers": {
+        "head": 2.5
+      }
+    },
+    "18060000008": {
+      "name": "R93",
+      "multipliers": {
+        "head": 2.5
+      }
+    },
+    "18050000032": {
+      "name": "Marlin杠杆步枪",
+      "multipliers": {
+        "limbs": 0.45
+      }
+    },
+    "18050000031": {
+      "name": "PSG-1",
+      "multipliers": {
+        "head": 2.1
+      }
+    },
+    "18050000007": {
+      "name": "SR-25",
+      "multipliers": {
+        "head": 2.1,
+        "abdomen": 1.0,
+        "limbs": 0.5
+      }
+    },
+    "18050000004": {
+      "name": "SVD",
+      "multipliers": {
+        "head": 2.3
+      }
+    },
+    "18050000003": {
+      "name": "VSS",
+      "multipliers": {
+        "abdomen": 1.0,
+        "limbs": 0.5
+      }
+    },
+    "18050000002": {
+      "name": "Mini-14",
+      "multipliers": {
+        "limbs": 0.5
+      }
+    },
+    "18020000012": {
+      "name": "MK4",
+      "multipliers": {
+        "limbs": 0.5,
+        "abdomen": 1.0,
+        "chest": 1.0,
+        "head": 2.0
+      }
+    }
+  }
+}

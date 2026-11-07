@@ -1,0 +1,11 @@
+{
+	"data_version": 3,
+	"min_data_api": 2,
+	"notes": "S12武器与特殊弹药更新，需要1.1.0程序",
+	"package_url": "data-3.json",
+	"schema_version": 1,
+	"season": "S12",
+	"sha256": "ac00837f20283e8cbf7d1275e904b278a247feb0699924aa9de195a361b39530",
+	"size": 5322876,
+	"version_name": "1.1.0"
+}

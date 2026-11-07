@@ -1,0 +1,348 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-10-24",
+  "weapon_catalog_url": "https://dfttk.com/data/v3/catalog/weapons.json?v=65089f0628197d53",
+  "ammo_catalog_url": "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+  "notes": [
+    "武器 ammoTypeId 按同版本弹药目录关联本地口径图标。",
+    "可选等级由 assets/Bullet/bullet-sources.json 决定，保留本项目已收集的等级数据。"
+  ],
+  "weapons": {
+    "18010000018": {
+      "name": "AK-12",
+      "ammo_type_id": "12",
+      "caliber": "5.45x39mm",
+      "icon_file": "5.45x39mm.png"
+    },
+    "18010000006": {
+      "name": "AKM",
+      "ammo_type_id": "11",
+      "caliber": "7.62x39mm",
+      "icon_file": "7.62x39mm.png"
+    },
+    "18010000010": {
+      "name": "AKS-74U",
+      "ammo_type_id": "12",
+      "caliber": "5.45x39mm",
+      "icon_file": "5.45x39mm.png"
+    },
+    "18010000045": {
+      "name": "AR57",
+      "ammo_type_id": "21",
+      "caliber": "5.7x28mm",
+      "icon_file": "5.7x28mm.png"
+    },
+    "18010000037": {
+      "name": "AS-Val",
+      "ammo_type_id": "14",
+      "caliber": "9x39mm",
+      "icon_file": "9x39mm.png"
+    },
+    "18010000012": {
+      "name": "ASh-12",
+      "ammo_type_id": "16",
+      "caliber": "12.7x55mm",
+      "icon_file": "12.7x55mm.png"
+    },
+    "18010000015": {
+      "name": "AUG",
+      "ammo_type_id": "10",
+      "caliber": "5.56x45mm",
+      "icon_file": "5.56x45mm.png"
+    },
+    "18010000031": {
+      "name": "CAR-15",
+      "ammo_type_id": "10",
+      "caliber": "5.56x45mm",
+      "icon_file": "5.56x45mm.png"
+    },
+    "18010000023": {
+      "name": "G3",
+      "ammo_type_id": "17",
+      "caliber": "7.62x51mm",
+      "icon_file": "7.62x51mm.png"
+    },
+    "18010000013": {
+      "name": "K416",
+      "ammo_type_id": "10",
+      "caliber": "5.56x45mm",
+      "icon_file": "5.56x45mm.png"
+    },
+    "18010000040": {
+      "name": "K437",
+      "ammo_type_id": "27",
+      "caliber": "7.62x35mm",
+      "icon_file": "300-BLK.png"
+    },
+    "18010000042": {
+      "name": "KC17",
+      "ammo_type_id": "12",
+      "caliber": "5.45x39mm",
+      "icon_file": "5.45x39mm.png"
+    },
+    "18010000014": {
+      "name": "M16A4",
+      "ammo_type_id": "10",
+      "caliber": "5.56x45mm",
+      "icon_file": "5.56x45mm.png"
+    },
+    "18010000001": {
+      "name": "M4A1",
+      "ammo_type_id": "10",
+      "caliber": "5.56x45mm",
+      "icon_file": "5.56x45mm.png"
+    },
+    "18010000016": {
+      "name": "M7",
+      "ammo_type_id": "15",
+      "caliber": "6.8x51mm",
+      "icon_file": "6.8x51mm.png"
+    },
+    "18010000044": {
+      "name": "MCX-LT",
+      "ammo_type_id": "27",
+      "caliber": "7.62x35mm",
+      "icon_file": "300-BLK.png"
+    },
+    "18010000051": {
+      "name": "MDR",
+      "ammo_type_id": "17",
+      "caliber": "7.62x51mm",
+      "icon_file": "7.62x51mm.png"
+    },
+    "18010000043": {
+      "name": "MK47",
+      "ammo_type_id": "11",
+      "caliber": "7.62x39mm",
+      "icon_file": "7.62x39mm.png"
+    },
+    "18010000024": {
+      "name": "PTR-32",
+      "ammo_type_id": "11",
+      "caliber": "7.62x39mm",
+      "icon_file": "7.62x39mm.png"
+    },
+    "18010000008": {
+      "name": "QBZ95-1",
+      "ammo_type_id": "13",
+      "caliber": "5.8x42mm",
+      "icon_file": "5.8x42mm.png"
+    },
+    "18010000049": {
+      "name": "RM277",
+      "ammo_type_id": "15",
+      "caliber": "6.8x51mm",
+      "icon_file": "6.8x51mm.png"
+    },
+    "18010000021": {
+      "name": "SCAR-H",
+      "ammo_type_id": "17",
+      "caliber": "7.62x51mm",
+      "icon_file": "7.62x51mm.png"
+    },
+    "18010000017": {
+      "name": "SG552",
+      "ammo_type_id": "10",
+      "caliber": "5.56x45mm",
+      "icon_file": "5.56x45mm.png"
+    },
+    "18010000038": {
+      "name": "腾龙",
+      "ammo_type_id": "13",
+      "caliber": "5.8x42mm",
+      "icon_file": "5.8x42mm.png"
+    },
+    "18060000011": {
+      "name": "AWM",
+      "ammo_type_id": "24",
+      "caliber": ".338 Lap Mag",
+      "icon_file": "338-Lap-Mag.png"
+    },
+    "18060000009": {
+      "name": "M700",
+      "ammo_type_id": "17",
+      "caliber": "7.62x51mm",
+      "icon_file": "7.62x51mm.png"
+    },
+    "18060000033": {
+      "name": "M82",
+      "ammo_type_id": "30",
+      "caliber": ".50 BMG",
+      "icon_file": "50-BMG.png"
+    },
+    "18060000008": {
+      "name": "R93",
+      "ammo_type_id": "17",
+      "caliber": "7.62x51mm",
+      "icon_file": "7.62x51mm.png"
+    },
+    "18060000007": {
+      "name": "SV-98",
+      "ammo_type_id": "18",
+      "caliber": "7.62x54mm",
+      "icon_file": "7.62x54mm.png"
+    },
+    "18020000012": {
+      "name": "MK4",
+      "ammo_type_id": "26",
+      "caliber": "4.6x30mm",
+      "icon_file": "4.6x30mm.png"
+    },
+    "18020000001": {
+      "name": "MP5",
+      "ammo_type_id": "20",
+      "caliber": "9x19mm",
+      "icon_file": "9x19mm.png"
+    },
+    "18020000010": {
+      "name": "MP7",
+      "ammo_type_id": "26",
+      "caliber": "4.6x30mm",
+      "icon_file": "4.6x30mm.png"
+    },
+    "18020000002": {
+      "name": "P90",
+      "ammo_type_id": "21",
+      "caliber": "5.7x28mm",
+      "icon_file": "5.7x28mm.png"
+    },
+    "18020000011": {
+      "name": "QCQ171",
+      "ammo_type_id": "20",
+      "caliber": "9x19mm",
+      "icon_file": "9x19mm.png"
+    },
+    "18020000006": {
+      "name": "SMG-45",
+      "ammo_type_id": "19",
+      "caliber": ".45 ACP",
+      "icon_file": "45-ACP.png"
+    },
+    "18020000008": {
+      "name": "SR-3M",
+      "ammo_type_id": "14",
+      "caliber": "9x39mm",
+      "icon_file": "9x39mm.png"
+    },
+    "18020000004": {
+      "name": "UZI",
+      "ammo_type_id": "20",
+      "caliber": "9x19mm",
+      "icon_file": "9x19mm.png"
+    },
+    "18020000003": {
+      "name": "Vector",
+      "ammo_type_id": "19",
+      "caliber": ".45 ACP",
+      "icon_file": "45-ACP.png"
+    },
+    "18020000009": {
+      "name": "勇士",
+      "ammo_type_id": "20",
+      "caliber": "9x19mm",
+      "icon_file": "9x19mm.png"
+    },
+    "18020000046": {
+      "name": "汤姆逊",
+      "ammo_type_id": "19",
+      "caliber": ".45 ACP",
+      "icon_file": "45-ACP.png"
+    },
+    "18020000005": {
+      "name": "野牛",
+      "ammo_type_id": "20",
+      "caliber": "9x19mm",
+      "icon_file": "9x19mm.png"
+    },
+    "18050000005": {
+      "name": "M14",
+      "ammo_type_id": "17",
+      "caliber": "7.62x51mm",
+      "icon_file": "7.62x51mm.png"
+    },
+    "18050000032": {
+      "name": "Marlin杠杆步枪",
+      "ammo_type_id": "29",
+      "caliber": ".45-70mm",
+      "icon_file": "45-70-Govt.png"
+    },
+    "18050000002": {
+      "name": "Mini-14",
+      "ammo_type_id": "10",
+      "caliber": "5.56x45mm",
+      "icon_file": "5.56x45mm.png"
+    },
+    "18050000031": {
+      "name": "PSG-1",
+      "ammo_type_id": "17",
+      "caliber": "7.62x51mm",
+      "icon_file": "7.62x51mm.png"
+    },
+    "18050000006": {
+      "name": "SKS",
+      "ammo_type_id": "11",
+      "caliber": "7.62x39mm",
+      "icon_file": "7.62x39mm.png"
+    },
+    "18050000007": {
+      "name": "SR-25",
+      "ammo_type_id": "17",
+      "caliber": "7.62x51mm",
+      "icon_file": "7.62x51mm.png"
+    },
+    "18050000008": {
+      "name": "SR9",
+      "ammo_type_id": "17",
+      "caliber": "7.62x51mm",
+      "icon_file": "7.62x51mm.png"
+    },
+    "18050000033": {
+      "name": "SVCH",
+      "ammo_type_id": "18",
+      "caliber": "7.62x54mm",
+      "icon_file": "7.62x54mm.png"
+    },
+    "18050000004": {
+      "name": "SVD",
+      "ammo_type_id": "18",
+      "caliber": "7.62x54mm",
+      "icon_file": "7.62x54mm.png"
+    },
+    "18050000003": {
+      "name": "VSS",
+      "ammo_type_id": "14",
+      "caliber": "9x39mm",
+      "icon_file": "9x39mm.png"
+    },
+    "18040000002": {
+      "name": "M249",
+      "ammo_type_id": "10",
+      "caliber": "5.56x45mm",
+      "icon_file": "5.56x45mm.png"
+    },
+    "18040000003": {
+      "name": "M250",
+      "ammo_type_id": "15",
+      "caliber": "6.8x51mm",
+      "icon_file": "6.8x51mm.png"
+    },
+    "18040000001": {
+      "name": "PKM",
+      "ammo_type_id": "18",
+      "caliber": "7.62x54mm",
+      "icon_file": "7.62x54mm.png"
+    },
+    "18040000004": {
+      "name": "QJB201",
+      "ammo_type_id": "13",
+      "caliber": "5.8x42mm",
+      "icon_file": "5.8x42mm.png"
+    },
+    "s12:an94": {
+      "name": "AN94",
+      "ammo_type_id": "12",
+      "caliber": "5.45x39mm",
+      "icon_file": "5.45x39mm.png"
+    }
+  }
+}

@@ -1,0 +1,658 @@
+{
+  "schema_version": 1,
+  "game": "三角洲行动",
+  "mode": "sol",
+  "mode_name": "烽火地带",
+  "retrieved_at": "2026-10-24",
+  "source_data_version": "20261015-bd-balance.1",
+  "source_manifest_version": "65089f0628197d53",
+  "verification": "社区数据来源快照，已核验源文件 SHA-256；未逐项在游戏内实测。",
+  "durability_definition": "全新装备未经维修的基础最大耐久；不是当前剩余耐久。",
+  "counts": {
+    "armors": 26,
+    "helmets": 27,
+    "total": 53
+  },
+  "armors": {
+    "11050001001": {
+      "item_id": "11050001001",
+      "name": "摩托马甲",
+      "level": 1,
+      "max_durability": 20,
+      "icon_relative_path": "Armor/摩托马甲.png",
+      "godot_icon_path": "res://assets/Armor/摩托马甲.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050001002": {
+      "item_id": "11050001002",
+      "name": "安保防弹衣",
+      "level": 1,
+      "max_durability": 20,
+      "icon_relative_path": "Armor/安保防弹衣.png",
+      "godot_icon_path": "res://assets/Armor/安保防弹衣.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050001003": {
+      "item_id": "11050001003",
+      "name": "尼龙防弹衣",
+      "level": 1,
+      "max_durability": 25,
+      "icon_relative_path": "Armor/尼龙防弹衣.png",
+      "godot_icon_path": "res://assets/Armor/尼龙防弹衣.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050001004": {
+      "item_id": "11050001004",
+      "name": "轻型防弹衣",
+      "level": 1,
+      "max_durability": 30,
+      "icon_relative_path": "Armor/轻型防弹衣.png",
+      "godot_icon_path": "res://assets/Armor/轻型防弹衣.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050002001": {
+      "item_id": "11050002001",
+      "name": "简易防刺服",
+      "level": 2,
+      "max_durability": 30,
+      "icon_relative_path": "Armor/简易防刺服.png",
+      "godot_icon_path": "res://assets/Armor/简易防刺服.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050002002": {
+      "item_id": "11050002002",
+      "name": "HT战术背心",
+      "level": 2,
+      "max_durability": 35,
+      "icon_relative_path": "Armor/HT战术背心.png",
+      "godot_icon_path": "res://assets/Armor/HT战术背心.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050002003": {
+      "item_id": "11050002003",
+      "name": "TG战术防弹衣",
+      "level": 2,
+      "max_durability": 40,
+      "icon_relative_path": "Armor/TG战术防弹衣.png",
+      "godot_icon_path": "res://assets/Armor/TG战术防弹衣.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050002004": {
+      "item_id": "11050002004",
+      "name": "通用战术背心",
+      "level": 2,
+      "max_durability": 50,
+      "icon_relative_path": "Armor/通用战术背心.png",
+      "godot_icon_path": "res://assets/Armor/通用战术背心.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050003001": {
+      "item_id": "11050003001",
+      "name": "制式防弹背心",
+      "level": 3,
+      "max_durability": 50,
+      "icon_relative_path": "Armor/制式防弹背心.png",
+      "godot_icon_path": "res://assets/Armor/制式防弹背心.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050003002": {
+      "item_id": "11050003002",
+      "name": "Hvk快拆防弹衣",
+      "level": 3,
+      "max_durability": 60,
+      "icon_relative_path": "Armor/Hvk快拆防弹衣.png",
+      "godot_icon_path": "res://assets/Armor/Hvk快拆防弹衣.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050003003": {
+      "item_id": "11050003003",
+      "name": "TG-H防弹衣",
+      "level": 3,
+      "max_durability": 75,
+      "icon_relative_path": "Armor/TG-H防弹衣.png",
+      "godot_icon_path": "res://assets/Armor/TG-H防弹衣.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050003004": {
+      "item_id": "11050003004",
+      "name": "射手战术背心",
+      "level": 3,
+      "max_durability": 85,
+      "icon_relative_path": "Armor/射手战术背心.png",
+      "godot_icon_path": "res://assets/Armor/射手战术背心.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050004001": {
+      "item_id": "11050004001",
+      "name": "武士防弹背心",
+      "level": 4,
+      "max_durability": 80,
+      "icon_relative_path": "Armor/武士防弹背心.png",
+      "godot_icon_path": "res://assets/Armor/武士防弹背心.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050004002": {
+      "item_id": "11050004002",
+      "name": "突击手防弹背心",
+      "level": 4,
+      "max_durability": 90,
+      "icon_relative_path": "Armor/突击手防弹背心.png",
+      "godot_icon_path": "res://assets/Armor/突击手防弹背心.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050004003": {
+      "item_id": "11050004003",
+      "name": "DT-AVS防弹衣",
+      "level": 4,
+      "max_durability": 100,
+      "icon_relative_path": "Armor/DT-AVS防弹衣.png",
+      "godot_icon_path": "res://assets/Armor/DT-AVS防弹衣.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050004004": {
+      "item_id": "11050004004",
+      "name": "MK-2战术背心",
+      "level": 4,
+      "max_durability": 110,
+      "icon_relative_path": "Armor/MK-2战术背心.png",
+      "godot_icon_path": "res://assets/Armor/MK-2战术背心.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050004007": {
+      "item_id": "11050004007",
+      "name": "HMP特勤防弹衣",
+      "level": 4,
+      "max_durability": 80,
+      "icon_relative_path": "Armor/HMP特勤防弹衣.png",
+      "godot_icon_path": "res://assets/Armor/HMP特勤防弹衣.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050005001": {
+      "item_id": "11050005001",
+      "name": "精英防弹背心",
+      "level": 5,
+      "max_durability": 95,
+      "icon_relative_path": "Armor/精英防弹背心.png",
+      "godot_icon_path": "res://assets/Armor/精英防弹背心.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050005002": {
+      "item_id": "11050005002",
+      "name": "Hvk-2防弹衣",
+      "level": 5,
+      "max_durability": 115,
+      "icon_relative_path": "Armor/Hvk-2防弹衣.png",
+      "godot_icon_path": "res://assets/Armor/Hvk-2防弹衣.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050005003": {
+      "item_id": "11050005003",
+      "name": "FS复合防弹衣",
+      "level": 5,
+      "max_durability": 105,
+      "icon_relative_path": "Armor/FS复合防弹衣.png",
+      "godot_icon_path": "res://assets/Armor/FS复合防弹衣.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050005004": {
+      "item_id": "11050005004",
+      "name": "重型突击背心",
+      "level": 5,
+      "max_durability": 125,
+      "icon_relative_path": "Armor/重型突击背心.png",
+      "godot_icon_path": "res://assets/Armor/重型突击背心.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050005007": {
+      "item_id": "11050005007",
+      "name": "赤枭重装突击背心",
+      "level": 5,
+      "max_durability": 105,
+      "icon_relative_path": "Armor/赤枭重装突击背心.png",
+      "godot_icon_path": "res://assets/Armor/赤枭重装突击背心.png",
+      "supplemental_source": true,
+      "source_urls": [
+        "https://orzice.com/v/info/p1388",
+        "https://m.ali213.net/news/gl2601/1741879.html"
+      ]
+    },
+    "11050006001": {
+      "item_id": "11050006001",
+      "name": "金刚防弹衣",
+      "level": 6,
+      "max_durability": 140,
+      "icon_relative_path": "Armor/金刚防弹衣.png",
+      "godot_icon_path": "res://assets/Armor/金刚防弹衣.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050006002": {
+      "item_id": "11050006002",
+      "name": "HA-2重型防弹衣",
+      "level": 6,
+      "max_durability": 115,
+      "icon_relative_path": "Armor/HA-2重型防弹衣.png",
+      "godot_icon_path": "res://assets/Armor/HA-2重型防弹衣.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050006003": {
+      "item_id": "11050006003",
+      "name": "特里克MAS2.0装甲",
+      "level": 6,
+      "max_durability": 125,
+      "icon_relative_path": "Armor/特里克MAS2.0装甲.png",
+      "godot_icon_path": "res://assets/Armor/特里克MAS2.0装甲.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    },
+    "11050006004": {
+      "item_id": "11050006004",
+      "name": "泰坦防弹装甲",
+      "level": 6,
+      "max_durability": 150,
+      "icon_relative_path": "Armor/泰坦防弹装甲.png",
+      "godot_icon_path": "res://assets/Armor/泰坦防弹装甲.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/armors.json?v=65089f0628197d53"
+      ]
+    }
+  },
+  "helmets": {
+    "11010001001": {
+      "item_id": "11010001001",
+      "name": "老式钢盔",
+      "level": 1,
+      "max_durability": 10,
+      "icon_relative_path": "Helmet/老式钢盔.png",
+      "godot_icon_path": "res://assets/Helmet/老式钢盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010001002": {
+      "item_id": "11010001002",
+      "name": "安保头盔",
+      "level": 1,
+      "max_durability": 10,
+      "icon_relative_path": "Helmet/安保头盔.png",
+      "godot_icon_path": "res://assets/Helmet/安保头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010001003": {
+      "item_id": "11010001003",
+      "name": "奔尼帽",
+      "level": 1,
+      "max_durability": 10,
+      "icon_relative_path": "Helmet/奔尼帽.png",
+      "godot_icon_path": "res://assets/Helmet/奔尼帽.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010001004": {
+      "item_id": "11010001004",
+      "name": "户外棒球帽",
+      "level": 1,
+      "max_durability": 12,
+      "icon_relative_path": "Helmet/户外棒球帽.png",
+      "godot_icon_path": "res://assets/Helmet/户外棒球帽.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010002001": {
+      "item_id": "11010002001",
+      "name": "复古摩托头盔",
+      "level": 2,
+      "max_durability": 18,
+      "icon_relative_path": "Helmet/复古摩托头盔.png",
+      "godot_icon_path": "res://assets/Helmet/复古摩托头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010002002": {
+      "item_id": "11010002002",
+      "name": "H01战术头盔",
+      "level": 2,
+      "max_durability": 12,
+      "icon_relative_path": "Helmet/H01战术头盔.png",
+      "godot_icon_path": "res://assets/Helmet/H01战术头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010002003": {
+      "item_id": "11010002003",
+      "name": "DRO战术头盔",
+      "level": 2,
+      "max_durability": 15,
+      "icon_relative_path": "Helmet/DRO战术头盔.png",
+      "godot_icon_path": "res://assets/Helmet/DRO战术头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010002004": {
+      "item_id": "11010002004",
+      "name": "MC防弹头盔",
+      "level": 2,
+      "max_durability": 20,
+      "icon_relative_path": "Helmet/MC防弹头盔.png",
+      "godot_icon_path": "res://assets/Helmet/MC防弹头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010003001": {
+      "item_id": "11010003001",
+      "name": "防暴头盔",
+      "level": 3,
+      "max_durability": 28,
+      "icon_relative_path": "Helmet/防暴头盔.png",
+      "godot_icon_path": "res://assets/Helmet/防暴头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010003002": {
+      "item_id": "11010003002",
+      "name": "H07战术头盔",
+      "level": 3,
+      "max_durability": 20,
+      "icon_relative_path": "Helmet/H07战术头盔.png",
+      "godot_icon_path": "res://assets/Helmet/H07战术头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010003003": {
+      "item_id": "11010003003",
+      "name": "DAS防弹头盔",
+      "level": 3,
+      "max_durability": 40,
+      "icon_relative_path": "Helmet/DAS防弹头盔.png",
+      "godot_icon_path": "res://assets/Helmet/DAS防弹头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010003004": {
+      "item_id": "11010003004",
+      "name": "MC201防弹头盔",
+      "level": 3,
+      "max_durability": 34,
+      "icon_relative_path": "Helmet/MC201防弹头盔.png",
+      "godot_icon_path": "res://assets/Helmet/MC201防弹头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010004001": {
+      "item_id": "11010004001",
+      "name": "D6战术头盔",
+      "level": 4,
+      "max_durability": 55,
+      "icon_relative_path": "Helmet/D6战术头盔.png",
+      "godot_icon_path": "res://assets/Helmet/D6战术头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010004002": {
+      "item_id": "11010004002",
+      "name": "MHS战术头盔",
+      "level": 4,
+      "max_durability": 30,
+      "icon_relative_path": "Helmet/MHS战术头盔.png",
+      "godot_icon_path": "res://assets/Helmet/MHS战术头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010004003": {
+      "item_id": "11010004003",
+      "name": "DICH训练头盔",
+      "level": 4,
+      "max_durability": 35,
+      "icon_relative_path": "Helmet/DICH训练头盔.png",
+      "godot_icon_path": "res://assets/Helmet/DICH训练头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010004004": {
+      "item_id": "11010004004",
+      "name": "GT1战术头盔",
+      "level": 4,
+      "max_durability": 48,
+      "icon_relative_path": "Helmet/GT1战术头盔.png",
+      "godot_icon_path": "res://assets/Helmet/GT1战术头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010005001": {
+      "item_id": "11010005001",
+      "name": "Mask-1铁壁头盔",
+      "level": 5,
+      "max_durability": 75,
+      "icon_relative_path": "Helmet/Mask-1铁壁头盔.png",
+      "godot_icon_path": "res://assets/Helmet/Mask-1铁壁头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010005002": {
+      "item_id": "11010005002",
+      "name": "H09防暴头盔",
+      "level": 5,
+      "max_durability": 45,
+      "icon_relative_path": "Helmet/H09防暴头盔.png",
+      "godot_icon_path": "res://assets/Helmet/H09防暴头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010005003": {
+      "item_id": "11010005003",
+      "name": "DICH-1战术头盔",
+      "level": 5,
+      "max_durability": 40,
+      "icon_relative_path": "Helmet/DICH-1战术头盔.png",
+      "godot_icon_path": "res://assets/Helmet/DICH-1战术头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010005004": {
+      "item_id": "11010005004",
+      "name": "GN重型头盔",
+      "level": 5,
+      "max_durability": 50,
+      "icon_relative_path": "Helmet/GN重型头盔.png",
+      "godot_icon_path": "res://assets/Helmet/GN重型头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010005009": {
+      "item_id": "11010005009",
+      "name": "GN重型夜视头盔",
+      "level": 5,
+      "max_durability": 50,
+      "icon_relative_path": "Helmet/GN重型夜视头盔.png",
+      "godot_icon_path": "res://assets/Helmet/GN重型夜视头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010005010": {
+      "item_id": "11010005010",
+      "name": "GN久战重型夜视头盔",
+      "level": 5,
+      "max_durability": 20,
+      "icon_relative_path": "Helmet/GN久战重型夜视头盔.png",
+      "godot_icon_path": "res://assets/Helmet/GN久战重型夜视头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010005011": {
+      "item_id": "11010005011",
+      "name": "赤枭装甲防弹面具",
+      "level": 5,
+      "max_durability": 75,
+      "icon_relative_path": "Helmet/赤枭装甲防弹面具.png",
+      "godot_icon_path": "res://assets/Helmet/赤枭装甲防弹面具.png",
+      "supplemental_source": true,
+      "source_urls": [
+        "https://orzice.com/v/info/p1387",
+        "https://m.ali213.net/news/gl2601/1741879.html"
+      ]
+    },
+    "11010006002": {
+      "item_id": "11010006002",
+      "name": "H70精英头盔",
+      "level": 6,
+      "max_durability": 55,
+      "icon_relative_path": "Helmet/H70精英头盔.png",
+      "godot_icon_path": "res://assets/Helmet/H70精英头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010006003": {
+      "item_id": "11010006003",
+      "name": "DICH-9重型头盔",
+      "level": 6,
+      "max_durability": 50,
+      "icon_relative_path": "Helmet/DICH-9重型头盔.png",
+      "godot_icon_path": "res://assets/Helmet/DICH-9重型头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010006004": {
+      "item_id": "11010006004",
+      "name": "GT5指挥官头盔",
+      "level": 6,
+      "max_durability": 60,
+      "icon_relative_path": "Helmet/GT5指挥官头盔.png",
+      "godot_icon_path": "res://assets/Helmet/GT5指挥官头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    },
+    "11010006007": {
+      "item_id": "11010006007",
+      "name": "H70夜视精英头盔",
+      "level": 6,
+      "max_durability": 55,
+      "icon_relative_path": "Helmet/H70夜视精英头盔.png",
+      "godot_icon_path": "res://assets/Helmet/H70夜视精英头盔.png",
+      "supplemental_source": false,
+      "source_urls": [
+        "https://dfttk.com/data/v3/combat/defense/helmets.json?v=65089f0628197d53"
+      ]
+    }
+  }
+}

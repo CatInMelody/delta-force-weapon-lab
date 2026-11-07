@@ -1,0 +1,177 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Code/data_update.gd" id="1"]
+[ext_resource type="Script" path="res://Code/program_update.gd" id="2"]
+
+[node name="Update" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Surface" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="Surface"]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Content" type="VBoxContainer" parent="Surface/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Version" type="Label" parent="Surface/Margin/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "当前版本：V1.1.0\n当前赛季S12"
+horizontal_alignment = 1
+
+[node name="DataVersion" type="Label" parent="Surface/Margin/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.43, 0.9, 1, 1)
+text = "数据版本：1.0.0（1）"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="Surface/Margin/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.61, 0.67, 0.83, 1)
+text = "更新枪械、弹药与防具数据，无需重新下载完整程序。\n安装后重新加载生效，个人方案与标题会保留。"
+autowrap_mode = 3
+horizontal_alignment = 1
+
+[node name="Actions" type="HBoxContainer" parent="Surface/Margin/Content"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Check" type="Button" parent="Surface/Margin/Content/Actions"]
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "检查数据更新"
+
+[node name="Download" type="Button" parent="Surface/Margin/Content/Actions"]
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+disabled = true
+text = "下载数据更新"
+
+[node name="Reload" type="Button" parent="Surface/Margin/Content"]
+visible = false
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+text = "重新加载数据"
+
+[node name="Status" type="Label" parent="Surface/Margin/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "点击检查数据更新。"
+autowrap_mode = 3
+horizontal_alignment = 1
+max_lines_visible = 4
+
+[node name="Notes" type="Label" parent="Surface/Margin/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.61, 0.67, 0.83, 1)
+autowrap_mode = 3
+horizontal_alignment = 1
+max_lines_visible = 4
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+use_threads = true
+timeout = 15.0
+body_size_limit = 8388608
+
+[node name="Separator" type="HSeparator" parent="Surface/Margin/Content"]
+layout_mode = 2
+
+[node name="Program" type="VBoxContainer" parent="Surface/Margin/Content"]
+layout_mode = 2
+theme_override_constants/separation = 10
+script = ExtResource("2")
+
+[node name="Title" type="Label" parent="Surface/Margin/Content/Program"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.43, 0.9, 1, 1)
+text = "程序更新 · GitHub"
+horizontal_alignment = 1
+
+[node name="Actions" type="HBoxContainer" parent="Surface/Margin/Content/Program"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Check" type="Button" parent="Surface/Margin/Content/Program/Actions"]
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "检查程序更新"
+
+[node name="Download" type="Button" parent="Surface/Margin/Content/Program/Actions"]
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+disabled = true
+text = "下载新版程序"
+
+[node name="Status" type="Label" parent="Surface/Margin/Content/Program"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "新增功能与计算逻辑通过程序更新，数值调整通过上方数据更新。"
+autowrap_mode = 3
+horizontal_alignment = 1
+max_lines_visible = 3
+
+[node name="Links" type="HBoxContainer" parent="Surface/Margin/Content/Program"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Source" type="LinkButton" parent="Surface/Margin/Content/Program/Links"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+mouse_default_cursor_shape = 2
+text = "项目主页 / 手动下载"
+
+[node name="Licenses" type="LinkButton" parent="Surface/Margin/Content/Program/Links"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+mouse_default_cursor_shape = 2
+text = "Godot 与第三方许可"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="Surface/Margin/Content/Program"]
+use_threads = true
+timeout = 15.0
+body_size_limit = 1048576
+
+[node name="LicenseDialog" type="AcceptDialog" parent="Surface/Margin/Content/Program"]
+title = "Godot 与第三方许可"
+size = Vector2i(800, 520)
+
+[node name="Content" type="TextEdit" parent="Surface/Margin/Content/Program/LicenseDialog"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 788.0
+offset_bottom = 464.0
+editable = false
+wrap_mode = 1
+

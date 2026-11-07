@@ -1,0 +1,638 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://assets/UI/aurora_theme.tres" id="aurora_theme"]
+
+[ext_resource type="Theme" path="res://assets/UI/icon_button_theme.tres" id="theme_icon"]
+[ext_resource type="Script" path="res://Code/icon_feedback.gd" id="script_feedback"]
+
+[ext_resource type="PackedScene" path="res://Scene/stat_refresh.tscn" id="5_refresh"]
+
+[ext_resource type="Script" path="res://Code/compare.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/AR/M7.png" id="2_m7"]
+[ext_resource type="Texture2D" path="res://assets/AR/M4A1.png" id="3_m4"]
+[ext_resource type="PackedScene" path="res://Scene/icon_picker.tscn" id="4_picker"]
+
+[sub_resource type="StyleBoxFlat" id="Style_card"]
+bg_color = Color(0.18, 0.20, 0.36, 0.70)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.64, 0.69, 1, 0.16)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_left = 18
+corner_radius_bottom_right = 18
+corner_detail = 12
+
+
+[sub_resource type="StyleBoxFlat" id="Style_page"]
+bg_color = Color(0.10, 0.12, 0.26, 0.40)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.64, 0.69, 1, 0.16)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_left = 18
+corner_radius_bottom_right = 18
+corner_detail = 12
+
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxFlat" id="Style_metrics"]
+bg_color = Color(0.18, 0.20, 0.36, 0.48)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.64, 0.69, 1, 0.16)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_left = 18
+corner_radius_bottom_right = 18
+corner_detail = 12
+
+content_margin_left = 12.0
+content_margin_top = 13.0
+content_margin_right = 12.0
+content_margin_bottom = 13.0
+
+[node name="Compare" type="PanelContainer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("Style_page")
+script = ExtResource("1_script")
+theme = ExtResource("aurora_theme")
+
+[node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="Header" type="HBoxContainer" parent="Content"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Content/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+text = "枪械对比"
+
+[node name="Legend" type="Label" parent="Content/Header"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "红色：秒伤更高 / BTK 更少"
+visible = false
+
+[node name="Conditions" type="Label" parent="Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "GN重型头盔（5级 / 耐久50） · 重型突击背心（5级 / 耐久125） · 敌方100血 · 每种方案满耐久"
+text_overrun_behavior = 3
+
+[node name="TableScroll" type="ScrollContainer" parent="Content"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 1
+
+[node name="Table" type="HBoxContainer" parent="Content/TableScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="MetricLabels" type="PanelContainer" parent="Content/TableScroll/Table"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("Style_metrics")
+
+[node name="Column" type="VBoxContainer" parent="Content/TableScroll/Table/MetricLabels"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HeaderSpacer" type="Control" parent="Content/TableScroll/Table/MetricLabels/Column"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Metrics" type="VBoxContainer" parent="Content/TableScroll/Table/MetricLabels/Column"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="FireRate" type="Label" parent="Content/TableScroll/Table/MetricLabels/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "射速"
+vertical_alignment = 1
+tooltip_text = "发/分钟"
+
+[node name="FleshDps" type="Label" parent="Content/TableScroll/Table/MetricLabels/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "秒肉伤"
+vertical_alignment = 1
+
+[node name="ArmorDps" type="Label" parent="Content/TableScroll/Table/MetricLabels/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "秒甲伤"
+vertical_alignment = 1
+
+[node name="Head" type="Label" parent="Content/TableScroll/Table/MetricLabels/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "全头"
+vertical_alignment = 1
+
+[node name="Chest" type="Label" parent="Content/TableScroll/Table/MetricLabels/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "全胸"
+vertical_alignment = 1
+
+[node name="Abdomen" type="Label" parent="Content/TableScroll/Table/MetricLabels/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "全腹"
+vertical_alignment = 1
+
+[node name="Mixed1" type="Label" parent="Content/TableScroll/Table/MetricLabels/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "马一枪手"
+vertical_alignment = 1
+
+[node name="Mixed2" type="Label" parent="Content/TableScroll/Table/MetricLabels/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "马二枪手"
+vertical_alignment = 1
+
+[node name="Mixed3" type="Label" parent="Content/TableScroll/Table/MetricLabels/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "马三枪手"
+vertical_alignment = 1
+
+[node name="Arms" type="Label" parent="Content/TableScroll/Table/MetricLabels/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "全手"
+vertical_alignment = 1
+
+[node name="LeftWeapon" type="PanelContainer" parent="Content/TableScroll/Table"]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("Style_card")
+
+[node name="Margin" type="MarginContainer" parent="Content/TableScroll/Table/LeftWeapon"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Column" type="VBoxContainer" parent="Content/TableScroll/Table/LeftWeapon/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="WeaponHeader" type="VBoxContainer" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="WeaponName" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/WeaponHeader"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "M7 ▾"
+horizontal_alignment = 1
+
+[node name="WeaponButton" type="Button" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/WeaponHeader"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+tooltip_text = "点击图标选择武器"
+flat = false
+theme = ExtResource("theme_icon")
+script = ExtResource("script_feedback")
+
+[node name="Image" type="TextureRect" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/WeaponHeader/WeaponButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_m7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ammo" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/WeaponHeader"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "默认5级弹，无5级则4级"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Metrics" type="VBoxContainer" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="FireRate" type="HBoxContainer" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/FireRate"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/FireRate"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "发/分钟"
+
+[node name="FleshDps" type="HBoxContainer" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/FleshDps"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="ArmorDps" type="HBoxContainer" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/ArmorDps"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Head" type="HBoxContainer" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/Head"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/Head"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "枪"
+
+[node name="Chest" type="HBoxContainer" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/Chest"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/Chest"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "枪"
+
+[node name="Abdomen" type="HBoxContainer" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/Abdomen"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/Abdomen"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "枪"
+
+[node name="Mixed1" type="HBoxContainer" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/Mixed1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/Mixed1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "枪"
+
+[node name="Mixed2" type="HBoxContainer" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/Mixed2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/Mixed2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "枪"
+
+[node name="Mixed3" type="HBoxContainer" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/Mixed3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/Mixed3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "枪"
+
+[node name="Arms" type="HBoxContainer" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/Arms"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="Content/TableScroll/Table/LeftWeapon/Margin/Column/Metrics/Arms"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "枪"
+
+[node name="RightWeapon" type="PanelContainer" parent="Content/TableScroll/Table"]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("Style_card")
+
+[node name="Margin" type="MarginContainer" parent="Content/TableScroll/Table/RightWeapon"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Column" type="VBoxContainer" parent="Content/TableScroll/Table/RightWeapon/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="WeaponHeader" type="VBoxContainer" parent="Content/TableScroll/Table/RightWeapon/Margin/Column"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="WeaponName" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/WeaponHeader"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "M4A1 ▾"
+horizontal_alignment = 1
+
+[node name="WeaponButton" type="Button" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/WeaponHeader"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+tooltip_text = "点击图标选择武器"
+flat = false
+theme = ExtResource("theme_icon")
+script = ExtResource("script_feedback")
+
+[node name="Image" type="TextureRect" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/WeaponHeader/WeaponButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_m4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ammo" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/WeaponHeader"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "默认5级弹，无5级则4级"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Metrics" type="VBoxContainer" parent="Content/TableScroll/Table/RightWeapon/Margin/Column"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="FireRate" type="HBoxContainer" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/FireRate"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/FireRate"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "发/分钟"
+
+[node name="FleshDps" type="HBoxContainer" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/FleshDps"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="ArmorDps" type="HBoxContainer" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/ArmorDps"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Head" type="HBoxContainer" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/Head"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/Head"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "枪"
+
+[node name="Chest" type="HBoxContainer" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/Chest"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/Chest"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "枪"
+
+[node name="Abdomen" type="HBoxContainer" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/Abdomen"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/Abdomen"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "枪"
+
+[node name="Mixed1" type="HBoxContainer" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/Mixed1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/Mixed1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "枪"
+
+[node name="Mixed2" type="HBoxContainer" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/Mixed2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/Mixed2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "枪"
+
+[node name="Mixed3" type="HBoxContainer" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/Mixed3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/Mixed3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "枪"
+
+[node name="Arms" type="HBoxContainer" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+alignment = 1
+
+[node name="Value" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/Arms"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "—"
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="Content/TableScroll/Table/RightWeapon/Margin/Column/Metrics/Arms"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "枪"
+
+[node name="ComparePopupLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="IconPicker" parent="ComparePopupLayer" instance=ExtResource("4_picker")]
+visible = false
+
+[node name="RefreshLayer" type="CanvasLayer" parent="."]
+layer = 8
+
+[node name="ValuesRefresh" parent="RefreshLayer" instance=ExtResource("5_refresh")]
+
+[editable path="ComparePopupLayer/IconPicker"]
+

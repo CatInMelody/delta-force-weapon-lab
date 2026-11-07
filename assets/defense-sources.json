@@ -1,0 +1,1042 @@
+{
+  "game": "三角洲行动",
+  "collected_at": "2026-10-24",
+  "scope": "护甲与头盔基础物品图片，每件装备一个原图；包含夜视头盔、奔尼帽、户外棒球帽及赤枭头甲，不按耐久状态重复保存。",
+  "image_source": "腾讯 playerhub.df.qq.com 公开 CDN",
+  "catalog_sources": [
+    "https://dfttk.com/data/v3/combat/defense/armors.json",
+    "https://dfttk.com/data/v3/combat/defense/helmets.json",
+    "https://dfttk.com/data/v3/locales/zh-CN/items.json",
+    "https://github.com/jiansenc/DeltaForceData/blob/main/public/json/protect/armor.json",
+    "https://github.com/jiansenc/DeltaForceData/blob/main/public/json/protect/helmet.json",
+    "https://sjzwiki.com/game/armor",
+    "https://sjzwiki.com/game/helmets",
+    "https://orzice.com/v/info/p1388",
+    "https://news.17173.com/content/01232026/233446084.shtml"
+  ],
+  "counts": {
+    "Armor": 26,
+    "Helmet": 27
+  },
+  "total": 53,
+  "errors": [],
+  "items": [
+    {
+      "item_id": "11050001001",
+      "category": "Armor",
+      "name": "摩托马甲",
+      "source_name": "摩托马甲",
+      "aliases": [
+        "摩托马甲"
+      ],
+      "level": 1,
+      "relative_path": "Armor/摩托马甲.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050001001.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 336,
+      "height": 432,
+      "transparent": true,
+      "bytes": 172927,
+      "sha256": "1db4e68ef0c94408378446d2f5f0ff7ce5672b4cd877c79b588f3c9798e26a26"
+    },
+    {
+      "item_id": "11050001002",
+      "category": "Armor",
+      "name": "安保防弹衣",
+      "source_name": "安保防弹衣",
+      "aliases": [
+        "安保防弹衣"
+      ],
+      "level": 1,
+      "relative_path": "Armor/安保防弹衣.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050001002.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 368,
+      "height": 432,
+      "transparent": true,
+      "bytes": 168716,
+      "sha256": "f9e05bd677f82e5e82429a1926d9c398ebdc4ce2c4bd560639687cf07b5367ca"
+    },
+    {
+      "item_id": "11050001003",
+      "category": "Armor",
+      "name": "尼龙防弹衣",
+      "source_name": "尼龙防弹衣",
+      "aliases": [
+        "尼龙防弹衣"
+      ],
+      "level": 1,
+      "relative_path": "Armor/尼龙防弹衣.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050001003.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 336,
+      "height": 432,
+      "transparent": true,
+      "bytes": 157344,
+      "sha256": "b6c75873d1c4a6c23c1b9590fdb9137a5dabdb4bf5052f9bcdaa46f343f2c34b"
+    },
+    {
+      "item_id": "11050001004",
+      "category": "Armor",
+      "name": "轻型防弹衣",
+      "source_name": "轻型防弹衣",
+      "aliases": [
+        "轻型防弹衣"
+      ],
+      "level": 1,
+      "relative_path": "Armor/轻型防弹衣.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050001004.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 336,
+      "height": 432,
+      "transparent": true,
+      "bytes": 126722,
+      "sha256": "8de149e9f6927ea4c5414d73f648e88afedb2b59b20320ca0035ee30fb0102cf"
+    },
+    {
+      "item_id": "11050002001",
+      "category": "Armor",
+      "name": "简易防刺服",
+      "source_name": "简易防刺服",
+      "aliases": [
+        "简易防刺服"
+      ],
+      "level": 2,
+      "relative_path": "Armor/简易防刺服.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050002001.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 336,
+      "height": 432,
+      "transparent": true,
+      "bytes": 161264,
+      "sha256": "e6af6352f6a726c8f829cf8fad043b20ed9ce5d1315e8613b4b6cffd4189229f"
+    },
+    {
+      "item_id": "11050002002",
+      "category": "Armor",
+      "name": "HT战术背心",
+      "source_name": "HT战术背心",
+      "aliases": [
+        "HT战术背心"
+      ],
+      "level": 2,
+      "relative_path": "Armor/HT战术背心.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050002002.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 384,
+      "height": 432,
+      "transparent": true,
+      "bytes": 171587,
+      "sha256": "fe6cccbdc9c3f8854719c2e0e1fc1df621a43e7deb528f9bf3051b1631c70645"
+    },
+    {
+      "item_id": "11050002003",
+      "category": "Armor",
+      "name": "TG战术防弹衣",
+      "source_name": "TG战术防弹衣",
+      "aliases": [
+        "TG战术防弹衣",
+        "UTA猛禽防弹护甲"
+      ],
+      "level": 2,
+      "relative_path": "Armor/TG战术防弹衣.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050002003.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 368,
+      "height": 432,
+      "transparent": true,
+      "bytes": 155667,
+      "sha256": "73ec5b4ef7d4180bdae6ba5b738bd45c76da2cdf0406a23fe50d2f675b9ab350"
+    },
+    {
+      "item_id": "11050002004",
+      "category": "Armor",
+      "name": "通用战术背心",
+      "source_name": "通用战术背心",
+      "aliases": [
+        "通用战术背心",
+        "通用野蜂战术装甲"
+      ],
+      "level": 2,
+      "relative_path": "Armor/通用战术背心.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050002004.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 336,
+      "height": 432,
+      "transparent": true,
+      "bytes": 171764,
+      "sha256": "21f0adb5b9fb2fdc2c6016a040e13f550e3b421754c18e2c7682daae3beb89bf"
+    },
+    {
+      "item_id": "11050003001",
+      "category": "Armor",
+      "name": "制式防弹背心",
+      "source_name": "制式防弹背心",
+      "aliases": [
+        "制式防弹背心"
+      ],
+      "level": 3,
+      "relative_path": "Armor/制式防弹背心.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050003001.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 384,
+      "height": 432,
+      "transparent": true,
+      "bytes": 165093,
+      "sha256": "69c743d890f7c67d2e1c62a0231467b2c7c88cc01e90b580e7f485c14f6347f9"
+    },
+    {
+      "item_id": "11050003002",
+      "category": "Armor",
+      "name": "Hvk快拆防弹衣",
+      "source_name": "Hvk快拆防弹衣",
+      "aliases": [
+        "Hvk快拆防弹衣"
+      ],
+      "level": 3,
+      "relative_path": "Armor/Hvk快拆防弹衣.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050003002.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 368,
+      "height": 512,
+      "transparent": true,
+      "bytes": 295929,
+      "sha256": "f7e8b34bce15b63ccd2accf7dc003bbdcb961fecd2b958718faffa80ed7d40a2"
+    },
+    {
+      "item_id": "11050003003",
+      "category": "Armor",
+      "name": "TG-H防弹衣",
+      "source_name": "TG-H防弹衣",
+      "aliases": [
+        "TG-H防弹衣"
+      ],
+      "level": 3,
+      "relative_path": "Armor/TG-H防弹衣.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050003003.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 480,
+      "height": 864,
+      "transparent": true,
+      "bytes": 712185,
+      "sha256": "5a221c1a4f0b9bd8857961d188ffde333cb7dea09a867fc9ec376307248b21a8"
+    },
+    {
+      "item_id": "11050003004",
+      "category": "Armor",
+      "name": "射手战术背心",
+      "source_name": "射手战术背心",
+      "aliases": [
+        "射手战术背心"
+      ],
+      "level": 3,
+      "relative_path": "Armor/射手战术背心.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050003004.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 496,
+      "height": 864,
+      "transparent": true,
+      "bytes": 628746,
+      "sha256": "291fb7cc72dffd7493896d438d04d56b687ad42563d7f70ef5e63bb6a5f22ddf"
+    },
+    {
+      "item_id": "11050004001",
+      "category": "Armor",
+      "name": "武士防弹背心",
+      "source_name": "武士防弹背心",
+      "aliases": [
+        "武士防弹背心"
+      ],
+      "level": 4,
+      "relative_path": "Armor/武士防弹背心.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050004001.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 336,
+      "height": 432,
+      "transparent": true,
+      "bytes": 165125,
+      "sha256": "224e1b5efb0cd9c03843110cfcc36077bba8e01926c18b24ffe288b14a461b48"
+    },
+    {
+      "item_id": "11050004002",
+      "category": "Armor",
+      "name": "突击手防弹背心",
+      "source_name": "突击手防弹背心",
+      "aliases": [
+        "突击手防弹背心",
+        "野蜂防弹背心"
+      ],
+      "level": 4,
+      "relative_path": "Armor/突击手防弹背心.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050004002.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 512,
+      "height": 864,
+      "transparent": true,
+      "bytes": 671710,
+      "sha256": "359a05984b4cc7ea3165cfff1a432d52a132aa038a63507556768d749d2a29dd"
+    },
+    {
+      "item_id": "11050004003",
+      "category": "Armor",
+      "name": "DT-AVS防弹衣",
+      "source_name": "DT-AVS防弹衣",
+      "aliases": [
+        "DT-AVS防弹衣"
+      ],
+      "level": 4,
+      "relative_path": "Armor/DT-AVS防弹衣.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050004003.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 496,
+      "height": 864,
+      "transparent": true,
+      "bytes": 673623,
+      "sha256": "9ac39c3bd0d3bc7b422a537bb3ff919b5c05cc58e779a398047812963106d401"
+    },
+    {
+      "item_id": "11050004004",
+      "category": "Armor",
+      "name": "MK-2战术背心",
+      "source_name": "MK-2战术背心",
+      "aliases": [
+        "MK-2战术背心"
+      ],
+      "level": 4,
+      "relative_path": "Armor/MK-2战术背心.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050004004.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 528,
+      "height": 864,
+      "transparent": true,
+      "bytes": 808998,
+      "sha256": "e75a8c00e7f2c34fade86170045b89a1b1d69c7e2f8a3efd75e56b8bd2bb38f8"
+    },
+    {
+      "item_id": "11050004007",
+      "category": "Armor",
+      "name": "HMP特勤防弹衣",
+      "source_name": "HMP特勤防弹衣",
+      "aliases": [
+        "HMP特勤防弹衣"
+      ],
+      "level": 4,
+      "relative_path": "Armor/HMP特勤防弹衣.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050004007.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 400,
+      "height": 640,
+      "transparent": true,
+      "bytes": 323301,
+      "sha256": "0f60aed6da910cd353da622cae5f8cc4ccacc5fa4ee6c5514959d7fe479124fa"
+    },
+    {
+      "item_id": "11050005001",
+      "category": "Armor",
+      "name": "精英防弹背心",
+      "source_name": "精英防弹背心",
+      "aliases": [
+        "精英防弹背心"
+      ],
+      "level": 5,
+      "relative_path": "Armor/精英防弹背心.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050005001.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 496,
+      "height": 864,
+      "transparent": true,
+      "bytes": 679326,
+      "sha256": "3b274fbfc3527bbfd033b9a8f7cf83f16736e84c6266111927a6d9628835db0b"
+    },
+    {
+      "item_id": "11050005002",
+      "category": "Armor",
+      "name": "Hvk-2防弹衣",
+      "source_name": "Hvk-2防弹衣",
+      "aliases": [
+        "Hvk-2防弹衣"
+      ],
+      "level": 5,
+      "relative_path": "Armor/Hvk-2防弹衣.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050005002.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 832,
+      "height": 864,
+      "transparent": true,
+      "bytes": 831097,
+      "sha256": "3ed81496e57ea497cbb57edb07f8bce4c06929c5269408fc20c5e2754886b16c"
+    },
+    {
+      "item_id": "11050005003",
+      "category": "Armor",
+      "name": "FS复合防弹衣",
+      "source_name": "FS复合防弹衣",
+      "aliases": [
+        "FS复合防弹衣"
+      ],
+      "level": 5,
+      "relative_path": "Armor/FS复合防弹衣.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050005003.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 544,
+      "height": 864,
+      "transparent": true,
+      "bytes": 795075,
+      "sha256": "be34dbd9816d1856101afa3eee4f3cd0e1eff11ed07c13449f28e0fbd8612588"
+    },
+    {
+      "item_id": "11050005004",
+      "category": "Armor",
+      "name": "重型突击背心",
+      "source_name": "重型突击背心",
+      "aliases": [
+        "重型突击背心"
+      ],
+      "level": 5,
+      "relative_path": "Armor/重型突击背心.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050005004.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 832,
+      "height": 864,
+      "transparent": true,
+      "bytes": 888257,
+      "sha256": "6b559c84d7c8a0e946749e4de03234cb413e6232e9f7078e130c2802e8f8d97c"
+    },
+    {
+      "item_id": "11050005007",
+      "category": "Armor",
+      "name": "赤枭重装突击背心",
+      "source_name": "赤枭重装突击背心",
+      "aliases": [
+        "赤枭重装突击背心"
+      ],
+      "level": 5,
+      "relative_path": "Armor/赤枭重装突击背心.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050005007.png",
+      "catalog_url": "https://dfttk.com/data/v3/locales/zh-CN/items.json",
+      "supplemental": true,
+      "width": 704,
+      "height": 864,
+      "transparent": true,
+      "bytes": 812827,
+      "sha256": "c0201284a891f62da73d7a3d76c8ba7dff28aec5f13decda7e72048956e3df4b",
+      "verification_url": "https://orzice.com/v/info/p1388"
+    },
+    {
+      "item_id": "11050006001",
+      "category": "Armor",
+      "name": "金刚防弹衣",
+      "source_name": "金刚防弹衣",
+      "aliases": [
+        "金刚防弹衣"
+      ],
+      "level": 6,
+      "relative_path": "Armor/金刚防弹衣.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050006001.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 764,
+      "height": 832,
+      "transparent": true,
+      "bytes": 781210,
+      "sha256": "206f9e2fb69f0878d2ca613799f2a5529aceb49e09c876e98bd051c9d75e7d80"
+    },
+    {
+      "item_id": "11050006002",
+      "category": "Armor",
+      "name": "HA-2重型防弹衣",
+      "source_name": "HA-2重型防弹衣",
+      "aliases": [
+        "HA-2重型防弹衣",
+        "HA-2防弹装甲"
+      ],
+      "level": 6,
+      "relative_path": "Armor/HA-2重型防弹衣.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050006002.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 736,
+      "height": 864,
+      "transparent": true,
+      "bytes": 713728,
+      "sha256": "3c8ae7bc2e06e5eaf11d6b787c3e1340d9b2c55b2c5d56c81c31c604a1d45795"
+    },
+    {
+      "item_id": "11050006003",
+      "category": "Armor",
+      "name": "特里克MAS2.0装甲",
+      "source_name": "特里克MAS2.0装甲",
+      "aliases": [
+        "特里克MAS2.0装甲"
+      ],
+      "level": 6,
+      "relative_path": "Armor/特里克MAS2.0装甲.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050006003.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 736,
+      "height": 864,
+      "transparent": true,
+      "bytes": 746174,
+      "sha256": "e2be51f74fdd60ed18d3dc29f907b7cc60639bcba98fb6ee9b35bc86e1f661a4"
+    },
+    {
+      "item_id": "11050006004",
+      "category": "Armor",
+      "name": "泰坦防弹装甲",
+      "source_name": "泰坦防弹装甲",
+      "aliases": [
+        "泰坦防弹装甲",
+        "犀牛重型防弹衣"
+      ],
+      "level": 6,
+      "relative_path": "Armor/泰坦防弹装甲.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11050006004.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/armors.json",
+      "supplemental": false,
+      "width": 672,
+      "height": 864,
+      "transparent": true,
+      "bytes": 644808,
+      "sha256": "7da504bae39a207c47478400bb63a979efaa7e3e7660232db084fc72cbfd5d4f"
+    },
+    {
+      "item_id": "11010001001",
+      "category": "Helmet",
+      "name": "老式钢盔",
+      "source_name": "老式钢盔",
+      "aliases": [
+        "老式钢盔"
+      ],
+      "level": 1,
+      "relative_path": "Helmet/老式钢盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010001001.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 65361,
+      "sha256": "55d90a1e30a8beb75c36df974661e9d07282b8a4f722153935b08c0f12fbad6c"
+    },
+    {
+      "item_id": "11010001002",
+      "category": "Helmet",
+      "name": "安保头盔",
+      "source_name": "安保头盔",
+      "aliases": [
+        "安保头盔"
+      ],
+      "level": 1,
+      "relative_path": "Helmet/安保头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010001002.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 60394,
+      "sha256": "720a07f6555973fe47c0e1f4568a6f7dddb4b84782762aa03119b7cf214b5237"
+    },
+    {
+      "item_id": "11010001003",
+      "category": "Helmet",
+      "name": "奔尼帽",
+      "source_name": "奔尼帽",
+      "aliases": [
+        "奔尼帽"
+      ],
+      "level": 1,
+      "relative_path": "Helmet/奔尼帽.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010001003.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 58627,
+      "sha256": "4cf2a603e906d4fb6d655e90b5bf545755700bcfca85c940df031a971d581f5a"
+    },
+    {
+      "item_id": "11010001004",
+      "category": "Helmet",
+      "name": "户外棒球帽",
+      "source_name": "户外棒球帽",
+      "aliases": [
+        "户外棒球帽"
+      ],
+      "level": 1,
+      "relative_path": "Helmet/户外棒球帽.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010001004.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 76973,
+      "sha256": "e0caf7685d9dd6d8214f57f83a637d9f00d25d7224e00559d1510169c710acfa"
+    },
+    {
+      "item_id": "11010002001",
+      "category": "Helmet",
+      "name": "复古摩托头盔",
+      "source_name": "复古摩托头盔",
+      "aliases": [
+        "复古摩托头盔"
+      ],
+      "level": 2,
+      "relative_path": "Helmet/复古摩托头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010002001.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 64733,
+      "sha256": "1e497ca2958e846ad38324a8e5cc564ee898c30b33ed11d710105a89c7d3e72d"
+    },
+    {
+      "item_id": "11010002002",
+      "category": "Helmet",
+      "name": "H01战术头盔",
+      "source_name": "H01 战术头盔",
+      "aliases": [
+        "H01 战术头盔"
+      ],
+      "level": 2,
+      "relative_path": "Helmet/H01战术头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010002002.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 94503,
+      "sha256": "4a7fcc9ad529e31649b2b342b1ac5ed75fc88871947edb57c30fdb48fe816d27"
+    },
+    {
+      "item_id": "11010002003",
+      "category": "Helmet",
+      "name": "DRO战术头盔",
+      "source_name": "DRO 战术头盔",
+      "aliases": [
+        "DRO 战术头盔"
+      ],
+      "level": 2,
+      "relative_path": "Helmet/DRO战术头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010002003.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 57292,
+      "sha256": "6199b396dfdb0bab2140d3ff2c60aba6660462ec2d811903ecd1b18f9774a5b9"
+    },
+    {
+      "item_id": "11010002004",
+      "category": "Helmet",
+      "name": "MC防弹头盔",
+      "source_name": "MC 防弹头盔",
+      "aliases": [
+        "MC 防弹头盔",
+        "MC防弹头盔"
+      ],
+      "level": 2,
+      "relative_path": "Helmet/MC防弹头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010002004.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 87626,
+      "sha256": "53708c259e792782accbc2104ad47ccc9040b020893328f154513805030eae11"
+    },
+    {
+      "item_id": "11010003001",
+      "category": "Helmet",
+      "name": "防暴头盔",
+      "source_name": "防暴头盔",
+      "aliases": [
+        "防暴头盔"
+      ],
+      "level": 3,
+      "relative_path": "Helmet/防暴头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010003001.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 71788,
+      "sha256": "348b8f1d2ee230f1012a70f3debfcc4b2f24531f81a1bc173b3e94264f2d4fbc"
+    },
+    {
+      "item_id": "11010003002",
+      "category": "Helmet",
+      "name": "H07战术头盔",
+      "source_name": "H07 战术头盔",
+      "aliases": [
+        "H07 战术头盔"
+      ],
+      "level": 3,
+      "relative_path": "Helmet/H07战术头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010003002.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 93392,
+      "sha256": "52c0ce4a7adaab4dffa2f57dd23e562725dc307ee06e5ef2dcf3d7ce812dd5e1"
+    },
+    {
+      "item_id": "11010003003",
+      "category": "Helmet",
+      "name": "DAS防弹头盔",
+      "source_name": "DAS 防弹头盔",
+      "aliases": [
+        "DAS 防弹头盔",
+        "通用獾式战术头盔"
+      ],
+      "level": 3,
+      "relative_path": "Helmet/DAS防弹头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010003003.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 93521,
+      "sha256": "16504226b1aa1dbccd3d04eda913f12b761df237b36f21c8dbb411b3424ebe36"
+    },
+    {
+      "item_id": "11010003004",
+      "category": "Helmet",
+      "name": "MC201防弹头盔",
+      "source_name": "MC201 防弹头盔",
+      "aliases": [
+        "MC201 头盔",
+        "MC201 防弹头盔"
+      ],
+      "level": 3,
+      "relative_path": "Helmet/MC201防弹头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010003004.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 99775,
+      "sha256": "13ee80ce779f7f1e62d9e2d6f4e4ffa79c02d91402306753aea3a118877eaa01"
+    },
+    {
+      "item_id": "11010004001",
+      "category": "Helmet",
+      "name": "D6战术头盔",
+      "source_name": "D6 战术头盔",
+      "aliases": [
+        "D6 战术头盔"
+      ],
+      "level": 4,
+      "relative_path": "Helmet/D6战术头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010004001.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 84610,
+      "sha256": "3535a48a23b619733ec9e1d54e08783702a039acaf115c408c88635838377880"
+    },
+    {
+      "item_id": "11010004002",
+      "category": "Helmet",
+      "name": "MHS战术头盔",
+      "source_name": "MHS 战术头盔",
+      "aliases": [
+        "MHS 战术头盔"
+      ],
+      "level": 4,
+      "relative_path": "Helmet/MHS战术头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010004002.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 89764,
+      "sha256": "af48d51a64a2c963d1fce7633a85506c445b1d31b736bc5af470a39c1008a067"
+    },
+    {
+      "item_id": "11010004003",
+      "category": "Helmet",
+      "name": "DICH训练头盔",
+      "source_name": "DICH 训练头盔",
+      "aliases": [
+        "DICH 训练头盔"
+      ],
+      "level": 4,
+      "relative_path": "Helmet/DICH训练头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010004003.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 96391,
+      "sha256": "3205a0f0cebf30e65f91657137657afe9496efb22e826862d1834a16acd7003f"
+    },
+    {
+      "item_id": "11010004004",
+      "category": "Helmet",
+      "name": "GT1战术头盔",
+      "source_name": "GT1 战术头盔",
+      "aliases": [
+        "GT1 战术头盔"
+      ],
+      "level": 4,
+      "relative_path": "Helmet/GT1战术头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010004004.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 352,
+      "height": 336,
+      "transparent": true,
+      "bytes": 113631,
+      "sha256": "619f7e2e2ff0a11597aceaee264367cc2d277c8eb4604ff49d59486dc48c430a"
+    },
+    {
+      "item_id": "11010005001",
+      "category": "Helmet",
+      "name": "Mask-1铁壁头盔",
+      "source_name": "Mask-1铁壁头盔",
+      "aliases": [
+        "Mask-1铁壁头盔"
+      ],
+      "level": 5,
+      "relative_path": "Helmet/Mask-1铁壁头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010005001.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 104640,
+      "sha256": "0ba85f60be6dbdb803054e910fa467131ffef603b8c3705e8918a0ec621ba640"
+    },
+    {
+      "item_id": "11010005002",
+      "category": "Helmet",
+      "name": "H09防暴头盔",
+      "source_name": "H09 防暴头盔",
+      "aliases": [
+        "H09 防暴头盔"
+      ],
+      "level": 5,
+      "relative_path": "Helmet/H09防暴头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010005002.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 115302,
+      "sha256": "11695f77d419f67da440ed29cf19e7126f5fdaa6592c1ae20339fbd620a32006"
+    },
+    {
+      "item_id": "11010005003",
+      "category": "Helmet",
+      "name": "DICH-1战术头盔",
+      "source_name": "DICH-1战术头盔",
+      "aliases": [
+        "DICH-1战术头盔"
+      ],
+      "level": 5,
+      "relative_path": "Helmet/DICH-1战术头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010005003.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 101071,
+      "sha256": "3adb8953ed20154eaa00475c0afeb83588b3360ef75b82fc8568362cd1cd8b89"
+    },
+    {
+      "item_id": "11010005004",
+      "category": "Helmet",
+      "name": "GN重型头盔",
+      "source_name": "GN 重型头盔",
+      "aliases": [
+        "GN 重型头盔"
+      ],
+      "level": 5,
+      "relative_path": "Helmet/GN重型头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010005004.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 97854,
+      "sha256": "a1aafe0cbdb4caac4a5cdf5dcfdae8e3e642e86e9aa73fa88fda7a97423641fa"
+    },
+    {
+      "item_id": "11010005009",
+      "category": "Helmet",
+      "name": "GN重型夜视头盔",
+      "source_name": "GN 重型夜视头盔",
+      "aliases": [
+        "GN 重型夜视头盔"
+      ],
+      "level": 5,
+      "relative_path": "Helmet/GN重型夜视头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010005009.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "bytes": 148733,
+      "sha256": "15fff1b4d334b205086b18c0e9c2842f5d089006e53e6e3c0dd379dadb4f74aa"
+    },
+    {
+      "item_id": "11010005010",
+      "category": "Helmet",
+      "name": "GN久战重型夜视头盔",
+      "source_name": "GN 久战重型夜视头盔",
+      "aliases": [
+        "GN 久战重型夜视头盔"
+      ],
+      "level": 5,
+      "relative_path": "Helmet/GN久战重型夜视头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010005010.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "bytes": 140355,
+      "sha256": "b8ad41758d16ad1e3ab61a263f0acf6989f322a82be182d838d9b358df23f61a"
+    },
+    {
+      "item_id": "11010005011",
+      "category": "Helmet",
+      "name": "赤枭装甲防弹面具",
+      "source_name": "赤枭装甲防弹面具",
+      "aliases": [
+        "赤枭装甲防弹面具"
+      ],
+      "level": 5,
+      "relative_path": "Helmet/赤枭装甲防弹面具.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010005011.png",
+      "catalog_url": "https://dfttk.com/data/v3/locales/zh-CN/items.json",
+      "supplemental": true,
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "bytes": 125485,
+      "sha256": "50b9f88acf99616347e3b4bcbfc995d7730a906e769e2ba38ec78c48b855b636",
+      "verification_url": "https://news.17173.com/content/01232026/233446084.shtml"
+    },
+    {
+      "item_id": "11010006002",
+      "category": "Helmet",
+      "name": "H70精英头盔",
+      "source_name": "H70 精英头盔",
+      "aliases": [
+        "H70 精英头盔"
+      ],
+      "level": 6,
+      "relative_path": "Helmet/H70精英头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010006002.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 100964,
+      "sha256": "5d8d5b34fc12659133a4099f3060b9c5d0b5f28a9310769e6f2f15c0e54b50b0"
+    },
+    {
+      "item_id": "11010006003",
+      "category": "Helmet",
+      "name": "DICH-9重型头盔",
+      "source_name": "DICH-9重型头盔",
+      "aliases": [
+        "DICH-9重型头盔"
+      ],
+      "level": 6,
+      "relative_path": "Helmet/DICH-9重型头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010006003.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 96578,
+      "sha256": "9349d397e8d5069ba7882a531070b37b6a1a8145e8abc8e9c1d9b1893b62f900"
+    },
+    {
+      "item_id": "11010006004",
+      "category": "Helmet",
+      "name": "GT5指挥官头盔",
+      "source_name": "GT5 指挥官头盔",
+      "aliases": [
+        "GT5 指挥官头盔"
+      ],
+      "level": 6,
+      "relative_path": "Helmet/GT5指挥官头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010006004.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 304,
+      "height": 336,
+      "transparent": true,
+      "bytes": 104811,
+      "sha256": "b385b27c22ef33a8274084fed7d9e11aa9b4a3fe9085fa722e572b2977706439"
+    },
+    {
+      "item_id": "11010006007",
+      "category": "Helmet",
+      "name": "H70夜视精英头盔",
+      "source_name": "H70 夜视精英头盔",
+      "aliases": [
+        "H70 夜视精英头盔"
+      ],
+      "level": 6,
+      "relative_path": "Helmet/H70夜视精英头盔.png",
+      "source_url": "https://playerhub.df.qq.com/playerhub/60004/object/11010006007.png",
+      "catalog_url": "https://dfttk.com/data/v3/combat/defense/helmets.json",
+      "supplemental": false,
+      "width": 336,
+      "height": 336,
+      "transparent": true,
+      "bytes": 142045,
+      "sha256": "312e033a54d32cdd6a8f453f3d6c0025a59207833410aaab90777ec062cee478"
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "description": "用户指定配置；未覆盖字段、图标、弹药和部位倍率继承原枪。",
+  "weapons": [
+    {
+      "weapon_id": "variant:m7_typhoon",
+      "base_weapon_id": "18010000016",
+      "name": "提风M7",
+      "overrides": {
+        "flesh_damage": 39,
+        "armor_damage": 42,
+        "range_m": 65
+      }
+    },
+    {
+      "weapon_id": "variant:mk47_aozhan",
+      "base_weapon_id": "18010000043",
+      "name": "鏖战MK47",
+      "overrides": {
+        "range_m": 25,
+        "flesh_damage": 46,
+        "armor_damage": 47
+      }
+    },
+    {
+      "weapon_id": "variant:mk47_yujin",
+      "base_weapon_id": "18010000043",
+      "name": "余烬MK47",
+      "overrides": {
+        "range_m": 35,
+        "flesh_damage": 45,
+        "armor_damage": 46
+      }
+    },
+    {
+      "weapon_id": "variant:k437_long",
+      "base_weapon_id": "18010000040",
+      "name": "长枪管K437",
+      "overrides": {
+        "range_m": 53,
+        "armor_damage": 35
+      }
+    },
+    {
+      "weapon_id": "variant:tenglong_high",
+      "base_weapon_id": "18010000038",
+      "name": "高导腾龙",
+      "overrides": {
+        "fire_rate_rpm": 759
+      }
+    },
+    {
+      "weapon_id": "variant:mcx_insulated",
+      "base_weapon_id": "18010000044",
+      "name": "隔热MCX",
+      "overrides": {
+        "fire_rate_rpm": 870,
+        "flesh_damage": 36
+      },
+      "multipliers": {
+        "abdomen": 1.0
+      }
+    },
+    {
+      "weapon_id": "variant:thompson_advanced",
+      "base_weapon_id": "18020000046",
+      "name": "先进汤姆逊",
+      "overrides": {
+        "flesh_damage": 37,
+        "armor_damage": 37
+      }
+    },
+    {
+      "weapon_id": "variant:mk4_space",
+      "base_weapon_id": "18020000012",
+      "name": "深空MK4",
+      "overrides": {
+        "flesh_damage": 34,
+        "armor_damage": 30,
+        "fire_rate_rpm": 872,
+        "range_m": 25
+      },
+      "multipliers": {
+        "limbs": 0.4,
+        "abdomen": 0.9,
+        "chest": 1.0,
+        "head": 1.9
+      }
+    },
+    {
+      "weapon_id": "variant:mk4_fencing",
+      "base_weapon_id": "18020000012",
+      "name": "击剑MK4",
+      "overrides": {
+        "flesh_damage": 34,
+        "armor_damage": 35,
+        "fire_rate_rpm": 793,
+        "range_m": 26
+      },
+      "multipliers": {
+        "limbs": 0.5,
+        "abdomen": 1.0,
+        "chest": 1.0,
+        "head": 2.0
+      }
+    },
+    {
+      "weapon_id": "variant:qcq_high",
+      "base_weapon_id": "18020000011",
+      "name": "高导QCQ",
+      "overrides": {
+        "fire_rate_rpm": 848
+      }
+    },
+    {
+      "weapon_id": "variant:qjb_high",
+      "base_weapon_id": "18040000004",
+      "name": "高导QJB",
+      "overrides": {
+        "fire_rate_rpm": 873
+      }
+    },
+    {
+      "weapon_id": "variant:m250_long",
+      "base_weapon_id": "18040000003",
+      "name": "长枪管M250",
+      "overrides": {
+        "range_m": 52
+      },
+      "multipliers": {
+        "abdomen": 0.9
+      }
+    },
+    {
+      "weapon_id": "variant:marlin_hummingbird",
+      "base_weapon_id": "18050000032",
+      "name": "蜂鸟Marlin",
+      "overrides": {
+        "fire_rate_rpm": 200,
+        "flesh_damage": 75,
+        "armor_damage": 59
+      },
+      "multipliers": {
+        "head": 1.5
+      }
+    },
+    {
+      "weapon_id": "variant:marlin_rhino",
+      "base_weapon_id": "18050000032",
+      "name": "犀牛Marlin",
+      "overrides": {
+        "fire_rate_rpm": 75,
+        "flesh_damage": 100,
+        "armor_damage": 25,
+        "range_m": 20
+      },
+      "multipliers": {
+        "head": 1.41,
+        "abdomen": 0.67,
+        "limbs": 0.34
+      }
+    },
+    {
+      "weapon_id": "variant:psg_high",
+      "base_weapon_id": "18050000031",
+      "name": "高导PSG",
+      "overrides": {
+        "fire_rate_rpm": 353
+      }
+    },
+    {
+      "weapon_id": "variant:sr9_high",
+      "base_weapon_id": "18050000008",
+      "name": "高导SR9",
+      "overrides": {
+        "fire_rate_rpm": 307
+      }
+    },
+    {
+      "weapon_id": "variant:m700_whirlwind",
+      "base_weapon_id": "18060000009",
+      "name": "旋风M700",
+      "overrides": {
+        "fire_rate_rpm": 420
+      },
+      "multipliers": {
+        "limbs": 0.25,
+        "abdomen": 0.5
+      }
+    },
+    {
+      "weapon_id": "variant:m700_suppressed",
+      "base_weapon_id": "18060000009",
+      "name": "旋风一体消音M700",
+      "overrides": {
+        "fire_rate_rpm": 494
+      },
+      "multipliers": {
+        "limbs": 0.25,
+        "abdomen": 0.5
+      }
+    }
+  ]
+}

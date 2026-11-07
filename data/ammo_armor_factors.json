@@ -1,0 +1,6394 @@
+{
+  "schema_version": 1,
+  "game": "三角洲行动",
+  "mode": "sol",
+  "mode_name": "烽火地带",
+  "retrieved_at": "2026-10-24",
+  "source_data_version": "20261015-bd-balance.1",
+  "source_manifest_version": "65089f0628197d53",
+  "verification": "社区数据来源快照，已核验源文件 SHA-256；未逐项在游戏内实测。",
+  "armor_level_order": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "interaction_source": {
+    "type": "sdkArmorCorrection",
+    "packageVersion": "0.2.2",
+    "dataVersion": "20261010-045133"
+  },
+  "definitions": {
+    "armor_damage_factors": "用户要求的对1至6级护甲耐久伤害修正系数；0.9表示保留90%，不是降低90%。数组下标=护甲等级-1。",
+    "helmet_damage_factors": "对应1至6级头盔的耐久伤害修正系数。",
+    "ammo_armor_damage_multiplier": "弹药自身独立甲伤倍率。与对等级的修正系数分开保存。",
+    "effective_armor_damage_factors": "按来源模型计算：独立甲伤倍率 × armor_damage_factors。已包含独立倍率，不要再乘一次。",
+    "effective_helmet_damage_factors": "按来源模型计算：独立甲伤倍率 × helmet_damage_factors。",
+    "by_caliber_and_level": "口径 -> 穿透等级字符串 -> 具体弹药ID数组；同级特殊弹不能合并成单条。"
+  },
+  "notes": [
+    "子弹穿透等级保留0至7级；防具目标等级为1至6级。",
+    "包含普通弹与季节限定弹；是否仍可获取以游戏为准。",
+    "箭矢不是子弹，4种箭矢单独列于excluded_arrows，不计入110种子弹。",
+    "有效系数是来源模型的计算结果，不是本次游戏实测；特殊弹附加效果与多弹丸结算不由本表完整描述。",
+    "armor_damage_factors与肉伤穿透系数不同，不可用来直接计算肉伤。"
+  ],
+  "counts": {
+    "calibers": 20,
+    "bullet_types": 114,
+    "excluded_arrow_types": 4,
+    "target_armor_levels": 6,
+    "body_armor_factor_values": 684,
+    "helmet_factor_values": 684
+  },
+  "ammo": {
+    "37100100001": {
+      "item_id": "37100100001",
+      "name": "RRLP",
+      "display_name": "5.56x45mm RRLP",
+      "caliber": "5.56x45mm",
+      "source_caliber": "5.56*45mm",
+      "ammo_type_id": "10",
+      "penetration_level": 1,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "helmet_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "effective_armor_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "effective_helmet_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.56x45mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.56x45mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37100200001": {
+      "item_id": "37100200001",
+      "name": "FMJ",
+      "display_name": "5.56x45mm FMJ",
+      "caliber": "5.56x45mm",
+      "source_caliber": "5.56*45mm",
+      "ammo_type_id": "10",
+      "penetration_level": 2,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.56x45mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.56x45mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37100300001": {
+      "item_id": "37100300001",
+      "name": "M855",
+      "display_name": "5.56x45mm M855",
+      "caliber": "5.56x45mm",
+      "source_caliber": "5.56*45mm",
+      "ammo_type_id": "10",
+      "penetration_level": 3,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.56x45mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.56x45mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37100300002": {
+      "item_id": "37100300002",
+      "name": "M855 APC",
+      "display_name": "5.56x45mm M855 APC",
+      "caliber": "5.56x45mm",
+      "source_caliber": "5.56*45mm",
+      "ammo_type_id": "10",
+      "penetration_level": 3,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1.15,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        0.6,
+        0.5
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        0.6,
+        0.5
+      ],
+      "effective_armor_damage_factors": [
+        1.15,
+        1.15,
+        1.15,
+        1.15,
+        0.69,
+        0.575
+      ],
+      "effective_helmet_damage_factors": [
+        1.15,
+        1.15,
+        1.15,
+        1.15,
+        0.69,
+        0.575
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.56x45mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.56x45mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37100400001": {
+      "item_id": "37100400001",
+      "name": "M855A1",
+      "display_name": "5.56x45mm M855A1",
+      "caliber": "5.56x45mm",
+      "source_caliber": "5.56*45mm",
+      "ammo_type_id": "10",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.56x45mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.56x45mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37100400002": {
+      "item_id": "37100400002",
+      "name": "M855A1 APC+",
+      "display_name": "5.56x45mm M855A1 APC+",
+      "caliber": "5.56x45mm",
+      "source_caliber": "5.56*45mm",
+      "ammo_type_id": "10",
+      "penetration_level": 4,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1.15,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.7
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.7
+      ],
+      "effective_armor_damage_factors": [
+        1.15,
+        1.15,
+        1.15,
+        1.15,
+        1.15,
+        0.805
+      ],
+      "effective_helmet_damage_factors": [
+        1.15,
+        1.15,
+        1.15,
+        1.15,
+        1.15,
+        0.805
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.56x45mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.56x45mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37100500001": {
+      "item_id": "37100500001",
+      "name": "M995",
+      "display_name": "5.56x45mm M995",
+      "caliber": "5.56x45mm",
+      "source_caliber": "5.56*45mm",
+      "ammo_type_id": "10",
+      "penetration_level": 5,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.56x45mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.56x45mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37110100001": {
+      "item_id": "37110100001",
+      "name": "LP",
+      "display_name": "7.62x39mm LP",
+      "caliber": "7.62x39mm",
+      "source_caliber": "7.62*39mm",
+      "ammo_type_id": "11",
+      "penetration_level": 1,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "helmet_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "effective_armor_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "effective_helmet_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/7.62x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/7.62x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37110200001": {
+      "item_id": "37110200001",
+      "name": "T45M",
+      "display_name": "7.62x39mm T45M",
+      "caliber": "7.62x39mm",
+      "source_caliber": "7.62*39mm",
+      "ammo_type_id": "11",
+      "penetration_level": 2,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/7.62x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/7.62x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37110300001": {
+      "item_id": "37110300001",
+      "name": "PS",
+      "display_name": "7.62x39mm PS",
+      "caliber": "7.62x39mm",
+      "source_caliber": "7.62*39mm",
+      "ammo_type_id": "11",
+      "penetration_level": 3,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/7.62x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/7.62x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37110400001": {
+      "item_id": "37110400001",
+      "name": "BP",
+      "display_name": "7.62x39mm BP",
+      "caliber": "7.62x39mm",
+      "source_caliber": "7.62*39mm",
+      "ammo_type_id": "11",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/7.62x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/7.62x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37110400002": {
+      "item_id": "37110400002",
+      "name": "BP-SUB",
+      "display_name": "7.62x39mm BP-SUB",
+      "caliber": "7.62x39mm",
+      "source_caliber": "7.62*39mm",
+      "ammo_type_id": "11",
+      "penetration_level": 4,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/7.62x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/7.62x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37110500001": {
+      "item_id": "37110500001",
+      "name": "AP",
+      "display_name": "7.62x39mm AP",
+      "caliber": "7.62x39mm",
+      "source_caliber": "7.62*39mm",
+      "ammo_type_id": "11",
+      "penetration_level": 5,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/7.62x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/7.62x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37110500002": {
+      "item_id": "37110500002",
+      "name": "AP-SUB",
+      "display_name": "7.62x39mm AP-SUB",
+      "caliber": "7.62x39mm",
+      "source_caliber": "7.62*39mm",
+      "ammo_type_id": "11",
+      "penetration_level": 5,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 0.95,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.045,
+        1.045,
+        1.045,
+        1.045,
+        1.045,
+        1.045
+      ],
+      "effective_helmet_damage_factors": [
+        1.045,
+        1.045,
+        1.045,
+        1.045,
+        1.045,
+        1.045
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/7.62x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/7.62x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37120100001": {
+      "item_id": "37120100001",
+      "name": "PRS",
+      "display_name": "5.45x39mm PRS",
+      "caliber": "5.45x39mm",
+      "source_caliber": "5.45*39mm",
+      "ammo_type_id": "12",
+      "penetration_level": 1,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "helmet_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "effective_armor_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "effective_helmet_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.45x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.45x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37120200001": {
+      "item_id": "37120200001",
+      "name": "T",
+      "display_name": "5.45x39mm T",
+      "caliber": "5.45x39mm",
+      "source_caliber": "5.45*39mm",
+      "ammo_type_id": "12",
+      "penetration_level": 2,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.45x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.45x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37120300001": {
+      "item_id": "37120300001",
+      "name": "PS",
+      "display_name": "5.45x39mm PS",
+      "caliber": "5.45x39mm",
+      "source_caliber": "5.45*39mm",
+      "ammo_type_id": "12",
+      "penetration_level": 3,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.45x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.45x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37120400001": {
+      "item_id": "37120400001",
+      "name": "BT",
+      "display_name": "5.45x39mm BT",
+      "caliber": "5.45x39mm",
+      "source_caliber": "5.45*39mm",
+      "ammo_type_id": "12",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.45x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.45x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37120400002": {
+      "item_id": "37120400002",
+      "name": "BT +P",
+      "display_name": "5.45x39mm BT +P",
+      "caliber": "5.45x39mm",
+      "source_caliber": "5.45*39mm",
+      "ammo_type_id": "12",
+      "penetration_level": 4,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.45x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.45x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37120400003": {
+      "item_id": "37120400003",
+      "name": "BT ST",
+      "display_name": "5.45x39mm BT ST",
+      "caliber": "5.45x39mm",
+      "source_caliber": "5.45*39mm",
+      "ammo_type_id": "12",
+      "penetration_level": 4,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.45x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.45x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37120500001": {
+      "item_id": "37120500001",
+      "name": "BS",
+      "display_name": "5.45x39mm BS",
+      "caliber": "5.45x39mm",
+      "source_caliber": "5.45*39mm",
+      "ammo_type_id": "12",
+      "penetration_level": 5,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.45x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.45x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37120500003": {
+      "item_id": "37120500003",
+      "name": "BS ST+",
+      "display_name": "5.45x39mm BS ST+",
+      "caliber": "5.45x39mm",
+      "source_caliber": "5.45*39mm",
+      "ammo_type_id": "12",
+      "penetration_level": 5,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.45x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.45x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37130200001": {
+      "item_id": "37130200001",
+      "name": "DBP87",
+      "display_name": "5.8x42mm DBP87",
+      "caliber": "5.8x42mm",
+      "source_caliber": "5.8*42mm",
+      "ammo_type_id": "13",
+      "penetration_level": 2,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.8x42mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.8x42mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37130300001": {
+      "item_id": "37130300001",
+      "name": "DVP88",
+      "display_name": "5.8x42mm DVP88",
+      "caliber": "5.8x42mm",
+      "source_caliber": "5.8*42mm",
+      "ammo_type_id": "13",
+      "penetration_level": 3,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.8x42mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.8x42mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37130400001": {
+      "item_id": "37130400001",
+      "name": "DBP10",
+      "display_name": "5.8x42mm DBP10",
+      "caliber": "5.8x42mm",
+      "source_caliber": "5.8*42mm",
+      "ammo_type_id": "13",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.8x42mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.8x42mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37130400002": {
+      "item_id": "37130400002",
+      "name": "5.8x42mm DBP10 +P",
+      "display_name": "5.8x42mm DBP10 +P",
+      "caliber": "5.8x42mm",
+      "source_caliber": null,
+      "ammo_type_id": "13",
+      "penetration_level": 4,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.8x42mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.8x42mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37130500001": {
+      "item_id": "37130500001",
+      "name": "DVC12",
+      "display_name": "5.8x42mm DVC12",
+      "caliber": "5.8x42mm",
+      "source_caliber": "5.8*42mm",
+      "ammo_type_id": "13",
+      "penetration_level": 5,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.8x42mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.8x42mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37130500002": {
+      "item_id": "37130500002",
+      "name": "5.8x42mm DVC12 +P",
+      "display_name": "5.8x42mm DVC12 +P",
+      "caliber": "5.8x42mm",
+      "source_caliber": null,
+      "ammo_type_id": "13",
+      "penetration_level": 5,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.8x42mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.8x42mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37140300001": {
+      "item_id": "37140300001",
+      "name": "SP5",
+      "display_name": "9x39mm SP5",
+      "caliber": "9x39mm",
+      "source_caliber": "9*39mm",
+      "ammo_type_id": "14",
+      "penetration_level": 3,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/9x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/9x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37140300002": {
+      "item_id": "37140300002",
+      "name": "9x39mm PAB-7",
+      "display_name": "9x39mm PAB-7",
+      "caliber": "9x39mm",
+      "source_caliber": null,
+      "ammo_type_id": "14",
+      "penetration_level": 3,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/9x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/9x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37140400001": {
+      "item_id": "37140400001",
+      "name": "SP6",
+      "display_name": "9x39mm SP6",
+      "caliber": "9x39mm",
+      "source_caliber": "9*39mm",
+      "ammo_type_id": "14",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/9x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/9x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37140400002": {
+      "item_id": "37140400002",
+      "name": "9x39mm PAB-9",
+      "display_name": "9x39mm PAB-9",
+      "caliber": "9x39mm",
+      "source_caliber": null,
+      "ammo_type_id": "14",
+      "penetration_level": 4,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/9x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/9x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37140500001": {
+      "item_id": "37140500001",
+      "name": "BP",
+      "display_name": "9x39mm BP",
+      "caliber": "9x39mm",
+      "source_caliber": "9*39mm",
+      "ammo_type_id": "14",
+      "penetration_level": 5,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/9x39mm.png",
+      "godot_icon_path": "res://assets/Bullet/9x39mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37150300002": {
+      "item_id": "37150300002",
+      "name": "PLY-I",
+      "display_name": "6.8x51mm PLY-I",
+      "caliber": "6.8x51mm",
+      "source_caliber": "6.8*51mm",
+      "ammo_type_id": "15",
+      "penetration_level": 3,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 0.9,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.81,
+        0.81,
+        0.81,
+        0.81,
+        0.45,
+        0.36
+      ],
+      "effective_helmet_damage_factors": [
+        0.81,
+        0.81,
+        0.81,
+        0.81,
+        0.45,
+        0.36
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/6.8x51mm.png",
+      "godot_icon_path": "res://assets/Bullet/6.8x51mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37150400001": {
+      "item_id": "37150400001",
+      "name": "FMJ",
+      "display_name": "6.8x51mm FMJ",
+      "caliber": "6.8x51mm",
+      "source_caliber": "6.8*51mm",
+      "ammo_type_id": "15",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/6.8x51mm.png",
+      "godot_icon_path": "res://assets/Bullet/6.8x51mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37150400002": {
+      "item_id": "37150400002",
+      "name": "PLY-II",
+      "display_name": "6.8x51mm PLY-II",
+      "caliber": "6.8x51mm",
+      "source_caliber": "6.8*51mm",
+      "ammo_type_id": "15",
+      "penetration_level": 4,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 0.9,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.54
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.54
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/6.8x51mm.png",
+      "godot_icon_path": "res://assets/Bullet/6.8x51mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37150500001": {
+      "item_id": "37150500001",
+      "name": "Hybrid",
+      "display_name": "6.8x51mm Hybrid",
+      "caliber": "6.8x51mm",
+      "source_caliber": "6.8*51mm",
+      "ammo_type_id": "15",
+      "penetration_level": 5,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/6.8x51mm.png",
+      "godot_icon_path": "res://assets/Bullet/6.8x51mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37150500002": {
+      "item_id": "37150500002",
+      "name": "PLY-III",
+      "display_name": "6.8x51mm PLY-III",
+      "caliber": "6.8x51mm",
+      "source_caliber": "6.8*51mm",
+      "ammo_type_id": "15",
+      "penetration_level": 5,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 0.9,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        0.99,
+        0.99,
+        0.99,
+        0.99,
+        0.99,
+        0.99
+      ],
+      "effective_helmet_damage_factors": [
+        0.99,
+        0.99,
+        0.99,
+        0.99,
+        0.99,
+        0.99
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/6.8x51mm.png",
+      "godot_icon_path": "res://assets/Bullet/6.8x51mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37150600001": {
+      "item_id": "37150600001",
+      "name": "AP",
+      "display_name": "6.8x51mm AP",
+      "caliber": "6.8x51mm",
+      "source_caliber": "6.8*51mm",
+      "ammo_type_id": "15",
+      "penetration_level": 6,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/6.8x51mm.png",
+      "godot_icon_path": "res://assets/Bullet/6.8x51mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37160300001": {
+      "item_id": "37160300001",
+      "name": "PS12A",
+      "display_name": "12.7x55mm PS12A",
+      "caliber": "12.7x55mm",
+      "source_caliber": "12.7*55",
+      "ammo_type_id": "16",
+      "penetration_level": 3,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/12.7x55mm.png",
+      "godot_icon_path": "res://assets/Bullet/12.7x55mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37160400001": {
+      "item_id": "37160400001",
+      "name": "PS12",
+      "display_name": "12.7x55mm PS12",
+      "caliber": "12.7x55mm",
+      "source_caliber": "12.7*55",
+      "ammo_type_id": "16",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/12.7x55mm.png",
+      "godot_icon_path": "res://assets/Bullet/12.7x55mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37160400002": {
+      "item_id": "37160400002",
+      "name": "PD12双头弹",
+      "display_name": "12.7x55mm PD12双头弹",
+      "caliber": "12.7x55mm",
+      "source_caliber": "12.7*55",
+      "ammo_type_id": "16",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 0.1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "effective_armor_damage_factors": [
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1
+      ],
+      "effective_helmet_damage_factors": [
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1
+      ],
+      "special_rule_id": "pd12DoubleHead",
+      "icon_relative_path": "Bullet/12.7x55mm.png",
+      "godot_icon_path": "res://assets/Bullet/12.7x55mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37160500001": {
+      "item_id": "37160500001",
+      "name": "PS12B",
+      "display_name": "12.7x55mm PS12B",
+      "caliber": "12.7x55mm",
+      "source_caliber": "12.7*55",
+      "ammo_type_id": "16",
+      "penetration_level": 5,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/12.7x55mm.png",
+      "godot_icon_path": "res://assets/Bullet/12.7x55mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37170200001": {
+      "item_id": "37170200001",
+      "name": "7.62x51mm Ultra Nosler",
+      "display_name": "7.62x51mm Ultra Nosler",
+      "caliber": "7.62x51mm",
+      "source_caliber": null,
+      "ammo_type_id": "17",
+      "penetration_level": 2,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/7.62x51mm.png",
+      "godot_icon_path": "res://assets/Bullet/7.62x51mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37170300001": {
+      "item_id": "37170300001",
+      "name": "BPZ",
+      "display_name": "7.62x51mm BPZ",
+      "caliber": "7.62x51mm",
+      "source_caliber": "7.62*51mm",
+      "ammo_type_id": "17",
+      "penetration_level": 3,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/7.62x51mm.png",
+      "godot_icon_path": "res://assets/Bullet/7.62x51mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37170400001": {
+      "item_id": "37170400001",
+      "name": "M80",
+      "display_name": "7.62x51mm M80",
+      "caliber": "7.62x51mm",
+      "source_caliber": "7.62*51mm",
+      "ammo_type_id": "17",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/7.62x51mm.png",
+      "godot_icon_path": "res://assets/Bullet/7.62x51mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37170500001": {
+      "item_id": "37170500001",
+      "name": "M62",
+      "display_name": "7.62x51mm M62",
+      "caliber": "7.62x51mm",
+      "source_caliber": "7.62*51mm",
+      "ammo_type_id": "17",
+      "penetration_level": 5,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/7.62x51mm.png",
+      "godot_icon_path": "res://assets/Bullet/7.62x51mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37170500002": {
+      "item_id": "37170500002",
+      "name": "LS",
+      "display_name": "7.62x51mm LS",
+      "caliber": "7.62x51mm",
+      "source_caliber": "7.62*51mm",
+      "ammo_type_id": "17",
+      "penetration_level": 5,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/7.62x51mm.png",
+      "godot_icon_path": "res://assets/Bullet/7.62x51mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37170600001": {
+      "item_id": "37170600001",
+      "name": "m61",
+      "display_name": "7.62x51mm m61",
+      "caliber": "7.62x51mm",
+      "source_caliber": "7.62*51mm",
+      "ammo_type_id": "17",
+      "penetration_level": 6,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "helmet_damage_factors": [
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "effective_armor_damage_factors": [
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "effective_helmet_damage_factors": [
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/7.62x51mm.png",
+      "godot_icon_path": "res://assets/Bullet/7.62x51mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37180300001": {
+      "item_id": "37180300001",
+      "name": "T46M",
+      "display_name": "7.62x54R T46M",
+      "caliber": "7.62x54R",
+      "source_caliber": "7.62*54R",
+      "ammo_type_id": "18",
+      "penetration_level": 3,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/7.62x54mm.png",
+      "godot_icon_path": "res://assets/Bullet/7.62x54mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37180400001": {
+      "item_id": "37180400001",
+      "name": "LPS",
+      "display_name": "7.62x54R LPS",
+      "caliber": "7.62x54R",
+      "source_caliber": "7.62*54R",
+      "ammo_type_id": "18",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/7.62x54mm.png",
+      "godot_icon_path": "res://assets/Bullet/7.62x54mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37180500001": {
+      "item_id": "37180500001",
+      "name": "BT",
+      "display_name": "7.62x54R BT",
+      "caliber": "7.62x54R",
+      "source_caliber": "7.62*54R",
+      "ammo_type_id": "18",
+      "penetration_level": 5,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/7.62x54mm.png",
+      "godot_icon_path": "res://assets/Bullet/7.62x54mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37180600001": {
+      "item_id": "37180600001",
+      "name": "SNB",
+      "display_name": "7.62x54R SNB",
+      "caliber": "7.62x54R",
+      "source_caliber": "7.62*54R",
+      "ammo_type_id": "18",
+      "penetration_level": 6,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "helmet_damage_factors": [
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "effective_armor_damage_factors": [
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "effective_helmet_damage_factors": [
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/7.62x54mm.png",
+      "godot_icon_path": "res://assets/Bullet/7.62x54mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37190000001": {
+      "item_id": "37190000001",
+      "name": "RIP",
+      "display_name": ".45 ACP RIP",
+      "caliber": ".45 ACP",
+      "source_caliber": ".45ACP",
+      "ammo_type_id": "19",
+      "penetration_level": 0,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "effective_armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "effective_helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/45-ACP.png",
+      "godot_icon_path": "res://assets/Bullet/45-ACP.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37190000002": {
+      "item_id": "37190000002",
+      "name": ".45 ACP CT",
+      "display_name": ".45 ACP CT",
+      "caliber": ".45 ACP",
+      "source_caliber": null,
+      "ammo_type_id": "19",
+      "penetration_level": 0,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "effective_armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "effective_helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/45-ACP.png",
+      "godot_icon_path": "res://assets/Bullet/45-ACP.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37190100001": {
+      "item_id": "37190100001",
+      "name": "HS",
+      "display_name": ".45 ACP HS",
+      "caliber": ".45 ACP",
+      "source_caliber": ".45ACP",
+      "ammo_type_id": "19",
+      "penetration_level": 1,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "helmet_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "effective_armor_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "effective_helmet_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/45-ACP.png",
+      "godot_icon_path": "res://assets/Bullet/45-ACP.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37190200001": {
+      "item_id": "37190200001",
+      "name": "JHP",
+      "display_name": ".45 ACP JHP",
+      "caliber": ".45 ACP",
+      "source_caliber": ".45ACP",
+      "ammo_type_id": "19",
+      "penetration_level": 2,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/45-ACP.png",
+      "godot_icon_path": "res://assets/Bullet/45-ACP.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37190300001": {
+      "item_id": "37190300001",
+      "name": "FMJ",
+      "display_name": ".45 ACP FMJ",
+      "caliber": ".45 ACP",
+      "source_caliber": ".45ACP",
+      "ammo_type_id": "19",
+      "penetration_level": 3,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/45-ACP.png",
+      "godot_icon_path": "res://assets/Bullet/45-ACP.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37190400001": {
+      "item_id": "37190400001",
+      "name": "AP",
+      "display_name": ".45 ACP AP",
+      "caliber": ".45 ACP",
+      "source_caliber": ".45ACP",
+      "ammo_type_id": "19",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/45-ACP.png",
+      "godot_icon_path": "res://assets/Bullet/45-ACP.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37190500001": {
+      "item_id": "37190500001",
+      "name": "Super",
+      "display_name": ".45 ACP Super",
+      "caliber": ".45 ACP",
+      "source_caliber": ".45ACP",
+      "ammo_type_id": "19",
+      "penetration_level": 5,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/45-ACP.png",
+      "godot_icon_path": "res://assets/Bullet/45-ACP.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37200000001": {
+      "item_id": "37200000001",
+      "name": "RIP",
+      "display_name": "9x19mm RIP",
+      "caliber": "9x19mm",
+      "source_caliber": "9*19mm",
+      "ammo_type_id": "20",
+      "penetration_level": 0,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "effective_armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "effective_helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/9x19mm.png",
+      "godot_icon_path": "res://assets/Bullet/9x19mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37200000002": {
+      "item_id": "37200000002",
+      "name": "9x19mm CT",
+      "display_name": "9x19mm CT",
+      "caliber": "9x19mm",
+      "source_caliber": null,
+      "ammo_type_id": "20",
+      "penetration_level": 0,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "effective_armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "effective_helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/9x19mm.png",
+      "godot_icon_path": "res://assets/Bullet/9x19mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37200100001": {
+      "item_id": "37200100001",
+      "name": "PSO",
+      "display_name": "9x19mm PSO",
+      "caliber": "9x19mm",
+      "source_caliber": "9*19mm",
+      "ammo_type_id": "20",
+      "penetration_level": 1,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "helmet_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "effective_armor_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "effective_helmet_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/9x19mm.png",
+      "godot_icon_path": "res://assets/Bullet/9x19mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37200200001": {
+      "item_id": "37200200001",
+      "name": "Pst",
+      "display_name": "9x19mm Pst",
+      "caliber": "9x19mm",
+      "source_caliber": "9*19mm",
+      "ammo_type_id": "20",
+      "penetration_level": 2,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/9x19mm.png",
+      "godot_icon_path": "res://assets/Bullet/9x19mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37200300001": {
+      "item_id": "37200300001",
+      "name": "AP6.3",
+      "display_name": "9x19mm AP6.3",
+      "caliber": "9x19mm",
+      "source_caliber": "9*19mm",
+      "ammo_type_id": "20",
+      "penetration_level": 3,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/9x19mm.png",
+      "godot_icon_path": "res://assets/Bullet/9x19mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37200400001": {
+      "item_id": "37200400001",
+      "name": "PBP",
+      "display_name": "9x19mm PBP",
+      "caliber": "9x19mm",
+      "source_caliber": "9*19mm",
+      "ammo_type_id": "20",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/9x19mm.png",
+      "godot_icon_path": "res://assets/Bullet/9x19mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37210000001": {
+      "item_id": "37210000001",
+      "name": "R37.F",
+      "display_name": "5.7x28mm R37.F",
+      "caliber": "5.7x28mm",
+      "source_caliber": "5.7*28mm",
+      "ammo_type_id": "21",
+      "penetration_level": 0,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "effective_armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "effective_helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.7x28mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.7x28mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37210100001": {
+      "item_id": "37210100001",
+      "name": "SS198LF",
+      "display_name": "5.7x28mm SS198LF",
+      "caliber": "5.7x28mm",
+      "source_caliber": "5.7*28mm",
+      "ammo_type_id": "21",
+      "penetration_level": 1,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "helmet_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "effective_armor_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "effective_helmet_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.7x28mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.7x28mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37210200001": {
+      "item_id": "37210200001",
+      "name": "SS197SR",
+      "display_name": "5.7x28mm SS197SR",
+      "caliber": "5.7x28mm",
+      "source_caliber": "5.7*28mm",
+      "ammo_type_id": "21",
+      "penetration_level": 2,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.7x28mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.7x28mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37210300001": {
+      "item_id": "37210300001",
+      "name": "L191",
+      "display_name": "5.7x28mm L191",
+      "caliber": "5.7x28mm",
+      "source_caliber": "5.7*28mm",
+      "ammo_type_id": "21",
+      "penetration_level": 3,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.7x28mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.7x28mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37210300002": {
+      "item_id": "37210300002",
+      "name": "HT",
+      "display_name": "5.7x28mm HT",
+      "caliber": "5.7x28mm",
+      "source_caliber": "5.7*28mm",
+      "ammo_type_id": "21",
+      "penetration_level": 3,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 0.2,
+      "armor_damage_factors": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "helmet_damage_factors": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "effective_armor_damage_factors": [
+        0.04,
+        0.04,
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "effective_helmet_damage_factors": [
+        0.04,
+        0.04,
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.7x28mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.7x28mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37210400001": {
+      "item_id": "37210400001",
+      "name": "SS193",
+      "display_name": "5.7x28mm SS193",
+      "caliber": "5.7x28mm",
+      "source_caliber": "5.7*28mm",
+      "ammo_type_id": "21",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.7x28mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.7x28mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37210400002": {
+      "item_id": "37210400002",
+      "name": "HT+",
+      "display_name": "5.7x28mm HT+",
+      "caliber": "5.7x28mm",
+      "source_caliber": "5.7*28mm",
+      "ammo_type_id": "21",
+      "penetration_level": 4,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 0.2,
+      "armor_damage_factors": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "helmet_damage_factors": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "effective_armor_damage_factors": [
+        0.04,
+        0.04,
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "effective_helmet_damage_factors": [
+        0.04,
+        0.04,
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.7x28mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.7x28mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37210500001": {
+      "item_id": "37210500001",
+      "name": "SS190",
+      "display_name": "5.7x28mm SS190",
+      "caliber": "5.7x28mm",
+      "source_caliber": "5.7*28mm",
+      "ammo_type_id": "21",
+      "penetration_level": 5,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.7x28mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.7x28mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37220000001": {
+      "item_id": "37220000001",
+      "name": "9号霰射“鼠蛋”",
+      "display_name": ".357 Magnum 9号霰射“鼠蛋”",
+      "caliber": ".357 Magnum",
+      "source_caliber": ".357 Magnum",
+      "ammo_type_id": "22",
+      "penetration_level": 0,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 0.41,
+      "armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "effective_armor_damage_factors": [
+        0.164,
+        0.123,
+        0.082,
+        0.0615,
+        0.0615,
+        0.0615
+      ],
+      "effective_helmet_damage_factors": [
+        0.164,
+        0.123,
+        0.082,
+        0.0615,
+        0.0615,
+        0.0615
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/357-Magnum.png",
+      "godot_icon_path": "res://assets/Bullet/357-Magnum.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37220200001": {
+      "item_id": "37220200001",
+      "name": "HP",
+      "display_name": ".357 Magnum HP",
+      "caliber": ".357 Magnum",
+      "source_caliber": ".357 Magnum",
+      "ammo_type_id": "22",
+      "penetration_level": 2,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/357-Magnum.png",
+      "godot_icon_path": "res://assets/Bullet/357-Magnum.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37220300001": {
+      "item_id": "37220300001",
+      "name": "JHP",
+      "display_name": ".357 Magnum JHP",
+      "caliber": ".357 Magnum",
+      "source_caliber": ".357 Magnum",
+      "ammo_type_id": "22",
+      "penetration_level": 3,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/357-Magnum.png",
+      "godot_icon_path": "res://assets/Bullet/357-Magnum.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37220400001": {
+      "item_id": "37220400001",
+      "name": "FMJ",
+      "display_name": ".357 Magnum FMJ",
+      "caliber": ".357 Magnum",
+      "source_caliber": ".357 Magnum",
+      "ammo_type_id": "22",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/357-Magnum.png",
+      "godot_icon_path": "res://assets/Bullet/357-Magnum.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37230200001": {
+      "item_id": "37230200001",
+      "name": "HP",
+      "display_name": ".50 AE HP",
+      "caliber": ".50 AE",
+      "source_caliber": ".50AE",
+      "ammo_type_id": "23",
+      "penetration_level": 2,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/50-AE.png",
+      "godot_icon_path": "res://assets/Bullet/50-AE.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37230300001": {
+      "item_id": "37230300001",
+      "name": "JHP",
+      "display_name": ".50 AE JHP",
+      "caliber": ".50 AE",
+      "source_caliber": ".50AE",
+      "ammo_type_id": "23",
+      "penetration_level": 3,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/50-AE.png",
+      "godot_icon_path": "res://assets/Bullet/50-AE.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37230400001": {
+      "item_id": "37230400001",
+      "name": "FMJ",
+      "display_name": ".50 AE FMJ",
+      "caliber": ".50 AE",
+      "source_caliber": ".50AE",
+      "ammo_type_id": "23",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/50-AE.png",
+      "godot_icon_path": "res://assets/Bullet/50-AE.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37230500001": {
+      "item_id": "37230500001",
+      "name": "AP",
+      "display_name": ".50 AE AP",
+      "caliber": ".50 AE",
+      "source_caliber": ".50AE",
+      "ammo_type_id": "23",
+      "penetration_level": 5,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/50-AE.png",
+      "godot_icon_path": "res://assets/Bullet/50-AE.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37240700001": {
+      "item_id": "37240700001",
+      "name": "AP",
+      "display_name": ".338 Lap Mag AP",
+      "caliber": ".338 Lap Mag",
+      "source_caliber": ".338 Lap Mag",
+      "ammo_type_id": "24",
+      "penetration_level": 7,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/338-Lap-Mag.png",
+      "godot_icon_path": "res://assets/Bullet/338-Lap-Mag.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37250000001": {
+      "item_id": "37250000001",
+      "name": "8.5毫米鹿弹",
+      "display_name": "12 Gauge 8.5毫米鹿弹",
+      "caliber": "12 Gauge",
+      "source_caliber": "12Gauge",
+      "ammo_type_id": "25",
+      "penetration_level": 0,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "effective_armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "effective_helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/12-Gauge.png",
+      "godot_icon_path": "res://assets/Bullet/12-Gauge.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37250000002": {
+      "item_id": "37250000002",
+      "name": "独头RIP",
+      "display_name": "12 Gauge 独头RIP",
+      "caliber": "12 Gauge",
+      "source_caliber": "12Gauge",
+      "ammo_type_id": "25",
+      "penetration_level": 0,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 3.5,
+      "armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "effective_armor_damage_factors": [
+        1.4,
+        1.05,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "effective_helmet_damage_factors": [
+        1.4,
+        1.05,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/12-Gauge.png",
+      "godot_icon_path": "res://assets/Bullet/12-Gauge.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37250100001": {
+      "item_id": "37250100001",
+      "name": "7毫米鹿弹",
+      "display_name": "12 Gauge 7毫米鹿弹",
+      "caliber": "12 Gauge",
+      "source_caliber": "12Gauge",
+      "ammo_type_id": "25",
+      "penetration_level": 1,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.15
+      ],
+      "helmet_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.15
+      ],
+      "effective_armor_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.15
+      ],
+      "effective_helmet_damage_factors": [
+        0.6,
+        0.6,
+        0.4,
+        0.3,
+        0.2,
+        0.15
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/12-Gauge.png",
+      "godot_icon_path": "res://assets/Bullet/12-Gauge.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37250200002": {
+      "item_id": "37250200002",
+      "name": "独头GT",
+      "display_name": "12 Gauge 独头GT",
+      "caliber": "12 Gauge",
+      "source_caliber": "12Gauge",
+      "ammo_type_id": "25",
+      "penetration_level": 2,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 3.5,
+      "armor_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "helmet_damage_factors": [
+        0.7,
+        0.7,
+        0.7,
+        0.5,
+        0.4,
+        0.3
+      ],
+      "effective_armor_damage_factors": [
+        2.45,
+        2.45,
+        2.45,
+        1.75,
+        1.4,
+        1.05
+      ],
+      "effective_helmet_damage_factors": [
+        2.45,
+        2.45,
+        2.45,
+        1.75,
+        1.4,
+        1.05
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/12-Gauge.png",
+      "godot_icon_path": "res://assets/Bullet/12-Gauge.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37250300001": {
+      "item_id": "37250300001",
+      "name": "箭型弹",
+      "display_name": "12 Gauge 箭型弹",
+      "caliber": "12 Gauge",
+      "source_caliber": "12Gauge",
+      "ammo_type_id": "25",
+      "penetration_level": 3,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.43,
+        0.35
+      ],
+      "helmet_damage_factors": [
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.43,
+        0.35
+      ],
+      "effective_armor_damage_factors": [
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.43,
+        0.35
+      ],
+      "effective_helmet_damage_factors": [
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.43,
+        0.35
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/12-Gauge.png",
+      "godot_icon_path": "res://assets/Bullet/12-Gauge.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37250300002": {
+      "item_id": "37250300002",
+      "name": "独头FTX",
+      "display_name": "12 Gauge 独头FTX",
+      "caliber": "12 Gauge",
+      "source_caliber": "12Gauge",
+      "ammo_type_id": "25",
+      "penetration_level": 3,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 3.5,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        3.15,
+        3.15,
+        3.15,
+        3.15,
+        1.75,
+        1.4
+      ],
+      "effective_helmet_damage_factors": [
+        3.15,
+        3.15,
+        3.15,
+        3.15,
+        1.75,
+        1.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/12-Gauge.png",
+      "godot_icon_path": "res://assets/Bullet/12-Gauge.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37250400002": {
+      "item_id": "37250400002",
+      "name": "独头AP-20",
+      "display_name": "12 Gauge 独头AP-20",
+      "caliber": "12 Gauge",
+      "source_caliber": "12Gauge",
+      "ammo_type_id": "25",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 3.5,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        3.5,
+        3.5,
+        3.5,
+        3.5,
+        3.5,
+        2.1
+      ],
+      "effective_helmet_damage_factors": [
+        3.5,
+        3.5,
+        3.5,
+        3.5,
+        3.5,
+        2.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/12-Gauge.png",
+      "godot_icon_path": "res://assets/Bullet/12-Gauge.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37250400003": {
+      "item_id": "37250400003",
+      "name": "12 Gauge 龙息弹",
+      "display_name": "12 Gauge 龙息弹",
+      "caliber": "12 Gauge",
+      "source_caliber": null,
+      "ammo_type_id": "25",
+      "penetration_level": 0,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/12-Gauge.png",
+      "godot_icon_path": "res://assets/Bullet/12-Gauge.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37250400004": {
+      "item_id": "37250400004",
+      "name": "独头APX",
+      "display_name": "12 Gauge 独头APX",
+      "caliber": "12 Gauge",
+      "source_caliber": "12Gauge",
+      "ammo_type_id": "25",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 3.5,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        3.85,
+        3.85,
+        3.85,
+        3.85,
+        3.85,
+        2.1
+      ],
+      "effective_helmet_damage_factors": [
+        3.85,
+        3.85,
+        3.85,
+        3.85,
+        3.85,
+        2.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/12-Gauge.png",
+      "godot_icon_path": "res://assets/Bullet/12-Gauge.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37250400005": {
+      "item_id": "37250400005",
+      "name": "DART",
+      "display_name": "12 Gauge DART",
+      "caliber": "12 Gauge",
+      "source_caliber": "12Gauge",
+      "ammo_type_id": "25",
+      "penetration_level": 3,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.43,
+        0.35
+      ],
+      "helmet_damage_factors": [
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.43,
+        0.35
+      ],
+      "effective_armor_damage_factors": [
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.43,
+        0.35
+      ],
+      "effective_helmet_damage_factors": [
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.43,
+        0.35
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/12-Gauge.png",
+      "godot_icon_path": "res://assets/Bullet/12-Gauge.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37260000002": {
+      "item_id": "37260000002",
+      "name": "CT",
+      "display_name": "4.6x30mm CT",
+      "caliber": "4.6x30mm",
+      "source_caliber": "4.6*30mm",
+      "ammo_type_id": "26",
+      "penetration_level": 0,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "effective_armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "effective_helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/4.6x30mm.png",
+      "godot_icon_path": "res://assets/Bullet/4.6x30mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37260300001": {
+      "item_id": "37260300001",
+      "name": "Subsonic SX",
+      "display_name": "4.6x30mm Subsonic SX",
+      "caliber": "4.6x30mm",
+      "source_caliber": "4.6*30mm",
+      "ammo_type_id": "26",
+      "penetration_level": 3,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/4.6x30mm.png",
+      "godot_icon_path": "res://assets/Bullet/4.6x30mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37260400001": {
+      "item_id": "37260400001",
+      "name": "FMJ SX",
+      "display_name": "4.6x30mm FMJ SX",
+      "caliber": "4.6x30mm",
+      "source_caliber": "4.6*30mm",
+      "ammo_type_id": "26",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/4.6x30mm.png",
+      "godot_icon_path": "res://assets/Bullet/4.6x30mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37260400002": {
+      "item_id": "37260400002",
+      "name": "FMJ ST",
+      "display_name": "4.6x30mm FMJ ST",
+      "caliber": "4.6x30mm",
+      "source_caliber": "4.6*30mm",
+      "ammo_type_id": "26",
+      "penetration_level": 4,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/4.6x30mm.png",
+      "godot_icon_path": "res://assets/Bullet/4.6x30mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37260500001": {
+      "item_id": "37260500001",
+      "name": "AP SX",
+      "display_name": "4.6x30mm AP SX",
+      "caliber": "4.6x30mm",
+      "source_caliber": "4.6*30mm",
+      "ammo_type_id": "26",
+      "penetration_level": 5,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/4.6x30mm.png",
+      "godot_icon_path": "res://assets/Bullet/4.6x30mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37260500002": {
+      "item_id": "37260500002",
+      "name": "AP ST",
+      "display_name": "4.6x30mm AP ST",
+      "caliber": "4.6x30mm",
+      "source_caliber": "4.6*30mm",
+      "ammo_type_id": "26",
+      "penetration_level": 5,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/4.6x30mm.png",
+      "godot_icon_path": "res://assets/Bullet/4.6x30mm.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37280300001": {
+      "item_id": "37280300001",
+      "name": "V-Max",
+      "display_name": ".300 BLK V-Max",
+      "caliber": ".300 BLK",
+      "source_caliber": ".300BLK",
+      "ammo_type_id": "27",
+      "penetration_level": 3,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/300-BLK.png",
+      "godot_icon_path": "res://assets/Bullet/300-BLK.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37280300002": {
+      "item_id": "37280300002",
+      "name": "V-SUB",
+      "display_name": ".300 BLK V-SUB",
+      "caliber": ".300 BLK",
+      "source_caliber": ".300BLK",
+      "ammo_type_id": "27",
+      "penetration_level": 3,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_armor_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "effective_helmet_damage_factors": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.5,
+        0.4
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/300-BLK.png",
+      "godot_icon_path": "res://assets/Bullet/300-BLK.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37280400001": {
+      "item_id": "37280400001",
+      "name": "BCP-FMJ",
+      "display_name": ".300 BLK BCP-FMJ",
+      "caliber": ".300 BLK",
+      "source_caliber": ".300BLK",
+      "ammo_type_id": "27",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/300-BLK.png",
+      "godot_icon_path": "res://assets/Bullet/300-BLK.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37280400002": {
+      "item_id": "37280400002",
+      "name": "BCP-SUB",
+      "display_name": ".300 BLK BCP-SUB",
+      "caliber": ".300 BLK",
+      "source_caliber": ".300BLK",
+      "ammo_type_id": "27",
+      "penetration_level": 4,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/300-BLK.png",
+      "godot_icon_path": "res://assets/Bullet/300-BLK.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37280500001": {
+      "item_id": "37280500001",
+      "name": "TAC-TX",
+      "display_name": ".300 BLK TAC-TX",
+      "caliber": ".300 BLK",
+      "source_caliber": ".300BLK",
+      "ammo_type_id": "27",
+      "penetration_level": 5,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/300-BLK.png",
+      "godot_icon_path": "res://assets/Bullet/300-BLK.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37290300001": {
+      "item_id": "37290300001",
+      "name": "RN",
+      "display_name": ".45-70 Govt RN",
+      "caliber": ".45-70 Govt",
+      "source_caliber": "45-70 Govt",
+      "ammo_type_id": "29",
+      "penetration_level": 0,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "effective_armor_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "effective_helmet_damage_factors": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/45-70-Govt.png",
+      "godot_icon_path": "res://assets/Bullet/45-70-Govt.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37290400001": {
+      "item_id": "37290400001",
+      "name": "FMJ",
+      "display_name": ".45-70 Govt FMJ",
+      "caliber": ".45-70 Govt",
+      "source_caliber": "45-70 Govt",
+      "ammo_type_id": "29",
+      "penetration_level": 4,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/45-70-Govt.png",
+      "godot_icon_path": "res://assets/Bullet/45-70-Govt.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37290500001": {
+      "item_id": "37290500001",
+      "name": "FTX",
+      "display_name": ".45-70 Govt FTX",
+      "caliber": ".45-70 Govt",
+      "source_caliber": "45-70 Govt",
+      "ammo_type_id": "29",
+      "penetration_level": 5,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/45-70-Govt.png",
+      "godot_icon_path": "res://assets/Bullet/45-70-Govt.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37300600001": {
+      "item_id": "37300600001",
+      "name": "M10 RAZOR",
+      "display_name": ".50 BMG M10 RAZOR",
+      "caliber": ".50 BMG",
+      "source_caliber": ".50 BMG",
+      "ammo_type_id": "30",
+      "penetration_level": 6,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 5,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        5.5,
+        5.5,
+        5.5,
+        5.5,
+        5.5,
+        5.5
+      ],
+      "effective_helmet_damage_factors": [
+        5.5,
+        5.5,
+        5.5,
+        5.5,
+        5.5,
+        5.5
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/50-BMG.png",
+      "godot_icon_path": "res://assets/Bullet/50-BMG.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37300600002": {
+      "item_id": "37300600002",
+      "name": "M3 K-O",
+      "display_name": ".50 BMG M3 K-O",
+      "caliber": ".50 BMG",
+      "source_caliber": ".50 BMG",
+      "ammo_type_id": "30",
+      "penetration_level": 6,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 5,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        5.5,
+        5.5,
+        5.5,
+        5.5,
+        5.5,
+        5.5
+      ],
+      "effective_helmet_damage_factors": [
+        5.5,
+        5.5,
+        5.5,
+        5.5,
+        5.5,
+        5.5
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/50-BMG.png",
+      "godot_icon_path": "res://assets/Bullet/50-BMG.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "37300700001": {
+      "item_id": "37300700001",
+      "name": "M903 SLAP",
+      "display_name": ".50 BMG M903 SLAP",
+      "caliber": ".50 BMG",
+      "source_caliber": ".50 BMG",
+      "ammo_type_id": "30",
+      "penetration_level": 7,
+      "is_season_limited": false,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/50-BMG.png",
+      "godot_icon_path": "res://assets/Bullet/50-BMG.png",
+      "source_urls": [
+        "https://dfttk.com/data/v3/catalog/ammo.json?v=65089f0628197d53",
+        "https://dfttk.com/data/v3/combat/defense/ammo-interactions.json?v=65089f0628197d53"
+      ]
+    },
+    "s12:cinder": {
+      "item_id": "s12:cinder",
+      "name": "CINDER",
+      "display_name": "5.56x45mm CINDER",
+      "caliber": "5.56x45mm",
+      "source_caliber": "5.56*45mm",
+      "ammo_type_id": "10",
+      "penetration_level": 4,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/5.56x45mm.png",
+      "godot_icon_path": "res://assets/Bullet/5.56x45mm.png",
+      "source_urls": [],
+      "factor_source": "用户确认：暂沿用同口径同等级普通弹 37100400001"
+    },
+    "s12:tiv": {
+      "item_id": "s12:tiv",
+      "name": "TIV",
+      "display_name": ".300 BLK TIV",
+      "caliber": ".300 BLK",
+      "source_caliber": ".300BLK",
+      "ammo_type_id": "27",
+      "penetration_level": 4,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/Special/300BLK-TIV.webp",
+      "godot_icon_path": "res://assets/Bullet/Special/300BLK-TIV.webp",
+      "source_urls": [],
+      "factor_source": "用户确认：暂沿用同口径同等级普通弹 37280400001"
+    },
+    "s12:ttv": {
+      "item_id": "s12:ttv",
+      "name": "TTV",
+      "display_name": ".300 BLK TTV",
+      "caliber": ".300 BLK",
+      "source_caliber": ".300BLK",
+      "ammo_type_id": "27",
+      "penetration_level": 5,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_armor_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "effective_helmet_damage_factors": [
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1,
+        1.1
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/Special/300BLK-TTV.webp",
+      "godot_icon_path": "res://assets/Bullet/Special/300BLK-TTV.webp",
+      "source_urls": [],
+      "factor_source": "用户确认：暂沿用同口径同等级普通弹 37280500001"
+    },
+    "s12:spall": {
+      "item_id": "s12:spall",
+      "name": "SPALL",
+      "display_name": "5.45x39mm SPALL",
+      "caliber": "5.45x39mm",
+      "source_caliber": "5.45*39mm",
+      "ammo_type_id": "12",
+      "penetration_level": 4,
+      "is_season_limited": true,
+      "ammo_armor_damage_multiplier": 1,
+      "armor_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "helmet_damage_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6
+      ],
+      "effective_armor_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "effective_helmet_damage_factors": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6
+      ],
+      "special_rule_id": null,
+      "icon_relative_path": "Bullet/Special/545-SPALL.webp",
+      "godot_icon_path": "res://assets/Bullet/Special/545-SPALL.webp",
+      "source_urls": [],
+      "factor_source": "用户确认：暂沿用同口径同等级普通弹 37120400001"
+    }
+  },
+  "by_caliber_and_level": {
+    "5.56x45mm": {
+      "1": [
+        "37100100001"
+      ],
+      "2": [
+        "37100200001"
+      ],
+      "3": [
+        "37100300001",
+        "37100300002"
+      ],
+      "4": [
+        "37100400001",
+        "37100400002",
+        "s12:cinder"
+      ],
+      "5": [
+        "37100500001"
+      ]
+    },
+    "7.62x39mm": {
+      "1": [
+        "37110100001"
+      ],
+      "2": [
+        "37110200001"
+      ],
+      "3": [
+        "37110300001"
+      ],
+      "4": [
+        "37110400001",
+        "37110400002"
+      ],
+      "5": [
+        "37110500001",
+        "37110500002"
+      ]
+    },
+    "5.45x39mm": {
+      "1": [
+        "37120100001"
+      ],
+      "2": [
+        "37120200001"
+      ],
+      "3": [
+        "37120300001"
+      ],
+      "4": [
+        "37120400001",
+        "37120400002",
+        "37120400003",
+        "s12:spall"
+      ],
+      "5": [
+        "37120500001",
+        "37120500003"
+      ]
+    },
+    "5.8x42mm": {
+      "2": [
+        "37130200001"
+      ],
+      "3": [
+        "37130300001"
+      ],
+      "4": [
+        "37130400001",
+        "37130400002"
+      ],
+      "5": [
+        "37130500001",
+        "37130500002"
+      ]
+    },
+    "9x39mm": {
+      "3": [
+        "37140300001",
+        "37140300002"
+      ],
+      "4": [
+        "37140400001",
+        "37140400002"
+      ],
+      "5": [
+        "37140500001"
+      ]
+    },
+    "6.8x51mm": {
+      "3": [
+        "37150300002"
+      ],
+      "4": [
+        "37150400001",
+        "37150400002"
+      ],
+      "5": [
+        "37150500001",
+        "37150500002"
+      ],
+      "6": [
+        "37150600001"
+      ]
+    },
+    "12.7x55mm": {
+      "3": [
+        "37160300001"
+      ],
+      "4": [
+        "37160400001",
+        "37160400002"
+      ],
+      "5": [
+        "37160500001"
+      ]
+    },
+    "7.62x51mm": {
+      "2": [
+        "37170200001"
+      ],
+      "3": [
+        "37170300001"
+      ],
+      "4": [
+        "37170400001"
+      ],
+      "5": [
+        "37170500001",
+        "37170500002"
+      ],
+      "6": [
+        "37170600001"
+      ]
+    },
+    "7.62x54R": {
+      "3": [
+        "37180300001"
+      ],
+      "4": [
+        "37180400001"
+      ],
+      "5": [
+        "37180500001"
+      ],
+      "6": [
+        "37180600001"
+      ]
+    },
+    ".45 ACP": {
+      "0": [
+        "37190000001",
+        "37190000002"
+      ],
+      "1": [
+        "37190100001"
+      ],
+      "2": [
+        "37190200001"
+      ],
+      "3": [
+        "37190300001"
+      ],
+      "4": [
+        "37190400001"
+      ],
+      "5": [
+        "37190500001"
+      ]
+    },
+    "9x19mm": {
+      "0": [
+        "37200000001",
+        "37200000002"
+      ],
+      "1": [
+        "37200100001"
+      ],
+      "2": [
+        "37200200001"
+      ],
+      "3": [
+        "37200300001"
+      ],
+      "4": [
+        "37200400001"
+      ]
+    },
+    "5.7x28mm": {
+      "0": [
+        "37210000001"
+      ],
+      "1": [
+        "37210100001"
+      ],
+      "2": [
+        "37210200001"
+      ],
+      "3": [
+        "37210300001",
+        "37210300002"
+      ],
+      "4": [
+        "37210400001",
+        "37210400002"
+      ],
+      "5": [
+        "37210500001"
+      ]
+    },
+    ".357 Magnum": {
+      "0": [
+        "37220000001"
+      ],
+      "2": [
+        "37220200001"
+      ],
+      "3": [
+        "37220300001"
+      ],
+      "4": [
+        "37220400001"
+      ]
+    },
+    ".50 AE": {
+      "2": [
+        "37230200001"
+      ],
+      "3": [
+        "37230300001"
+      ],
+      "4": [
+        "37230400001"
+      ],
+      "5": [
+        "37230500001"
+      ]
+    },
+    ".338 Lap Mag": {
+      "7": [
+        "37240700001"
+      ]
+    },
+    "12 Gauge": {
+      "0": [
+        "37250000001",
+        "37250000002",
+        "37250400003"
+      ],
+      "1": [
+        "37250100001"
+      ],
+      "2": [
+        "37250200002"
+      ],
+      "3": [
+        "37250300001",
+        "37250300002",
+        "37250400005"
+      ],
+      "4": [
+        "37250400002",
+        "37250400004"
+      ]
+    },
+    "4.6x30mm": {
+      "0": [
+        "37260000002"
+      ],
+      "3": [
+        "37260300001"
+      ],
+      "4": [
+        "37260400001",
+        "37260400002"
+      ],
+      "5": [
+        "37260500001",
+        "37260500002"
+      ]
+    },
+    ".300 BLK": {
+      "3": [
+        "37280300001",
+        "37280300002"
+      ],
+      "4": [
+        "37280400001",
+        "37280400002",
+        "s12:tiv"
+      ],
+      "5": [
+        "37280500001",
+        "s12:ttv"
+      ]
+    },
+    ".45-70 Govt": {
+      "0": [
+        "37290300001"
+      ],
+      "4": [
+        "37290400001"
+      ],
+      "5": [
+        "37290500001"
+      ]
+    },
+    ".50 BMG": {
+      "6": [
+        "37300600001",
+        "37300600002"
+      ],
+      "7": [
+        "37300700001"
+      ]
+    }
+  },
+  "by_ammo_type_and_level": {
+    "10": {
+      "1": [
+        "37100100001"
+      ],
+      "2": [
+        "37100200001"
+      ],
+      "3": [
+        "37100300001",
+        "37100300002"
+      ],
+      "4": [
+        "37100400001",
+        "37100400002",
+        "s12:cinder"
+      ],
+      "5": [
+        "37100500001"
+      ]
+    },
+    "11": {
+      "1": [
+        "37110100001"
+      ],
+      "2": [
+        "37110200001"
+      ],
+      "3": [
+        "37110300001"
+      ],
+      "4": [
+        "37110400001",
+        "37110400002"
+      ],
+      "5": [
+        "37110500001",
+        "37110500002"
+      ]
+    },
+    "12": {
+      "1": [
+        "37120100001"
+      ],
+      "2": [
+        "37120200001"
+      ],
+      "3": [
+        "37120300001"
+      ],
+      "4": [
+        "37120400001",
+        "37120400002",
+        "37120400003",
+        "s12:spall"
+      ],
+      "5": [
+        "37120500001",
+        "37120500003"
+      ]
+    },
+    "13": {
+      "2": [
+        "37130200001"
+      ],
+      "3": [
+        "37130300001"
+      ],
+      "4": [
+        "37130400001",
+        "37130400002"
+      ],
+      "5": [
+        "37130500001",
+        "37130500002"
+      ]
+    },
+    "14": {
+      "3": [
+        "37140300001",
+        "37140300002"
+      ],
+      "4": [
+        "37140400001",
+        "37140400002"
+      ],
+      "5": [
+        "37140500001"
+      ]
+    },
+    "15": {
+      "3": [
+        "37150300002"
+      ],
+      "4": [
+        "37150400001",
+        "37150400002"
+      ],
+      "5": [
+        "37150500001",
+        "37150500002"
+      ],
+      "6": [
+        "37150600001"
+      ]
+    },
+    "16": {
+      "3": [
+        "37160300001"
+      ],
+      "4": [
+        "37160400001",
+        "37160400002"
+      ],
+      "5": [
+        "37160500001"
+      ]
+    },
+    "17": {
+      "2": [
+        "37170200001"
+      ],
+      "3": [
+        "37170300001"
+      ],
+      "4": [
+        "37170400001"
+      ],
+      "5": [
+        "37170500001",
+        "37170500002"
+      ],
+      "6": [
+        "37170600001"
+      ]
+    },
+    "18": {
+      "3": [
+        "37180300001"
+      ],
+      "4": [
+        "37180400001"
+      ],
+      "5": [
+        "37180500001"
+      ],
+      "6": [
+        "37180600001"
+      ]
+    },
+    "19": {
+      "0": [
+        "37190000001",
+        "37190000002"
+      ],
+      "1": [
+        "37190100001"
+      ],
+      "2": [
+        "37190200001"
+      ],
+      "3": [
+        "37190300001"
+      ],
+      "4": [
+        "37190400001"
+      ],
+      "5": [
+        "37190500001"
+      ]
+    },
+    "20": {
+      "0": [
+        "37200000001",
+        "37200000002"
+      ],
+      "1": [
+        "37200100001"
+      ],
+      "2": [
+        "37200200001"
+      ],
+      "3": [
+        "37200300001"
+      ],
+      "4": [
+        "37200400001"
+      ]
+    },
+    "21": {
+      "0": [
+        "37210000001"
+      ],
+      "1": [
+        "37210100001"
+      ],
+      "2": [
+        "37210200001"
+      ],
+      "3": [
+        "37210300001",
+        "37210300002"
+      ],
+      "4": [
+        "37210400001",
+        "37210400002"
+      ],
+      "5": [
+        "37210500001"
+      ]
+    },
+    "22": {
+      "0": [
+        "37220000001"
+      ],
+      "2": [
+        "37220200001"
+      ],
+      "3": [
+        "37220300001"
+      ],
+      "4": [
+        "37220400001"
+      ]
+    },
+    "23": {
+      "2": [
+        "37230200001"
+      ],
+      "3": [
+        "37230300001"
+      ],
+      "4": [
+        "37230400001"
+      ],
+      "5": [
+        "37230500001"
+      ]
+    },
+    "24": {
+      "7": [
+        "37240700001"
+      ]
+    },
+    "25": {
+      "0": [
+        "37250000001",
+        "37250000002",
+        "37250400003"
+      ],
+      "1": [
+        "37250100001"
+      ],
+      "2": [
+        "37250200002"
+      ],
+      "3": [
+        "37250300001",
+        "37250300002",
+        "37250400005"
+      ],
+      "4": [
+        "37250400002",
+        "37250400004"
+      ]
+    },
+    "26": {
+      "0": [
+        "37260000002"
+      ],
+      "3": [
+        "37260300001"
+      ],
+      "4": [
+        "37260400001",
+        "37260400002"
+      ],
+      "5": [
+        "37260500001",
+        "37260500002"
+      ]
+    },
+    "27": {
+      "3": [
+        "37280300001",
+        "37280300002"
+      ],
+      "4": [
+        "37280400001",
+        "37280400002",
+        "s12:tiv"
+      ],
+      "5": [
+        "37280500001",
+        "s12:ttv"
+      ]
+    },
+    "29": {
+      "0": [
+        "37290300001"
+      ],
+      "4": [
+        "37290400001"
+      ],
+      "5": [
+        "37290500001"
+      ]
+    },
+    "30": {
+      "6": [
+        "37300600001",
+        "37300600002"
+      ],
+      "7": [
+        "37300700001"
+      ]
+    }
+  },
+  "excluded_arrows": [
+    {
+      "item_id": "37270300001",
+      "name": "玻纤柳叶箭矢"
+    },
+    {
+      "item_id": "37270400001",
+      "name": "碳纤维刺骨箭矢"
+    },
+    {
+      "item_id": "37270500001",
+      "name": "碳纤维穿甲箭矢"
+    },
+    {
+      "item_id": "37270500002",
+      "name": "碳纤维散射箭矢"
+    }
+  ]
+}

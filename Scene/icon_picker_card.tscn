@@ -1,0 +1,75 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://assets/UI/icon_button_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://Code/icon_feedback.gd" id="2_feedback"]
+[sub_resource type="StyleBoxFlat" id="Style_selected"]
+bg_color = Color(0.26, 0.25, 0.45, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.45, 0.91, 1, 0.95)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_left = 12
+corner_radius_bottom_right = 12
+corner_detail = 12
+
+[node name="IconCard" type="Button"]
+custom_minimum_size = Vector2(148, 128)
+size_flags_horizontal = 3
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_feedback")
+theme_override_styles/focus = SubResource("Style_selected")
+
+[node name="Background" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 35.0
+offset_top = 4.0
+offset_right = 113.0
+offset_bottom = 82.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Image" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 140.0
+offset_bottom = 86.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Caption" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 88.0
+offset_right = 144.0
+offset_bottom = 124.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 14
+text = "图标名称
+口径 / 等级"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Selected" type="Label" parent="."]
+visible = false
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -28.0
+offset_top = 4.0
+offset_right = -6.0
+offset_bottom = 28.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.45, 0.93, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "✓"
+horizontal_alignment = 1
