@@ -1,0 +1,15 @@
+{
+  "name": "delta-force-weapon-lab-publishing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:data-host": "node tools/build_cloudflare.mjs",
+    "deploy:data": "npm run build:data-host && cd .build/cloudflare && cf deploy --prebuilt",
+    "postinstall": "node -e \"require('node:fs').writeFileSync('node_modules/.gdignore','')\""
+  },
+  "devDependencies": {
+    "cf": "1.0.0-beta.28",
+    "@cloudflare/build-output-utils": "0.9.10",
+    "@cloudflare/config": "0.30.2"
+  }
+}

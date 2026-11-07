@@ -91,7 +91,7 @@ func _run() -> void:
 		await get_tree().create_timer(0.05).timeout
 	check(not program.busy and (program.status.text.contains("最新版本") or program.status.text.contains("尚无公开正式版本")), "GitHub HTTPS release check works")
 	program._show_licenses()
-	check(program.get_node("LicenseDialog/Content").text.contains("MIT License"), "Standalone EXE includes Godot license")
+	check(program.get_node("LicenseDialog/Content").text.contains("Permission is hereby granted"), "Standalone EXE includes Godot license")
 	program.get_node("LicenseDialog").hide()
 	var expected_version := Store.BUILTIN_VERSION
 	if not updater.latest.is_empty():

@@ -28,3 +28,6 @@ feature_profiles/*-audit.json
 publish/S12-review/
 .public-source/
 .release/
+node_modules/
+.cloudflare/
+tests/*.png.import

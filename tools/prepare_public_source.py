@@ -30,7 +30,7 @@ def prepare():
     sources = []
     for folder, suffixes in {
         "Code": {".gd", ".uid"}, "Scene": {".tscn"},
-        "assets": {".png", ".webp", ".jpg", ".jpeg", ".svg", ".ttf", ".otf", ".json", ".import", ".gdshader", ".uid", ".tres"},
+        "assets": {".png", ".webp", ".jpg", ".jpeg", ".svg", ".ttf", ".otf", ".json", ".import", ".gdshader", ".uid", ".tres", ".md"},
         "licenses": {".txt"}, "tests": {".gd", ".uid"},
     }.items():
         for path in (ROOT / folder).rglob("*"):
@@ -38,8 +38,12 @@ def prepare():
                 sources.append(path)
     sources.extend((ROOT / "data").glob("*.json"))
     sources.extend((ROOT / "data").glob("*.md"))
-    for relative in [".editorconfig", ".gitattributes", ".gitignore", "README.md", "发布数据更新.md", "project.godot", "export_presets.cfg", "非洲之心.png", "非洲之心.png.import", "feature_profiles/tool-release.gdbuild", "feature_profiles/精简构建说明.md", "tools/build_release.ps1", "tools/export_data_update.gd", "tools/export_data_update.gd.uid", "tools/prepare_public_source.py", "tools/audit_release.py", "publish/data-version.json", "publish/data-3.json", "publish/_headers", "publish/index.html"]:
+    for relative in [".editorconfig", ".gitattributes", ".gitignore", "README.md", "发布数据更新.md", "package.json", "package-lock.json", "project.godot", "export_presets.cfg", "非洲之心.png", "非洲之心.png.import", "feature_profiles/tool-release.gdbuild", "feature_profiles/精简构建说明.md", "tools/build_release.ps1", "tools/export_data_update.gd", "tools/export_data_update.gd.uid", "tools/prepare_public_source.py", "tools/audit_release.py", "tools/build_cloudflare.mjs", "publish/data-version.json", "publish/data-2.json", "publish/_headers", "publish/index.html"]:
         sources.append(ROOT / relative)
+    manifest = json.loads((ROOT / "publish/data-version.json").read_text(encoding="utf-8-sig"))
+    if not re.fullmatch(r"data-\d+\.json", manifest["package_url"]):
+        raise RuntimeError("Invalid data snapshot filename")
+    sources.append(ROOT / "publish" / manifest["package_url"])
     sources = sorted(set(sources))
     audit(sources)
     for source in sources:
