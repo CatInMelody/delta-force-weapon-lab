@@ -31,3 +31,5 @@ publish/S12-review/
 node_modules/
 .cloudflare/
 tests/*.png.import
+__pycache__/
+*.pyc
