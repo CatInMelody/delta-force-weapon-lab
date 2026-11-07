@@ -27,6 +27,8 @@ def audit(paths):
 def prepare():
     if OUT.exists():
         raise RuntimeError("Publication tree already exists; inspect before replacing")
+    (ROOT / ".build").mkdir(exist_ok=True)
+    (ROOT / ".build" / ".gdignore").write_text("", encoding="utf-8")
     sources = []
     for folder, suffixes in {
         "Code": {".gd", ".uid"}, "Scene": {".tscn"},

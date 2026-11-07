@@ -1,5 +1,5 @@
 // Use Cloudflare's pinned build-output helpers, never upload the project directory.
-import { readFile, mkdir, copyFile, readdir, rm } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, copyFile, readdir, rm } from 'node:fs/promises';
 import { resolve, join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
@@ -21,6 +21,8 @@ if (bytes.length !== manifest.size || createHash('sha256').update(bytes).digest(
 }
 const outputRoot = join(root, '.build/cloudflare');
 const publicRoot = join(outputRoot, 'public');
+await mkdir(join(root, '.build'), { recursive: true });
+await writeFile(join(root, '.build/.gdignore'), '');
 await mkdir(publicRoot, { recursive: true });
 const files = ['data-version.json', manifest.package_url, '_headers', 'index.html'];
 // Old clients may still be downloading the previous snapshot during rollout.
