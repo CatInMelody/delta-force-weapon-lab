@@ -21,4 +21,4 @@ Godot对应路径：`res://assets/Bullet/Special/文件名.webp`。
 
 ## S12 补充
 
-300BLK-TIV.webp、300BLK-TTV.webp、545-SPALL.webp 来自用户提供的原图，以无损 WebP 保存。CINDER 沿用 5.56 通用图标。当前物品映射及伤害机制以 JSON 为准。
+300BLK-TIV.webp、300BLK-TTV.webp、545-SPALL.webp 来自用户提供的原图，以无损 WebP 保存。556-CINDER.webp 使用用户指定的红色包装图标；300BLK-TTV.webp 使用用户指定的绿色包装图标。当前物品映射及伤害机制以 JSON 为准。

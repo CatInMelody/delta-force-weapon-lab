@@ -5587,8 +5587,8 @@
         0.6
       ],
       "special_rule_id": null,
-      "icon_relative_path": "Bullet/5.56x45mm.png",
-      "godot_icon_path": "res://assets/Bullet/5.56x45mm.png",
+      "icon_relative_path": "Bullet/Special/556-CINDER.webp",
+      "godot_icon_path": "res://assets/Bullet/Special/556-CINDER.webp",
       "source_urls": [],
       "factor_source": "用户确认：暂沿用同口径同等级普通弹 37100400001"
     },

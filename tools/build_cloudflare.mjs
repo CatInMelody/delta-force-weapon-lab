@@ -25,8 +25,11 @@ await mkdir(join(root, '.build'), { recursive: true });
 await writeFile(join(root, '.build/.gdignore'), '');
 await mkdir(publicRoot, { recursive: true });
 const files = ['data-version.json', manifest.package_url, '_headers', 'index.html'];
-// Old clients may still be downloading the previous snapshot during rollout.
-if ((await readdir(join(root, 'publish'))).includes('data-2.json')) files.push('data-2.json');
+// Keep the most recent older snapshot available to in-flight update downloads.
+const previous = (await readdir(join(root, 'publish')))
+  .filter(name => /^data-\d+\.json$/.test(name) && Number(name.slice(5, -5)) < manifest.data_version)
+  .sort((a, b) => Number(b.slice(5, -5)) - Number(a.slice(5, -5)))[0];
+if (previous) files.push(previous);
 for (const name of await readdir(publicRoot)) if (!files.includes(name)) await rm(join(publicRoot, name));
 for (const name of files) await copyFile(join(root, 'publish', name), join(publicRoot, name));
 await cleanBuildOutputDir(outputRoot);
